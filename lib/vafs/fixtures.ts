@@ -63,18 +63,18 @@ export const demoRepoConnections: RepoConnection[] = [
 export const demoFiles: AfsFileRecord[] = [
   {
     workspaceId: "ws_personal_alvaro",
-    path: "BRAIN.md",
-    title: "Brain",
+    path: "AGENTS.md",
+    title: "Agent Rules",
     description: "Rules for how this personal AFS should be managed.",
     section: "root",
     updatedAt: "2026-05-17",
     sourceCommitSha: "aaf5d00",
     content:
-      "AFS workspace for durable personal context. Search knowledge first, compile raw material, and preserve provenance.",
+      "AFS workspace rules: search maintained knowledge, preserve raw artifacts in private Drive, and record provenance in SOURCES.md.",
   },
   {
     workspaceId: "ws_personal_alvaro",
-    path: "knowledge/vafs-product.md",
+    path: "PRODUCT.md",
     title: "VAFS Product",
     description:
       "VAFS is the productized implementation of AFS with GitHub source repos, Supabase metadata, and S3 Vectors retrieval.",

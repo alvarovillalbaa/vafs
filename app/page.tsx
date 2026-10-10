@@ -64,6 +64,7 @@ export default function Home() {
               <Boxes className="size-4" aria-hidden="true" />
             </span>
             <span>vAFS</span>
+            <Badge variant="outline">Historical prototype</Badge>
           </Link>
           <nav className="flex items-center gap-2">
             <Button asChild variant="ghost" size="sm">

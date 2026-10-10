@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-10",
+  "source_commit": "1f243e494f14d746425192ffed77b48333ea3509",
+  "move_time_bytes_preserved": true,
+  "instruction_updates_followed_moves": true,
+  "records": [
+    {
+      "source": "packages/skills/vafs-use/assets/agents-fs-template/BRAIN.md",
+      "destination": "packages/skills/vafs-use/assets/agents-fs-template/AGENTS.md",
+      "bytes": 395,
+      "sha256": "c6aabb4fb9c4a45f69e0621d16416b4b9a59620b327aa56dbd199ae31e3562e2"
+    },
+    {
+      "source": "packages/skills/vafs-use/assets/agents-fs-template/raw/README.md",
+      "destination": "packages/skills/vafs-use/assets/agents-fs-template/SOURCES.md",
+      "bytes": 151,
+      "sha256": "61887637fff2643b1bfa75e2b28b1b0e9ad504ca0161a26b2f79fe16125b15e8"
+    },
+    {
+      "source": "packages/skills/vafs-use/assets/agents-fs-template/logs/2026/2026-05-17/bootstrap.md",
+      "destination": "packages/skills/vafs-use/assets/agents-fs-template/logs/2026/05-17/bootstrap.md",
+      "bytes": 143,
+      "sha256": "4caec49fe084adc6d8bee82e2005039654791d3256076769cf0cde9bd442888d"
+    }
+  ]
+}
