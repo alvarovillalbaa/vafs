@@ -68,15 +68,14 @@ export default function DocsPage() {
 
         <article className="space-y-10">
           <section id="overview" className="scroll-mt-20">
-            <Badge variant="outline">Last updated 2026-05-17</Badge>
+            <Badge variant="outline">Historical prototype · AFS {afsStandard.lastUpdated}</Badge>
             <h1 className="mt-4 max-w-3xl font-heading text-4xl font-semibold tracking-normal">
-              vAFS is the product infrastructure for AFS-compatible agents-fs
-              repositories.
+              Historical vAFS prototype for AFS-compatible agents-fs repositories.
             </h1>
             <p className="mt-4 max-w-3xl text-base leading-7 text-zinc-600">
-              GitHub remains the source of truth for knowledge. Supabase owns
-              identity, workspace metadata, OAuth grants, and integration state.
-              S3 Vectors stores searchable chunks derived from agents-fs.
+              The virtual filesystem layer is cancelled. This repository retains
+              its prototype contracts and maintains the existing AFS catalog and
+              export template. Raw AFS artifacts belong in private Drive.
             </p>
             <div className="mt-6 grid gap-3 md:grid-cols-4">
               <DocFact icon={FolderGit2} label="Source" value="agents-fs" />
@@ -89,7 +88,7 @@ export default function DocsPage() {
           <section id="standard" className="scroll-mt-20">
             <SectionTitle
               title="AFS Standard"
-              description={`${afsStandard.sourcePath} is the local standard source used by this implementation.`}
+              description={`${afsStandard.sourcePath} owns the portable AFS contract.`}
             />
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               {afsPathGroups.map((group) => (

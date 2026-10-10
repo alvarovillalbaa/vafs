@@ -29,9 +29,9 @@ export type TemplateFile = {
 export const afsStandard = {
   name: "Agentic FileSystem",
   shortName: "AFS",
-  sourcePath: "/Users/alvarovillalba/Desktop/afs",
-  version: "0.1.0-draft",
-  lastUpdated: "2026-05-17",
+  sourcePath: "https://github.com/alvarovillalbaa/afs",
+  version: "2026-10-10",
+  lastUpdated: "2026-10-10",
 } as const
 
 export const afsPathGroups: AfsPathGroup[] = [
@@ -45,25 +45,25 @@ export const afsPathGroups: AfsPathGroup[] = [
         path: "/logs/",
         label: "Logs",
         description:
-          "Brief dated logs for meaningful changes, actions, decisions, and status updates.",
+          "At most two lines per change under YYYY/MM-DD/, including actions, patterns, status, and friction.",
       },
       {
-        path: "/lessons/",
+        path: "/lessons/<domain>/",
         label: "Lessons",
         description:
-          "Reusable lessons learned from experience, especially implementation and workflow lessons.",
+          "Lessons grounded in experience, organized by domain and YYYY/MM-DD/.",
       },
       {
-        path: "/items/",
-        label: "Items",
+        path: "/facts/<domain>/",
+        label: "Facts",
         description:
-          "Durable facts about the user, company, customers, environments, priorities, or reusable context.",
+          "Living, source-backed facts organized by domain without dated directories.",
       },
       {
         path: "/fixes/",
         label: "Fixes",
         description:
-          "Reusable error solutions and debugging resolutions from problems that were actually fixed.",
+          "Actual errors, solutions, and regression-prevention evidence under YYYY/MM-DD/.",
       },
       {
         path: "/steers/",
@@ -72,10 +72,10 @@ export const afsPathGroups: AfsPathGroup[] = [
           "Traces of agent work redirected by a human or secondary model, including what changed.",
       },
       {
-        path: "/models/",
-        label: "Models",
+        path: "/decisions/",
+        label: "Decisions",
         description:
-          "Short reasoning-state logs: decisions made, problems encountered, and goals set.",
+          "Brief living decisions and rationale; canonical goals remain in Notion.",
       },
       {
         path: "/reflections/",
@@ -89,19 +89,13 @@ export const afsPathGroups: AfsPathGroup[] = [
     id: "operational",
     title: "Operational",
     summary:
-      "Work products, raw material, plans, specs, sources, generated libraries, and domain-specific operating surfaces.",
+      "Dated work products, living human-owned specifications, generated libraries, and domain-specific surfaces.",
     paths: [
       {
         path: "/audits/",
         label: "Audits",
         description:
-          "Comprehensive reports and analytical audits, usually organized in timestamp folders.",
-      },
-      {
-        path: "/raw/",
-        label: "Raw",
-        description:
-          "Unprocessed material waiting to be promoted into knowledge or another canonical destination.",
+          "Comprehensive reports and analytical audits under YYYY/MM-DD/.",
       },
       {
         path: "<domain>/<folder>/",
@@ -113,31 +107,30 @@ export const afsPathGroups: AfsPathGroup[] = [
         path: "/plans/",
         label: "Plans",
         description:
-          "Implementation plans and plan-driven development artifacts.",
+          "Implementation plans under YYYY/MM-DD/.",
       },
       {
         path: "/specs/",
         label: "Specs",
         description:
-          "Living desired-state documentation with acceptance criteria and constraints.",
-      },
-      {
-        path: "/sources/",
-        label: "Sources",
-        description:
-          "URL-based sources to monitor and mine for high-quality additions.",
+          "Living, mainly human-defined desired state; agents propose changes under task authority.",
       },
       {
         path: "/lib/",
         label: "Library",
         description:
-          "Reusable generated content, drafts, registries, templates, and support artifacts.",
+          "Generated content, drafts, and support artifacts; templates sit beside the content they generate.",
       },
       {
         path: "/objects/<type>/",
         label: "Objects",
         description:
           "Structured object records such as clients, employees, vendors, accounts, or projects.",
+      },
+      {
+        path: "/results/",
+        label: "Results",
+        description: "Preserved work outputs under YYYY/MM-DD/.",
       },
     ],
   },
@@ -148,13 +141,13 @@ export const afsPathGroups: AfsPathGroup[] = [
       "Living documentation that represents current canonical understanding of a user, company, codebase, and workflows.",
     paths: [
       {
-        path: "/references/",
+        path: "/REFERENCES.md",
         label: "References",
-        description: "Stable code, URL, API, schema, and factual references.",
+        description: "One reference catalog linking source and technical owner guides.",
       },
       {
-        path: "/cookbook/",
-        label: "Cookbook",
+        path: "/cookbooks/",
+        label: "Cookbooks",
         description:
           "Technical guides for how something is actually done in a codebase or operating system.",
       },
@@ -162,7 +155,7 @@ export const afsPathGroups: AfsPathGroup[] = [
         path: "/knowledge/",
         label: "Knowledge",
         description:
-          "Timeless maintained knowledge compiled from raw material, decisions, and sources.",
+          "Unique generalized knowledge and perspectives with provenance; excludes copied material and operational definitions.",
       },
       {
         path: "/runbooks/",
@@ -174,30 +167,25 @@ export const afsPathGroups: AfsPathGroup[] = [
         path: "/research/",
         label: "Research",
         description:
-          "Continuous research about engineering, markets, business areas, or open questions.",
+          "Living units with ordered questions, hypotheses, reasoning, method, evidence, and status.",
       },
       {
-        path: "/official-documentation/",
-        label: "Official Documentation",
+        path: "/SOURCES.md",
+        label: "Sources",
         description:
-          "External provider documentation preserved as a stable reference.",
+          "Source identity, URLs, capture status, verified private Drive artifacts, and compiled destinations.",
       },
       {
-        path: "/context/",
-        label: "Context",
+        path: "/GAPS.md",
+        label: "Gaps",
         description:
-          "Contextual docs such as VALUES.md, USER.md, PREFERENCES.md, goals, budget, and roadmap.",
+          "Unresolved understanding with impact, owner when known, and resolution evidence.",
       },
     ],
   },
 ]
 
 export const afsRootFiles: AfsRootFile[] = [
-  {
-    file: "BRAIN.md",
-    label: "Brain",
-    description: "Decides how the AFS should be managed.",
-  },
   {
     file: "MEMORY.md",
     label: "Memory Rules",
@@ -211,7 +199,7 @@ export const afsRootFiles: AfsRootFile[] = [
   {
     file: "AGENTS.md",
     label: "Agent Rules",
-    description: "Defines general operating rules for AI agents working in the workspace.",
+    description: "Owns operating rules, AFS management, source priority, and verification.",
   },
   {
     file: "PLAN.md",
@@ -264,24 +252,44 @@ export const afsRootFiles: AfsRootFile[] = [
     description: "Defines communication style, tone, vocabulary, and messaging patterns.",
   },
   {
-    file: "FRICTION.md",
-    label: "Friction",
-    description: "Documents adoption barriers, inefficiencies, complaints, and pain.",
-  },
-  {
-    file: "PREDICTION.md",
-    label: "Prediction",
-    description: "Captures expected future risks, opportunities, and product bets.",
-  },
-  {
-    file: "REGRESSIONS.md",
-    label: "Regressions",
-    description: "Tracks recurring bugs, fragile assumptions, and regression traps.",
-  },
-  {
     file: "HEARTBEAT.md",
     label: "Heartbeat",
     description: "Defines recurring status, active priorities, blockers, and health checks.",
+  },
+  {
+    file: "ROADMAP.md",
+    label: "Roadmap",
+    description: "Direction and sequencing linked to canonical Notion goals.",
+  },
+  {
+    file: "TASTE.md",
+    label: "Taste",
+    description: "Judgment, quality examples, preferences, and anti-patterns.",
+  },
+  {
+    file: "BEHAVIOR.md",
+    label: "Behavior",
+    description: "Agent action, stopping, collaboration, and escalation rules.",
+  },
+  {
+    file: "IEP.md",
+    label: "Ideal Employee",
+    description: "Employee capabilities, values, and non-fit.",
+  },
+  {
+    file: "REFERENCES.md",
+    label: "References",
+    description: "One reference catalog with labeled source and owner-guide links.",
+  },
+  {
+    file: "SOURCES.md",
+    label: "Sources",
+    description: "Provenance, monitoring, capture status, and verified Drive artifact links.",
+  },
+  {
+    file: "GAPS.md",
+    label: "Gaps",
+    description: "Unresolved understanding, impact, and resolution evidence.",
   },
 ]
 
@@ -295,20 +303,27 @@ export const retrievalModes = [
 
 export const agentsFsTemplateFiles: TemplateFile[] = [
   {
-    path: "BRAIN.md",
-    title: "Brain",
-    description: "Workspace management contract for this AFS repository.",
-    content: `# BRAIN.md
-Last updated: 2026-05-17
+    path: "AGENTS.md",
+    title: "Agent Rules",
+    description: "Workspace operating rules and AFS management.",
+    content: `# AGENTS.md
+Last updated: 2026-10-10
 
-This repository is an AFS-compliant agents-fs workspace.
+This repository is an AFS-compatible agents-fs workspace.
 
 ## Operating Rules
-- Search canonical knowledge before raw sources.
-- Put unprocessed inputs in raw/.
-- Promote durable knowledge into knowledge/, references/, runbooks/, or another canonical path.
-- Preserve source references and dates when compiling knowledge.
-- Cleanup agents must write through a branch and pull request.
+
+- Search maintained knowledge and its references before consulting source artifacts.
+- Preserve source identity, URLs, dates, status, and authors when available in SOURCES.md.
+- Keep raw inputs and copied artifacts in the correct private Google Drive; verify a recoverable copy before removing original bytes.
+- Keep unique generalized knowledge and perspectives in knowledge/; operations belong in cookbooks/ or runbooks/.
+- Define continuous research in research/<unit>/README.md with ordered questions, hypotheses, reasoning, method, evidence, and status.
+- Use YYYY/MM-DD/ for logs, lessons, fixes, audits, plans, and results; each log entry is at most two lines.
+- Keep facts/<domain>/, decisions/, specs/, cookbooks/, knowledge/, runbooks/, and research/ living without date directories.
+- Folder docs: core README.md/ARCHITECTURE.md/TESTS.md; conditional SETUP.md/CHANGELOG.md/SECURITY.md; rare OVERVIEW.md/FAQ.md/DEPENDENCIES.md. Procedures and decisions use their topic folders, with no folder-level RUNBOOK.md or DECISIONS.md.
+- Goals belong in canonical Notion and link from ROADMAP.md; templates stay beside generated content.
+- REFERENCES.md catalogs links and owner guides; GAPS.md records unresolved understanding.
+- Use branch and pull request writeback when authorized; never infer permission to merge or publish.
 `,
   },
   {
@@ -316,41 +331,80 @@ This repository is an AFS-compliant agents-fs workspace.
     title: "agents-fs",
     description: "Repository entrypoint for humans and agents.",
     content: `# agents-fs
-Last updated: 2026-05-17
+Last updated: 2026-10-10
 
-This repository stores AFS-compatible knowledge for a user or workspace.
-It is the source of truth for vAFS; Supabase stores metadata only.
+This repository stores portable AFS instructions, unique knowledge, work history, and provenance. Start with [AGENTS.md](AGENTS.md), then [REFERENCES.md](REFERENCES.md), [SOURCES.md](SOURCES.md), and [GAPS.md](GAPS.md).
+
+[Knowledge](knowledge/README.md) contains generalized synthesis. [Research](research/README.md) explains unit definitions. Raw artifacts belong in private Drive and goals in canonical Notion.
+`,
+  },
+  {
+    path: "REFERENCES.md",
+    title: "References",
+    description: "One catalog of references and owner guides.",
+    content: `# References
+
+- [AFS standard](https://github.com/alvarovillalbaa/afs): canonical filesystem contract.
+- [Workspace rules](AGENTS.md): source placement and verification.
+- [Knowledge](knowledge/README.md): unique generalized synthesis.
+- [Research](research/README.md): continuous unit definitions.
+
+Add labeled external references and technical owner-guide links here rather than creating a duplicate reference registry.
+`,
+  },
+  {
+    path: "SOURCES.md",
+    title: "Sources",
+    description: "Source identity, capture status, and verified Drive provenance.",
+    content: `# Sources
+
+No external artifacts have been captured by this template. For each source, record origin, original path or URL, date, author when known, capture/ingestion status, verified private Drive artifact, checksums when migrated, and compiled destinations. Preservation does not prove ingestion.
+
+Personal raw material belongs in alvaro.villalbaperez@gmail.com Drive; Clous raw material in avillalba@clous.app Drive. The workspace owner must select and verify the private destination before any source removal. Keep unread or inaccessible URLs visible.
+`,
+  },
+  {
+    path: "GAPS.md",
+    title: "Gaps",
+    description: "Unresolved understanding and resolution evidence.",
+    content: `# Gaps
+
+The workspace owner must select the private Drive destination and canonical Notion goal records. This template has not verified those destinations, source artifacts, or ingestion. Record unresolved understanding with impact, owner when known, next action, and evidence needed to resolve it.
 `,
   },
   {
     path: "knowledge/README.md",
     title: "Knowledge",
-    description: "Canonical durable knowledge compiled from raw inputs.",
+    description: "Unique generalized knowledge and perspectives with provenance.",
     content: `# Knowledge
-Last updated: 2026-05-17
+Last updated: 2026-10-10
 
-Keep durable, current, reusable knowledge here. Prefer updating an existing page over creating duplicates.
+Keep unique generalized knowledge, original perspectives, and source-backed synthesis here. Prefer updating an existing page over creating duplicates. Do not mirror online material or define operations; procedures belong in cookbooks/ or runbooks/. Preserve provenance through SOURCES.md and distinguish hypotheses from verified evidence.
 `,
   },
   {
-    path: "raw/README.md",
-    title: "Raw",
-    description: "Inbox for unprocessed sources.",
-    content: `# Raw
-Last updated: 2026-05-17
+    path: "research/README.md",
+    title: "Research",
+    description: "Continuous research organized by defined units.",
+    content: `# Research
 
-Store unprocessed uploads, transcripts, notes, files, and links here until they are compiled into canonical knowledge.
+Create one living research/<unit>/ folder per accepted topic. Its README.md must define:
+
+- Questions and order: what to investigate and in which sequence.
+- Hypotheses: proposed expectations with uncertainty stated.
+- Reasoning: motivation and existing evidence.
+- Method: scope, evidence criteria, and stopping/review conditions.
+- Evidence and status: results, limits, next questions, and owner when known.
+
+Use those five names as section headings. Keep dated observations inside the unit as evidence; do not invent hypotheses, owners, or completed research to fill a template.
 `,
   },
   {
-    path: "logs/2026/2026-05-17/bootstrap.md",
+    path: "logs/2026/05-17/bootstrap.md",
     title: "Bootstrap Log",
-    description: "Initial vAFS bootstrap log.",
-    content: `# Bootstrap Log
-Last updated: 2026-05-17
-
-- Created agents-fs from the vAFS template.
-- Next action: connect sync and run the first index job.
+    description: "Illustrative bootstrap journal retaining the original template date.",
+    content: `Created an AFS workspace from the exported template.
+Record original sources in SOURCES.md before compiling unique synthesis.
 `,
   },
 ]
