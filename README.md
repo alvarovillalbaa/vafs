@@ -1,15 +1,16 @@
 # vAFS
-Last updated: 2026-05-17
+Last updated: 2026-10-28
 
 vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compatible `agents-fs` GitHub repositories.
 
 ## What This Repo Implements
 
 - Next.js 16 app and route handlers for the VAFS console and public API.
-- AFS contract imported into `lib/vafs/afs-contract.ts` from the local standard at `/Users/alvarovillalba/Desktop/afs`.
+- An imported AFS draft contract in `lib/vafs/afs-contract.ts`; the [AFS repository](https://github.com/alvarovillalbaa/afs) owns the standard.
 - Supabase-first metadata model for users, workspaces, memberships, OAuth grants, repo connections, jobs, and audit events.
 - GitHub `agents-fs` source-of-truth model with branch-and-PR writeback.
-- Hybrid retrieval: metadata, BM25, S3 Vectors adapter, rerank hooks, and local `rg` mode reserved for CLI/MCP.
+- Hosted retrieval contracts for metadata, keyword/vector adapters and reranking hooks; their external integration remains unfinished.
+- A file-based local CLI bridge with explicit-root metadata, real `rg`, optional configured QMD keyword retrieval, fresh content hashes and line/byte provenance. See [local retrieval](docs/local-retrieval.md).
 - OpenAI Agents SDK cleanup-agent contract in `lib/vafs/cleanup-agent.ts`.
 - CLI and MCP bridge in `bin/vafs.mjs` and `bin/vafs-mcp.mjs`.
 - Exportable skills in `packages/skills/vafs-use` and `packages/skills/vafs-devs`.
@@ -36,6 +37,22 @@ node bin/vafs.mjs sync ws_personal_alvaro
 node bin/vafs.mjs cleanup ws_personal_alvaro "Compile raw retrieval notes"
 ```
 
+Local checkout commands require installed Node and `rg`, with no application
+dependency installation. Supply the checkout explicitly:
+
+```bash
+node bin/vafs.mjs local index --root /path/to/agents-fs
+node bin/vafs.mjs local search "hybrid retrieval" --root /path/to/agents-fs
+node bin/vafs.mjs local get knowledge/retrieval.md --root /path/to/agents-fs
+```
+
+Local retrieval reads literal files and reports each signal's availability.
+It does not upload a checkout, create a hosted workspace or manufacture search
+results from the demo catalogue. Raw intake is excluded unless requested.
+QMD collection setup and live QMD acceptance remain separate prerequisites.
+The new focused checks are authored but have not run; source inspection is not
+functional acceptance.
+
 MCP stdio bridge:
 
 ```bash
@@ -58,7 +75,10 @@ The API is implemented with Next route handlers:
 - `GET /api/v1/health`
 - `GET|POST /api/mcp`
 
-Set `VAFS_AUTH_REQUIRED=true` to enforce scope checks through `x-vafs-scopes` while the Supabase OAuth server is being wired.
+`VAFS_AUTH_REQUIRED` controls the initial header-based scope check. That interim
+`x-vafs-scopes` behavior does not establish verified OAuth identity or workspace
+ownership. It has not been changed by the local reader. Hosted Auth/access and
+external-service acceptance remain unfinished.
 
 ## Environment
 
@@ -94,4 +114,9 @@ VAFS_AUTH_REQUIRED=false
 
 ## Current Integration State
 
-The implementation is credential-safe. It exposes real contracts, route handlers, CLI, MCP, schema, and worker boundaries, but external services are mocked until Supabase, GitHub App, AWS, and OpenAI credentials are configured.
+The hosted implementation exposes contracts, route handlers, HTTP-backed CLI
+and MCP, schema and worker boundaries. Its inspected search remains
+fixture-backed; credentialed Supabase/GitHub/AWS/OpenAI behavior and production
+access enforcement are unverified. Do not treat these surfaces as completed
+integrations. The local file bridge has an independent explicit-root contract
+and pending focused proof recorded under `docs/`.
