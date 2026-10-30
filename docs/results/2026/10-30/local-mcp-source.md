@@ -57,8 +57,24 @@ does not inherit the old 63-case reader approval request.
 Preparation uses a bounded selected-text bundle: nine original inputs were
 verified against the current untruncated 940-leaf GitHub tree before copying.
 No Git history, dependency environment, user data or private corpus was copied.
-The bundle is not a full checkout or canonical AFS ingestion. Publication and
-preservation evidence is recorded after the conditional source update.
+The bundle is not a full checkout or canonical AFS ingestion.
+
+Published source is
+[`ac3d57c077c7fc728ae18274e5c3a84107d9f552`](https://github.com/alvarovillalbaa/vafs/commit/ac3d57c077c7fc728ae18274e5c3a84107d9f552).
+The conditional non-force main update preserved concurrent-head protection.
+An untruncated readback matched all 947 paths, modes, types and blob SHAs against
+the original tree plus the exact nine-file overlay: two documentation changes,
+seven additions, 938 unrelated leaves preserved and none removed. Main and the
+immutable proposal read back exactly; zero Actions runs and no active workflow
+files were observed. The [machine receipt](local-mcp-publication.json) retains
+base/source trees, changed identities and limits.
+
+The first readback wrapper mistakenly parsed file Markdown as API JSON. Its
+handling was corrected and immutable reads repeated successfully; no product,
+test or assertion changed. This was a readback-recording error, not a test run.
+The separate 34-case question was then issued once against the immutable
+published proposal. All cases remain unrun until its answer; the fourteen sealed
+inputs remain unchanged by this result-only publication follow-up.
 
 The full vAFS and portfolio goal remain unfinished. Hosted Auth/persistence,
 integration activation, real QMD and wider architecture decisions remain their
