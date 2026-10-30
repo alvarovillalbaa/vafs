@@ -1,5 +1,5 @@
 # vAFS Architecture
-Last updated: 2026-05-17
+Last updated: 2026-10-30
 
 ## Ownership
 
@@ -31,7 +31,13 @@ Hosted VAFS uses:
 - S3 Vectors semantic recall
 - reranking hooks
 
-Local CLI/MCP mode may add real `rg`/shell grep against a trusted checkout. Hosted Supabase Edge workers do not run arbitrary shell commands.
+The local CLI reader uses real `rg` against a trusted explicit checkout. The
+separate [local MCP stdio entrypoint](local-mcp.md) reuses its corpus/page/search
+functions, with a pinned startup root and no write tools. Raw intake and QMD
+remain disabled in that MCP profile. Its functional checks are approval-pending;
+source implementation is not real-client acceptance. The existing hosted MCP
+bridge and access behavior are unchanged. Hosted Supabase Edge workers do not
+run arbitrary shell commands.
 
 ## Write Policy
 

@@ -1,5 +1,5 @@
 # vAFS
-Last updated: 2026-10-28
+Last updated: 2026-10-30
 
 vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compatible `agents-fs` GitHub repositories.
 
@@ -11,6 +11,7 @@ vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compa
 - GitHub `agents-fs` source-of-truth model with branch-and-PR writeback.
 - Hosted retrieval contracts for metadata, keyword/vector adapters and reranking hooks; their external integration remains unfinished.
 - A file-based local CLI bridge with explicit-root metadata, real `rg`, optional configured QMD keyword retrieval, fresh content hashes and line/byte provenance. See [local retrieval](docs/local-retrieval.md).
+- A separate read-only local MCP stdio entrypoint for that reader, without a hosted API. See [local MCP](docs/local-mcp.md); its focused functional checks remain pending approval.
 - OpenAI Agents SDK cleanup-agent contract in `lib/vafs/cleanup-agent.ts`.
 - CLI and MCP bridge in `bin/vafs.mjs` and `bin/vafs-mcp.mjs`.
 - Exportable skills in `packages/skills/vafs-use` and `packages/skills/vafs-devs`.
@@ -58,6 +59,17 @@ MCP stdio bridge:
 ```bash
 VAFS_API_URL=http://127.0.0.1:3000 node bin/vafs-mcp.mjs
 ```
+
+For a trusted local checkout, select the separate local server explicitly:
+
+```bash
+node bin/vafs-local-mcp.mjs --root /path/to/agents-fs
+```
+
+It exposes metadata index, literal search and exact page reads. Raw intake is
+excluded and QMD is disabled. It does not connect to the hosted API, change
+account access or implement sync/write tools. Source/static evidence and
+pending protocol/stdio acceptance are kept separate in [local MCP](docs/local-mcp.md).
 
 ## API
 
