@@ -25,6 +25,14 @@ jobs:
         with:
           node-version: 26.13.0
           package-manager-cache: false
+      - name: Provide exact Ubuntu ripgrep test tool
+        timeout-minutes: 3
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends ripgrep=14.1.0-1
+          test "$(dpkg-query --show --showformat='${Version}' ripgrep)" = '14.1.0-1'
       - name: Verify sealed source and run exactly 63 local reader checks
         shell: bash
         run: |
@@ -175,7 +183,7 @@ jobs:
           const expected = { tests: 63, suites: 0, pass: 63, fail: 0, cancelled: 0, skipped: 0, todo: 0 };
           const exactCases = cases.length === 63 && cases.every((row, index) => row.index === index + 1 && row.status === 'ok') && JSON.stringify(cases.map(row => row.name).sort()) === JSON.stringify(before?.names.toSorted());
           const passed = problems.length === 0 && signals.length === 0 && stopped === null && childCode === 0 && childSignal === null && before && after && exactCases && utf8Exact && totalRows.length === 7 && new Set(totalRows.map(row => row[0])).size === 7 && Object.keys(expected).every(key => totals[key] === expected[key]) && JSON.stringify(plans) === '[63]' && cleanup.processesStopped && cleanup.ownedTmpRemoved && !cleanup.forced;
-          const report = { schemaVersion: 'vafs.local-reader-ci.v1', sourceCommit: pin, workflowCommit: process.env.GITHUB_SHA, runtime, command: ['node', ...args], limits: { wallMs: 120000, termKillGraceMs: 3000, stdoutBytes: 262144, stderrBytes: 65536, childEnvironment: ['PATH', 'TMPDIR', 'TZ'] }, childCode, childSignal, stopped, signals, problems, totals, plans, exactCases, cases, sourceGuard: { before, after }, stdout: { bytes: outputBytes, capturedBytes: stdout.length, sha256: sha(stdout), complete: outputBytes === stdout.length }, stderr: { bytes: errorBytes, capturedBytes: stderr.length, sha256: sha(stderr), complete: errorBytes === stderr.length }, cleanup, passed: Boolean(passed), proofLimits: 'Authored local fixtures/real rg/scripted QMD only; no real QMD index/model, private corpus, external service, install, browser, database or hosted/MCP acceptance.' };
+          const report = { schemaVersion: 'vafs.local-reader-ci.v1', sourceCommit: pin, workflowCommit: process.env.GITHUB_SHA, runtime, command: ['node', ...args], limits: { wallMs: 120000, termKillGraceMs: 3000, stdoutBytes: 262144, stderrBytes: 65536, childEnvironment: ['PATH', 'TMPDIR', 'TZ'] }, childCode, childSignal, stopped, signals, problems, totals, plans, exactCases, cases, sourceGuard: { before, after }, stdout: { bytes: outputBytes, capturedBytes: stdout.length, sha256: sha(stdout), complete: outputBytes === stdout.length }, stderr: { bytes: errorBytes, capturedBytes: stderr.length, sha256: sha(stderr), complete: errorBytes === stderr.length }, cleanup, passed: Boolean(passed), proofLimits: 'Authored local fixtures/real rg/scripted QMD only; runner Node/RG tools provided, no application dependency/model install, real QMD index/model, private corpus, external service, browser, database or hosted/MCP acceptance.' };
           process.stdout.write(text); if (stderr.length) process.stderr.write(stderr);
           const json = JSON.stringify(report); if (Buffer.byteLength(json) > 131072) { process.stdout.write('\nVAFS63_REPORT {"passed":false,"reason":"report_limit"}\n'); process.exitCode = 1; }
           else { process.stdout.write(`\nVAFS63_REPORT ${json}\n`); process.exitCode = passed ? 0 : 1; }
