@@ -1,0 +1,178 @@
+name: Local reader 63 checks
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/local-reader-checks.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  reader:
+    if: ${{ github.repository == 'alvarovillalbaa/vafs' && github.event.repository.private == false && github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      SOURCE_COMMIT: d6888b7ab92cc17630858831879453402397b91e
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+        with:
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+          fetch-depth: 1
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 26.13.0
+          package-manager-cache: false
+      - name: Verify sealed source and run exactly 63 local reader checks
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import { spawn, execFileSync } from 'node:child_process';
+          import { createHash } from 'node:crypto';
+          import { accessSync, constants, createReadStream, lstatSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync } from 'node:fs';
+          import { dirname, join } from 'node:path';
+          const pin = 'd6888b7ab92cc17630858831879453402397b91e';
+          const treePin = 'bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89';
+          const sealPath = 'docs/results/2026/10-28/local-retrieval-source.json';
+          const files = ['tests/unit/local-corpus.test.mjs', 'tests/unit/local-retrieval.test.mjs', 'tests/unit/local-cli.test.mjs', 'tests/unit/local-process.test.mjs'];
+          const counts = [17, 16, 17, 13], args = ['--test', '--test-concurrency=1', '--test-reporter=tap', ...files];
+          const problems = [], signals = [], owned = new Map();
+          const sha = bytes => createHash('sha256').update(bytes).digest('hex');
+          const fail = code => { throw Object.assign(new Error(code), { code }); };
+          const pause = ms => new Promise(resolve => setTimeout(resolve, ms));
+          let task, taskIdentity, fixtures, env, child, deadline, escalation, fallback, monitor, stopped = null;
+          let before, after, runtime, childCode = null, childSignal = null, outputBytes = 0, errorBytes = 0;
+          const output = [], errors = [];
+          const git = (...values) => execFileSync('/usr/bin/git', values, { env, encoding: 'utf8', timeout: 10000, maxBuffer: 1048576 }).trim();
+          function resolveRg() {
+            for (const directory of ['/usr/bin', '/bin', '/usr/local/bin']) {
+              const path = join(directory, 'rg');
+              try { accessSync(path, constants.X_OK); if (lstatSync(realpathSync(path)).isFile()) return realpathSync(path); } catch {}
+            }
+            fail('rg_missing');
+          }
+          async function fileHash(path) {
+            const hash = createHash('sha256'); for await (const chunk of createReadStream(path)) hash.update(chunk); return hash.digest('hex');
+          }
+          function sourceGuard() {
+            if (process.env.SOURCE_COMMIT !== pin || git('rev-parse', 'HEAD') !== pin || git('rev-parse', 'HEAD^{tree}') !== treePin || git('status', '--porcelain=v1', '--untracked-files=all') !== '') fail('source_identity_changed');
+            const bytes = readFileSync(sealPath), canonical = execFileSync('/usr/bin/git', ['show', `HEAD:${sealPath}`], { env, timeout: 10000, maxBuffer: 1048576 });
+            if (!bytes.equals(canonical)) fail('seal_changed');
+            const seal = JSON.parse(bytes);
+            if (seal.schemaVersion !== 'local-retrieval-source-v1' || !Array.isArray(seal.sources) || seal.sources.length !== 11 || new Set(seal.sources.map(row => row.path)).size !== 11) fail('seal_invalid');
+            const entries = new Map(git('ls-tree', 'HEAD', '--', ...seal.sources.map(row => row.path)).split('\n').map(line => {
+              const match = line.match(/^(100644|100755) blob ([a-f0-9]{40})\t(.+)$/); if (!match) fail('tree_invalid'); return [match[3], { mode: match[1], blob: match[2] }];
+            }));
+            const sources = seal.sources.map(row => {
+              if (typeof row.path !== 'string' || !/^(bin|tests)\/[a-z0-9/._-]+$/.test(row.path) || row.path.includes('..')) fail('source_path_invalid');
+              const entry = entries.get(row.path), stat = lstatSync(row.path);
+              if (!stat.isFile() || stat.isSymbolicLink()) fail('source_type_changed');
+              const actual = readFileSync(row.path);
+              const mode = row.path === 'bin/vafs.mjs' ? '100755' : '100644';
+              const blob = createHash('sha1').update(Buffer.from(`blob ${actual.length}\0`)).update(actual).digest('hex');
+              if (!entry || !stat.isFile() || stat.isSymbolicLink() || entry.mode !== mode || (stat.mode & 0o777) !== (mode === '100755' ? 0o755 : 0o644) || entry.blob !== row.gitBlob || blob !== entry.blob || sha(actual) !== row.sha256) fail('source_bytes_or_mode_changed');
+              return { path: row.path, mode, gitBlob: blob, sha256: sha(actual) };
+            });
+            const names = files.flatMap((file, index) => {
+              const values = [...readFileSync(file, 'utf8').matchAll(/(?:^|\n)test\((['"])([^\\\r\n]*?)\1\s*,/g)].map(match => match[2]);
+              if (values.length !== counts[index] || seal.authoredCases[file.split('/').at(-1)] !== counts[index]) fail('case_inventory_changed'); return values;
+            });
+            if (names.length !== 63 || new Set(names).size !== 63 || seal.authoredCases.total !== 63) fail('case_inventory_changed');
+            return { commit: pin, tree: treePin, sealSha256: sha(bytes), sources, names };
+          }
+          function processRow(pid) {
+            try {
+              if (!Number.isSafeInteger(pid) || pid <= 1 || pid === process.pid || lstatSync(`/proc/${pid}`).uid !== process.getuid()) return null;
+              const text = readFileSync(`/proc/${pid}/stat`, 'utf8'), values = text.slice(text.lastIndexOf(') ') + 2).split(' ');
+              return { pid, parent: Number(values[1]), start: values[19], state: values[0] };
+            } catch { return null; }
+          }
+          function sample() {
+            const rows = new Map(readdirSync('/proc').filter(name => /^\d+$/.test(name)).map(name => processRow(Number(name))).filter(Boolean).map(row => [row.pid, row]));
+            if (child?.pid && !owned.has(child.pid) && rows.has(child.pid)) owned.set(child.pid, rows.get(child.pid));
+            for (let changed = true; changed;) {
+              changed = false;
+              for (const row of rows.values()) if (!owned.has(row.pid) && owned.has(row.parent) && rows.get(row.parent)?.start === owned.get(row.parent).start) { owned.set(row.pid, row); changed = true; }
+            }
+          }
+          function findOwnedMarker(directory, budget = { count: 0 }) {
+            for (const entry of readdirSync(directory, { withFileTypes: true })) {
+              if (++budget.count > 4096) fail('cleanup_inventory_limit');
+              const path = join(directory, entry.name); if (entry.isSymbolicLink()) continue;
+              if (entry.isDirectory()) findOwnedMarker(path, budget);
+              else if (entry.name === 'owned-grandchild.json' && entry.isFile()) {
+                try {
+                  if (lstatSync(path).size > 8192) continue;
+                  const value = JSON.parse(readFileSync(path, 'utf8')), row = processRow(value.pid);
+                  if (row && value.marker === path && readFileSync(`/proc/${value.pid}/cmdline`, 'utf8').split('\0').includes(path)) owned.set(value.pid, row);
+                } catch {}
+              }
+            }
+          }
+          function liveOwned() { sample(); return [...owned.values()].filter(row => { const current = processRow(row.pid); return current && current.start === row.start && !['Z', 'X'].includes(current.state); }); }
+          function killOwned(signal) {
+            let active; try { active = liveOwned(); } catch { problems.push('owned_inspection_failed'); return; }
+            for (const row of active) try { process.kill(row.pid, signal); } catch (error) { if (error.code !== 'ESRCH') problems.push('owned_signal_failed'); }
+          }
+          function stop(reason) {
+            if (stopped) return; stopped = reason;
+            if (child?.pid) try { process.kill(-child.pid, 'SIGTERM'); } catch (error) { if (error.code !== 'ESRCH') problems.push('group_term_failed'); }
+            killOwned('SIGTERM');
+            escalation = setTimeout(() => {
+              if (child?.pid) try { process.kill(-child.pid, 'SIGKILL'); } catch (error) { if (error.code !== 'ESRCH') problems.push('group_kill_failed'); }
+              killOwned('SIGKILL'); child?.stdout.destroy(); child?.stderr.destroy();
+            }, 3000);
+          }
+          const listeners = new Map(['SIGINT', 'SIGTERM', 'SIGHUP'].map(signal => [signal, () => { signals.push(signal); stop('interrupted'); }]));
+          for (const [signal, handler] of listeners) process.on(signal, handler);
+          let cleanup = { processesStopped: false, ownedTmpRemoved: false, forced: false };
+          try {
+            if (process.platform !== 'linux' || process.arch !== 'x64' || process.version !== 'v26.13.0') fail('runtime_profile_mismatch');
+            const parent = realpathSync(process.env.RUNNER_TEMP), rg = resolveRg();
+            task = mkdtempSync(join(parent, 'vafs-reader63-')); taskIdentity = lstatSync(task);
+            fixtures = join(task, 'fixtures'); mkdirSync(fixtures, { mode: 0o700 });
+            env = { PATH: [...new Set([dirname(process.execPath), dirname(rg), '/usr/bin', '/bin'])].join(':'), TMPDIR: fixtures, TZ: 'UTC' };
+            runtime = { node: { command: 'node', version: process.version, sha256: await fileHash(realpathSync(process.execPath)) }, rg: { command: 'rg', version: execFileSync(rg, ['--version'], { env, encoding: 'utf8', timeout: 3000, maxBuffer: 8192 }).trim(), sha256: await fileHash(rg) }, platform: process.platform, arch: process.arch };
+            before = sourceGuard(); await new Promise(resolve => setImmediate(resolve)); if (signals.length) fail('interrupted');
+            await new Promise(resolve => {
+              child = spawn(process.execPath, args, { env, shell: false, detached: true, stdio: ['ignore', 'pipe', 'pipe'] });
+              monitor = setInterval(sample, 50); deadline = setTimeout(() => stop('deadline'), 120000);
+              fallback = setTimeout(() => { stop('settlement_timeout'); child.stdout.destroy(); child.stderr.destroy(); resolve(); }, 125000);
+              child.stdout.on('data', chunk => { const room = 262144 - outputBytes; output.push(chunk.subarray(0, Math.max(0, room))); outputBytes += chunk.length; if (outputBytes > 262144) stop('stdout_limit'); });
+              child.stderr.on('data', chunk => { const room = 65536 - errorBytes; errors.push(chunk.subarray(0, Math.max(0, room))); errorBytes += chunk.length; if (errorBytes > 65536) stop('stderr_limit'); });
+              child.once('error', () => { problems.push('child_spawn_failed'); resolve(); });
+              child.once('close', (code, signal) => { childCode = code; childSignal = signal; resolve(); });
+            });
+          } catch (error) { problems.push(/^[a-z_]{1,64}$/.test(error.code ?? '') ? error.code : 'controller_failed'); }
+          finally {
+            clearTimeout(deadline); clearTimeout(fallback); clearInterval(monitor);
+            try {
+              if (fixtures) findOwnedMarker(fixtures);
+              if (liveOwned().length) { cleanup.forced = true; killOwned('SIGTERM'); const until = Date.now() + 3000; while (liveOwned().length && Date.now() < until) await pause(50); killOwned('SIGKILL'); await pause(100); }
+              cleanup.processesStopped = liveOwned().length === 0;
+            } catch { problems.push('process_cleanup_failed'); }
+            clearTimeout(escalation);
+            if (before) try { after = sourceGuard(); if (JSON.stringify(before) !== JSON.stringify(after)) fail('post_source_changed'); } catch { problems.push('post_source_guard_failed'); }
+            if (task) try {
+              const stat = lstatSync(task);
+              if (!cleanup.processesStopped || !stat.isDirectory() || stat.isSymbolicLink() || stat.dev !== taskIdentity.dev || stat.ino !== taskIdentity.ino || stat.uid !== process.getuid()) fail('tmp_identity_changed');
+              rmSync(task, { recursive: true, force: false }); cleanup.ownedTmpRemoved = true;
+            } catch { problems.push('owned_tmp_cleanup_failed'); }
+          }
+          const stdout = Buffer.concat(output), stderr = Buffer.concat(errors), text = stdout.toString('utf8');
+          const totalRows = [...text.matchAll(/^# (tests|suites|pass|fail|cancelled|skipped|todo) (\d+)\s*$/gm)].map(match => [match[1], Number(match[2])]);
+          const totals = Object.fromEntries(totalRows), utf8Exact = Buffer.from(text, 'utf8').equals(stdout);
+          const cases = [...text.matchAll(/^(ok|not ok) (\d+) - (.+)$/gm)].map(match => ({ index: Number(match[2]), name: match[3], status: match[1] }));
+          const plans = [...text.matchAll(/^1\.\.(\d+)\s*$/gm)].map(match => Number(match[1]));
+          const expected = { tests: 63, suites: 0, pass: 63, fail: 0, cancelled: 0, skipped: 0, todo: 0 };
+          const exactCases = cases.length === 63 && cases.every((row, index) => row.index === index + 1 && row.status === 'ok') && JSON.stringify(cases.map(row => row.name).sort()) === JSON.stringify(before?.names.toSorted());
+          const passed = problems.length === 0 && signals.length === 0 && stopped === null && childCode === 0 && childSignal === null && before && after && exactCases && utf8Exact && totalRows.length === 7 && new Set(totalRows.map(row => row[0])).size === 7 && Object.keys(expected).every(key => totals[key] === expected[key]) && JSON.stringify(plans) === '[63]' && cleanup.processesStopped && cleanup.ownedTmpRemoved && !cleanup.forced;
+          const report = { schemaVersion: 'vafs.local-reader-ci.v1', sourceCommit: pin, workflowCommit: process.env.GITHUB_SHA, runtime, command: ['node', ...args], limits: { wallMs: 120000, termKillGraceMs: 3000, stdoutBytes: 262144, stderrBytes: 65536, childEnvironment: ['PATH', 'TMPDIR', 'TZ'] }, childCode, childSignal, stopped, signals, problems, totals, plans, exactCases, cases, sourceGuard: { before, after }, stdout: { bytes: outputBytes, capturedBytes: stdout.length, sha256: sha(stdout), complete: outputBytes === stdout.length }, stderr: { bytes: errorBytes, capturedBytes: stderr.length, sha256: sha(stderr), complete: errorBytes === stderr.length }, cleanup, passed: Boolean(passed), proofLimits: 'Authored local fixtures/real rg/scripted QMD only; no real QMD index/model, private corpus, external service, install, browser, database or hosted/MCP acceptance.' };
+          process.stdout.write(text); if (stderr.length) process.stderr.write(stderr);
+          const json = JSON.stringify(report); if (Buffer.byteLength(json) > 131072) { process.stdout.write('\nVAFS63_REPORT {"passed":false,"reason":"report_limit"}\n'); process.exitCode = 1; }
+          else { process.stdout.write(`\nVAFS63_REPORT ${json}\n`); process.exitCode = passed ? 0 : 1; }
+          for (const [signal, handler] of listeners) process.removeListener(signal, handler);
+          NODE
