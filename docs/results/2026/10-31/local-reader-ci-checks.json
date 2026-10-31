@@ -1,0 +1,841 @@
+{
+  "schemaVersion": "vafs.local-reader-ci-checks.v1",
+  "date": "2026-10-31",
+  "status": "passed",
+  "repository": "alvarovillalbaa/vafs",
+  "source": {
+    "commit": "d6888b7ab92cc17630858831879453402397b91e",
+    "tree": "bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89",
+    "sealedInputs": 11,
+    "seal": "docs/results/2026/10-28/local-retrieval-source.json",
+    "sealSha256": "bb589d6f1a642dfe52791e0c9e238c79368e8e94d94545375b041bdb45e3d98c",
+    "prePostIdentical": true
+  },
+  "workflow": {
+    "path": ".github/workflows/local-reader-checks.yml",
+    "commit": "c7253691e1cffd248331e9becbab62ab0c07047a",
+    "tree": "5a61f6c949521da364d37b892bb608ec70b7b8e6",
+    "sha256": "95cbf0580476ecd96018eadb7813b83c22cc39cf2e53062f2dfeadb4114e15a1",
+    "sourcePinUnchanged": true
+  },
+  "run": {
+    "id": 41241301093,
+    "attempt": 1,
+    "event": "push",
+    "branch": "main",
+    "url": "https://github.com/alvarovillalbaa/vafs/actions/runs/41241301093",
+    "createdAt": "2026-10-31T20:57:29Z",
+    "completedAt": "2026-10-31T20:57:51Z",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "job": {
+    "id": 124655586122,
+    "name": "reader",
+    "url": "https://github.com/alvarovillalbaa/vafs/actions/runs/41241301093/job/124655586122",
+    "conclusion": "success",
+    "controllerExitCode": 0,
+    "reportAt": "2026-10-31T20:57:47.7834723Z",
+    "checkout": "success",
+    "nodeSetup": "success",
+    "runnerToolSetup": "success",
+    "controller": "success",
+    "postCleanup": "success"
+  },
+  "runtime": {
+    "runnerLabel": "ubuntu-24.04",
+    "platform": "linux",
+    "arch": "x64",
+    "node": {
+      "command": "node",
+      "version": "v26.13.0",
+      "sha256": "0adde40d1b7dfa57c8bc83cbc319758c3ec6ebba21363bb2fa752ea6b267ad1b"
+    },
+    "ripgrep": {
+      "command": "rg",
+      "version": "ripgrep 14.1.0\n\nfeatures:-simd-accel,+pcre2\nsimd(compile):+SSE2,-SSSE3,-AVX2\nsimd(runtime):+SSE2,+SSSE3,+AVX2\n\nPCRE2 10.42 is available (JIT is available)",
+      "sha256": "be2fbcdd985161603bfa268c7647eec670b9e94374f0e972da708d7de670a8fb",
+      "package": "ripgrep",
+      "packageVersion": "14.1.0-1",
+      "architecture": "amd64",
+      "packageSource": "https://packages.ubuntu.com/noble/ripgrep",
+      "qualification": "The apt step installed the exact package; logs show ripgrep14.1.0-1 unpack/setup and its exact dpkg-query assertion completed successfully. The controller independently recorded the resolved executable version and SHA-256."
+    },
+    "profileLimit": "Actual Ubuntu Linux/x64 Node26.13.0/RG14.1.0 execution, separate from the historical macOS Node26.8.2/RG15.2.0 execution and the preparation document's older runtime."
+  },
+  "execution": {
+    "invocations": 1,
+    "retries": 0,
+    "expectedCases": 63,
+    "executedCases": 63,
+    "exactNamesMatched": true,
+    "allNumberedOutcomesMatched": true,
+    "totals": {
+      "tests": 63,
+      "suites": 0,
+      "pass": 63,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "tapPlan": [
+      63
+    ],
+    "tapDurationMs": 1654.679066,
+    "childCode": 0,
+    "childSignal": null,
+    "stopped": null,
+    "signals": [],
+    "problems": [],
+    "groups": [
+      {
+        "path": "tests/unit/local-corpus.test.mjs",
+        "cases": 17,
+        "pass": 17,
+        "fail": 0
+      },
+      {
+        "path": "tests/unit/local-retrieval.test.mjs",
+        "cases": 16,
+        "pass": 16,
+        "fail": 0
+      },
+      {
+        "path": "tests/unit/local-cli.test.mjs",
+        "cases": 17,
+        "pass": 17,
+        "fail": 0
+      },
+      {
+        "path": "tests/unit/local-process.test.mjs",
+        "cases": 13,
+        "pass": 13,
+        "fail": 0
+      }
+    ]
+  },
+  "descendantProof": {
+    "path": "tests/unit/local-process.test.mjs",
+    "caseIndex": 47,
+    "name": "runner deadline settles while inherited pipes are open and stops its owned finite descendant",
+    "status": "ok",
+    "platformMechanism": "Linux /proc checks the fixture's owned PID for disappearance or non-running zombie state, after bounded inherited-pipe settlement and process-group termination.",
+    "qualification": "This demonstrates the unchanged authored Linux fixture assertion; it does not prove that macOS ps permissions are available or supersede the earlier EPERM result."
+  },
+  "captures": {
+    "stdout": {
+      "bytes": 14617,
+      "capturedBytes": 14617,
+      "sha256": "16b8dc9bd8a8977154bd94e7c3afb714615a660da29a64e845de01e4ebff99ac",
+      "complete": true,
+      "text": "TAP version 13\n# Subtest: local index is offline and emits metadata with relative paths and a stable root identity\nok 1 - local index is offline and emits metadata with relative paths and a stable root identity\n  ---\n  duration_ms: 20.640841\n  type: 'test'\n  ...\n# Subtest: local get returns exact source bytes and canonical relative document metadata\nok 2 - local get returns exact source bytes and canonical relative document metadata\n  ---\n  duration_ms: 7.938353\n  type: 'test'\n  ...\n# Subtest: local search retains every repeated query token and applies the explicit limit\nok 3 - local search retains every repeated query token and applies the explicit limit\n  ---\n  duration_ms: 12.500298\n  type: 'test'\n  ...\n# Subtest: raw documents remain opt-in for index and get\nok 4 - raw documents remain opt-in for index and get\n  ---\n  duration_ms: 18.075447\n  type: 'test'\n  ...\n# Subtest: local root is mandatory and argument errors never consult remote settings\nok 5 - local root is mandatory and argument errors never consult remote settings\n  ---\n  duration_ms: 0.316781\n  type: 'test'\n  ...\n# Subtest: sequential flag parsing rejects unknown, repeated, missing and command-inapplicable flags\nok 6 - sequential flag parsing rejects unknown, repeated, missing and command-inapplicable flags\n  ---\n  duration_ms: 0.27575\n  type: 'test'\n  ...\n# Subtest: local limit rejects noncanonical or out-of-range values before retrieval\nok 7 - local limit rejects noncanonical or out-of-range values before retrieval\n  ---\n  duration_ms: 0.178055\n  type: 'test'\n  ...\n# Subtest: local get rejects traversal and symlink documents without disclosing outside content\nok 8 - local get rejects traversal and symlink documents without disclosing outside content\n  ---\n  duration_ms: 2.770129\n  type: 'test'\n  ...\n# Subtest: explicit index export is private, outside the checkout, stable and never overwrites different data\nok 9 - explicit index export is private, outside the checkout, stable and never overwrites different data\n  ---\n  duration_ms: 32.928548\n  type: 'test'\n  ...\n# Subtest: index output cannot write into the source checkout directly or through a parent symlink\nok 10 - index output cannot write into the source checkout directly or through a parent symlink\n  ---\n  duration_ms: 18.096974\n  type: 'test'\n  ...\n# Subtest: remote health and workspace routes retain GET and bearer behavior without real HTTP\nok 11 - remote health and workspace routes retain GET and bearer behavior without real HTTP\n  ---\n  duration_ms: 20.99594\n  type: 'test'\n  ...\n# Subtest: remote search preserves the first query token and tokens equal to a workspace flag value\nok 12 - remote search preserves the first query token and tokens equal to a workspace flag value\n  ---\n  duration_ms: 0.473204\n  type: 'test'\n  ...\n# Subtest: remote get, raw upload, sync and cleanup preserve their HTTP payload surfaces\nok 13 - remote get, raw upload, sync and cleanup preserve their HTTP payload surfaces\n  ---\n  duration_ms: 1.333292\n  type: 'test'\n  ...\n# Subtest: remote failures return nonzero fixed errors without raw server bodies or tokens\nok 14 - remote failures return nonzero fixed errors without raw server bodies or tokens\n  ---\n  duration_ms: 0.518151\n  type: 'test'\n  ...\n# Subtest: invalid remote URLs, JSON, oversized bodies and transport failures stay bounded and safe\nok 15 - invalid remote URLs, JSON, oversized bodies and transport failures stay bounded and safe\n  ---\n  duration_ms: 2.156617\n  type: 'test'\n  ...\n# Subtest: help, unknown commands and literal dash query text have explicit JSON outcomes\nok 16 - help, unknown commands and literal dash query text have explicit JSON outcomes\n  ---\n  duration_ms: 0.553363\n  type: 'test'\n  ...\n# Subtest: native entry executes a local get with unusable remote credentials and no loader\nok 17 - native entry executes a local get with unusable remote credentials and no loader\n  ---\n  duration_ms: 49.755338\n  type: 'test'\n  ...\n# Subtest: requires an explicit directory and returns an honest empty corpus\nok 18 - requires an explicit directory and returns an honest empty corpus\n  ---\n  duration_ms: 11.720407\n  type: 'test'\n  ...\n# Subtest: canonicalizes an explicitly selected root and preserves BOM, CRLF and exact byte hashes\nok 19 - canonicalizes an explicitly selected root and preserves BOM, CRLF and exact byte hashes\n  ---\n  duration_ms: 7.681631\n  type: 'test'\n  ...\n# Subtest: extracts conservative scalar frontmatter while retaining the original source unchanged\nok 20 - extracts conservative scalar frontmatter while retaining the original source unchanged\n  ---\n  duration_ms: 6.353327\n  type: 'test'\n  ...\n# Subtest: labels filesystem fallback dates honestly and accepts an explicit updated scalar\nok 21 - labels filesystem fallback dates honestly and accepts an explicit updated scalar\n  ---\n  duration_ms: 6.966258\n  type: 'test'\n  ...\n# Subtest: uses real headings and prose rather than fenced examples or complex YAML values\nok 22 - uses real headings and prose rather than fenced examples or complex YAML values\n  ---\n  duration_ms: 5.430675\n  type: 'test'\n  ...\n# Subtest: uses the nearest vetted README or INDEX and does not attribute filesystem dates to folder metadata\nok 23 - uses the nearest vetted README or INDEX and does not attribute filesystem dates to folder metadata\n  ---\n  duration_ms: 8.624905\n  type: 'test'\n  ...\n# Subtest: respects .gitignore in a plain directory and never loads ignored metadata on get\nok 24 - respects .gitignore in a plain directory and never loads ignored metadata on get\n  ---\n  duration_ms: 17.288827\n  type: 'test'\n  ...\n# Subtest: excludes hidden paths, generated/vendor folders and non-text extensions even when raw is enabled\nok 25 - excludes hidden paths, generated/vendor folders and non-text extensions even when raw is enabled\n  ---\n  duration_ms: 7.281046\n  type: 'test'\n  ...\n# Subtest: requires an explicit raw opt-in for both index and get\nok 26 - requires an explicit raw opt-in for both index and get\n  ---\n  duration_ms: 14.802627\n  type: 'test'\n  ...\n# Subtest: never follows symlink descendants to a file or directory outside the selected root\nok 27 - never follows symlink descendants to a file or directory outside the selected root\n  ---\n  duration_ms: 5.603902\n  type: 'test'\n  ...\n# Subtest: rejects traversal, absolute, hidden and noncanonical get paths\nok 28 - rejects traversal, absolute, hidden and noncanonical get paths\n  ---\n  duration_ms: 1.935308\n  type: 'test'\n  ...\n# Subtest: skips invalid UTF-8 and NUL text with fixed reasons and fails direct gets\nok 29 - skips invalid UTF-8 and NUL text with fixed reasons and fails direct gets\n  ---\n  duration_ms: 11.409489\n  type: 'test'\n  ...\n# Subtest: accepts exactly 512 KiB, skips a larger file and refuses its direct get\nok 30 - accepts exactly 512 KiB, skips a larger file and refuses its direct get\n  ---\n  duration_ms: 12.345517\n  type: 'test'\n  ...\n# Subtest: refuses more than 1000 eligible documents instead of silently truncating results\nok 31 - refuses more than 1000 eligible documents instead of silently truncating results\n  ---\n  duration_ms: 107.985377\n  type: 'test'\n  ...\n# Subtest: enforces the 16 MiB aggregate read budget for accepted and invalid documents\nok 32 - enforces the 16 MiB aggregate read budget for accepted and invalid documents\n  ---\n  duration_ms: 132.541165\n  type: 'test'\n  ...\n# Subtest: returns the same vetted document projection from get and index\nok 33 - returns the same vetted document projection from get and index\n  ---\n  duration_ms: 14.649152\n  type: 'test'\n  ...\n# Subtest: honors an already-cancelled request without starting a corpus scan\nok 34 - honors an already-cancelled request without starting a corpus scan\n  ---\n  duration_ms: 0.856113\n  type: 'test'\n  ...\n# Subtest: file-tool runner keeps shell characters literal and captures bounded streams\nok 35 - file-tool runner keeps shell characters literal and captures bounded streams\n  ---\n  duration_ms: 23.466653\n  type: 'test'\n  ...\n# Subtest: file-tool runner forwards stdin without converting it to command arguments\nok 36 - file-tool runner forwards stdin without converting it to command arguments\n  ---\n  duration_ms: 21.178126\n  type: 'test'\n  ...\n# Subtest: file-tool environment omits tokens, preload and config trust overrides\nok 37 - file-tool environment omits tokens, preload and config trust overrides\n  ---\n  duration_ms: 20.936065\n  type: 'test'\n  ...\n# Subtest: missing and unsuccessful commands produce stable errors without private stderr\nok 38 - missing and unsuccessful commands produce stable errors without private stderr\n  ---\n  duration_ms: 19.765436\n  type: 'test'\n  ...\n# Subtest: explicitly permitted no-match status is retained without inventing successful matches\nok 39 - explicitly permitted no-match status is retained without inventing successful matches\n  ---\n  duration_ms: 16.006741\n  type: 'test'\n  ...\n# Subtest: a referenced deadline terminates only the owned running process\nok 40 - a referenced deadline terminates only the owned running process\n  ---\n  duration_ms: 152.029652\n  type: 'test'\n  ...\n# Subtest: caller cancellation terminates the owned process and pre-cancellation never spawns\nok 41 - caller cancellation terminates the owned process and pre-cancellation never spawns\n  ---\n  duration_ms: 1.663343\n  type: 'test'\n  ...\n# Subtest: combined stdout and stderr enforce the same byte budget\nok 42 - combined stdout and stderr enforce the same byte budget\n  ---\n  duration_ms: 17.214041\n  type: 'test'\n  ...\n# Subtest: invalid runner options and unknown local error codes cannot echo supplied data\nok 43 - invalid runner options and unknown local error codes cannot echo supplied data\n  ---\n  duration_ms: 0.280627\n  type: 'test'\n  ...\n# Subtest: derived index publication is private, complete and replays identical bytes without replacement\nok 44 - derived index publication is private, complete and replays identical bytes without replacement\n  ---\n  duration_ms: 5.758466\n  type: 'test'\n  ...\n# Subtest: derived index publication preserves different existing files and symlink targets\nok 45 - derived index publication preserves different existing files and symlink targets\n  ---\n  duration_ms: 3.073821\n  type: 'test'\n  ...\n# Subtest: concurrent derived index writers publish exactly one complete winner\nok 46 - concurrent derived index writers publish exactly one complete winner\n  ---\n  duration_ms: 2.386979\n  type: 'test'\n  ...\n# Subtest: runner deadline settles while inherited pipes are open and stops its owned finite descendant\nok 47 - runner deadline settles while inherited pipes are open and stops its owned finite descendant\n  ---\n  duration_ms: 254.942438\n  type: 'test'\n  ...\n# Subtest: real rg matches bind original UTF-8 BOM and CRLF bytes with current content hashes\nok 48 - real rg matches bind original UTF-8 BOM and CRLF bytes with current content hashes\n  ---\n  duration_ms: 24.446965\n  type: 'test'\n  ...\n# Subtest: folder titles descriptions and explicit dates contribute metadata without fabricated grep matches\nok 49 - folder titles descriptions and explicit dates contribute metadata without fabricated grep matches\n  ---\n  duration_ms: 21.142688\n  type: 'test'\n  ...\n# Subtest: raw documents are excluded by default and included only by explicit selection\nok 50 - raw documents are excluded by default and included only by explicit selection\n  ---\n  duration_ms: 18.795398\n  type: 'test'\n  ...\n# Subtest: literal metacharacters leading dashes and shell-looking text remain literal rg terms\nok 51 - literal metacharacters leading dashes and shell-looking text remain literal rg terms\n  ---\n  duration_ms: 27.911413\n  type: 'test'\n  ...\n# Subtest: RRF60 combines opposite leg ranks and resolves equal scores by stable relative path\nok 52 - RRF60 combines opposite leg ranks and resolves equal scores by stable relative path\n  ---\n  duration_ms: 26.546853\n  type: 'test'\n  ...\n# Subtest: query UTF-8 term and result limits fail before corpus or subprocess access\nok 53 - query UTF-8 term and result limits fail before corpus or subprocess access\n  ---\n  duration_ms: 9.737449\n  type: 'test'\n  ...\n# Subtest: one document returns no more than eight byte-checked matches with bounded excerpts\nok 54 - one document returns no more than eight byte-checked matches with bounded excerpts\n  ---\n  duration_ms: 8.085202\n  type: 'test'\n  ...\n# Subtest: QMD stays disabled unless a collection is explicitly requested\nok 55 - QMD stays disabled unless a collection is explicitly requested\n  ---\n  duration_ms: 8.304928\n  type: 'test'\n  ...\n# Subtest: scripted QMD contributes vetted candidates while stale and cross-root paths are reported\nok 56 - scripted QMD contributes vetted candidates while stale and cross-root paths are reported\n  ---\n  duration_ms: 27.715977\n  type: 'test'\n  ...\n# Subtest: QMD invocation uses only BM25 search and the operator home with sanitized environment\nok 57 - QMD invocation uses only BM25 search and the operator home with sanitized environment\n  ---\n  duration_ms: 27.242382\n  type: 'test'\n  ...\n# Subtest: a requested missing QMD binary fails visibly instead of fabricating a ranking leg\nok 58 - a requested missing QMD binary fails visibly instead of fabricating a ranking leg\n  ---\n  duration_ms: 16.13705\n  type: 'test'\n  ...\n# Subtest: malformed scripted QMD JSON and result records fail with one controlled protocol error\nok 59 - malformed scripted QMD JSON and result records fail with one controlled protocol error\n  ---\n  duration_ms: 79.950811\n  type: 'test'\n  ...\n# Subtest: flag-like queries are refused only for explicit QMD and invalid collections are controlled\nok 60 - flag-like queries are refused only for explicit QMD and invalid collections are controlled\n  ---\n  duration_ms: 8.545441\n  type: 'test'\n  ...\n# Subtest: pre-cancelled requests stop before reading a missing corpus\nok 61 - pre-cancelled requests stop before reading a missing corpus\n  ---\n  duration_ms: 1.332772\n  type: 'test'\n  ...\n# Subtest: caller cancellation kills the owned scripted QMD child and returns a safe cancellation\nok 62 - caller cancellation kills the owned scripted QMD child and returns a safe cancellation\n  ---\n  duration_ms: 33.530598\n  type: 'test'\n  ...\n# Subtest: rg match offsets are checked against the vetted bytes rather than trusted from subprocess JSON\nok 63 - rg match offsets are checked against the vetted bytes rather than trusted from subprocess JSON\n  ---\n  duration_ms: 44.328263\n  type: 'test'\n  ...\n1..63\n# tests 63\n# suites 0\n# pass 63\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1654.679066\n"
+    },
+    "stderr": {
+      "bytes": 0,
+      "capturedBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true,
+      "text": ""
+    },
+    "qualification": "Reconstructed exact child TAP bytes by removing GitHub log timestamps from the single actual TAP block. Byte count and SHA-256 independently match the controller's captured stdout; no echoed workflow source or runner paths are included."
+  },
+  "controllerReport": {
+    "schemaVersion": "vafs.local-reader-ci.v1",
+    "sourceCommit": "d6888b7ab92cc17630858831879453402397b91e",
+    "workflowCommit": "c7253691e1cffd248331e9becbab62ab0c07047a",
+    "runtime": {
+      "node": {
+        "command": "node",
+        "version": "v26.13.0",
+        "sha256": "0adde40d1b7dfa57c8bc83cbc319758c3ec6ebba21363bb2fa752ea6b267ad1b"
+      },
+      "rg": {
+        "command": "rg",
+        "version": "ripgrep 14.1.0\n\nfeatures:-simd-accel,+pcre2\nsimd(compile):+SSE2,-SSSE3,-AVX2\nsimd(runtime):+SSE2,+SSSE3,+AVX2\n\nPCRE2 10.42 is available (JIT is available)",
+        "sha256": "be2fbcdd985161603bfa268c7647eec670b9e94374f0e972da708d7de670a8fb"
+      },
+      "platform": "linux",
+      "arch": "x64"
+    },
+    "command": [
+      "node",
+      "--test",
+      "--test-concurrency=1",
+      "--test-reporter=tap",
+      "tests/unit/local-corpus.test.mjs",
+      "tests/unit/local-retrieval.test.mjs",
+      "tests/unit/local-cli.test.mjs",
+      "tests/unit/local-process.test.mjs"
+    ],
+    "limits": {
+      "wallMs": 120000,
+      "termKillGraceMs": 3000,
+      "stdoutBytes": 262144,
+      "stderrBytes": 65536,
+      "childEnvironment": [
+        "PATH",
+        "TMPDIR",
+        "TZ"
+      ]
+    },
+    "childCode": 0,
+    "childSignal": null,
+    "stopped": null,
+    "signals": [],
+    "problems": [],
+    "totals": {
+      "tests": 63,
+      "suites": 0,
+      "pass": 63,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "plans": [
+      63
+    ],
+    "exactCases": true,
+    "cases": [
+      {
+        "index": 1,
+        "name": "local index is offline and emits metadata with relative paths and a stable root identity",
+        "status": "ok"
+      },
+      {
+        "index": 2,
+        "name": "local get returns exact source bytes and canonical relative document metadata",
+        "status": "ok"
+      },
+      {
+        "index": 3,
+        "name": "local search retains every repeated query token and applies the explicit limit",
+        "status": "ok"
+      },
+      {
+        "index": 4,
+        "name": "raw documents remain opt-in for index and get",
+        "status": "ok"
+      },
+      {
+        "index": 5,
+        "name": "local root is mandatory and argument errors never consult remote settings",
+        "status": "ok"
+      },
+      {
+        "index": 6,
+        "name": "sequential flag parsing rejects unknown, repeated, missing and command-inapplicable flags",
+        "status": "ok"
+      },
+      {
+        "index": 7,
+        "name": "local limit rejects noncanonical or out-of-range values before retrieval",
+        "status": "ok"
+      },
+      {
+        "index": 8,
+        "name": "local get rejects traversal and symlink documents without disclosing outside content",
+        "status": "ok"
+      },
+      {
+        "index": 9,
+        "name": "explicit index export is private, outside the checkout, stable and never overwrites different data",
+        "status": "ok"
+      },
+      {
+        "index": 10,
+        "name": "index output cannot write into the source checkout directly or through a parent symlink",
+        "status": "ok"
+      },
+      {
+        "index": 11,
+        "name": "remote health and workspace routes retain GET and bearer behavior without real HTTP",
+        "status": "ok"
+      },
+      {
+        "index": 12,
+        "name": "remote search preserves the first query token and tokens equal to a workspace flag value",
+        "status": "ok"
+      },
+      {
+        "index": 13,
+        "name": "remote get, raw upload, sync and cleanup preserve their HTTP payload surfaces",
+        "status": "ok"
+      },
+      {
+        "index": 14,
+        "name": "remote failures return nonzero fixed errors without raw server bodies or tokens",
+        "status": "ok"
+      },
+      {
+        "index": 15,
+        "name": "invalid remote URLs, JSON, oversized bodies and transport failures stay bounded and safe",
+        "status": "ok"
+      },
+      {
+        "index": 16,
+        "name": "help, unknown commands and literal dash query text have explicit JSON outcomes",
+        "status": "ok"
+      },
+      {
+        "index": 17,
+        "name": "native entry executes a local get with unusable remote credentials and no loader",
+        "status": "ok"
+      },
+      {
+        "index": 18,
+        "name": "requires an explicit directory and returns an honest empty corpus",
+        "status": "ok"
+      },
+      {
+        "index": 19,
+        "name": "canonicalizes an explicitly selected root and preserves BOM, CRLF and exact byte hashes",
+        "status": "ok"
+      },
+      {
+        "index": 20,
+        "name": "extracts conservative scalar frontmatter while retaining the original source unchanged",
+        "status": "ok"
+      },
+      {
+        "index": 21,
+        "name": "labels filesystem fallback dates honestly and accepts an explicit updated scalar",
+        "status": "ok"
+      },
+      {
+        "index": 22,
+        "name": "uses real headings and prose rather than fenced examples or complex YAML values",
+        "status": "ok"
+      },
+      {
+        "index": 23,
+        "name": "uses the nearest vetted README or INDEX and does not attribute filesystem dates to folder metadata",
+        "status": "ok"
+      },
+      {
+        "index": 24,
+        "name": "respects .gitignore in a plain directory and never loads ignored metadata on get",
+        "status": "ok"
+      },
+      {
+        "index": 25,
+        "name": "excludes hidden paths, generated/vendor folders and non-text extensions even when raw is enabled",
+        "status": "ok"
+      },
+      {
+        "index": 26,
+        "name": "requires an explicit raw opt-in for both index and get",
+        "status": "ok"
+      },
+      {
+        "index": 27,
+        "name": "never follows symlink descendants to a file or directory outside the selected root",
+        "status": "ok"
+      },
+      {
+        "index": 28,
+        "name": "rejects traversal, absolute, hidden and noncanonical get paths",
+        "status": "ok"
+      },
+      {
+        "index": 29,
+        "name": "skips invalid UTF-8 and NUL text with fixed reasons and fails direct gets",
+        "status": "ok"
+      },
+      {
+        "index": 30,
+        "name": "accepts exactly 512 KiB, skips a larger file and refuses its direct get",
+        "status": "ok"
+      },
+      {
+        "index": 31,
+        "name": "refuses more than 1000 eligible documents instead of silently truncating results",
+        "status": "ok"
+      },
+      {
+        "index": 32,
+        "name": "enforces the 16 MiB aggregate read budget for accepted and invalid documents",
+        "status": "ok"
+      },
+      {
+        "index": 33,
+        "name": "returns the same vetted document projection from get and index",
+        "status": "ok"
+      },
+      {
+        "index": 34,
+        "name": "honors an already-cancelled request without starting a corpus scan",
+        "status": "ok"
+      },
+      {
+        "index": 35,
+        "name": "file-tool runner keeps shell characters literal and captures bounded streams",
+        "status": "ok"
+      },
+      {
+        "index": 36,
+        "name": "file-tool runner forwards stdin without converting it to command arguments",
+        "status": "ok"
+      },
+      {
+        "index": 37,
+        "name": "file-tool environment omits tokens, preload and config trust overrides",
+        "status": "ok"
+      },
+      {
+        "index": 38,
+        "name": "missing and unsuccessful commands produce stable errors without private stderr",
+        "status": "ok"
+      },
+      {
+        "index": 39,
+        "name": "explicitly permitted no-match status is retained without inventing successful matches",
+        "status": "ok"
+      },
+      {
+        "index": 40,
+        "name": "a referenced deadline terminates only the owned running process",
+        "status": "ok"
+      },
+      {
+        "index": 41,
+        "name": "caller cancellation terminates the owned process and pre-cancellation never spawns",
+        "status": "ok"
+      },
+      {
+        "index": 42,
+        "name": "combined stdout and stderr enforce the same byte budget",
+        "status": "ok"
+      },
+      {
+        "index": 43,
+        "name": "invalid runner options and unknown local error codes cannot echo supplied data",
+        "status": "ok"
+      },
+      {
+        "index": 44,
+        "name": "derived index publication is private, complete and replays identical bytes without replacement",
+        "status": "ok"
+      },
+      {
+        "index": 45,
+        "name": "derived index publication preserves different existing files and symlink targets",
+        "status": "ok"
+      },
+      {
+        "index": 46,
+        "name": "concurrent derived index writers publish exactly one complete winner",
+        "status": "ok"
+      },
+      {
+        "index": 47,
+        "name": "runner deadline settles while inherited pipes are open and stops its owned finite descendant",
+        "status": "ok"
+      },
+      {
+        "index": 48,
+        "name": "real rg matches bind original UTF-8 BOM and CRLF bytes with current content hashes",
+        "status": "ok"
+      },
+      {
+        "index": 49,
+        "name": "folder titles descriptions and explicit dates contribute metadata without fabricated grep matches",
+        "status": "ok"
+      },
+      {
+        "index": 50,
+        "name": "raw documents are excluded by default and included only by explicit selection",
+        "status": "ok"
+      },
+      {
+        "index": 51,
+        "name": "literal metacharacters leading dashes and shell-looking text remain literal rg terms",
+        "status": "ok"
+      },
+      {
+        "index": 52,
+        "name": "RRF60 combines opposite leg ranks and resolves equal scores by stable relative path",
+        "status": "ok"
+      },
+      {
+        "index": 53,
+        "name": "query UTF-8 term and result limits fail before corpus or subprocess access",
+        "status": "ok"
+      },
+      {
+        "index": 54,
+        "name": "one document returns no more than eight byte-checked matches with bounded excerpts",
+        "status": "ok"
+      },
+      {
+        "index": 55,
+        "name": "QMD stays disabled unless a collection is explicitly requested",
+        "status": "ok"
+      },
+      {
+        "index": 56,
+        "name": "scripted QMD contributes vetted candidates while stale and cross-root paths are reported",
+        "status": "ok"
+      },
+      {
+        "index": 57,
+        "name": "QMD invocation uses only BM25 search and the operator home with sanitized environment",
+        "status": "ok"
+      },
+      {
+        "index": 58,
+        "name": "a requested missing QMD binary fails visibly instead of fabricating a ranking leg",
+        "status": "ok"
+      },
+      {
+        "index": 59,
+        "name": "malformed scripted QMD JSON and result records fail with one controlled protocol error",
+        "status": "ok"
+      },
+      {
+        "index": 60,
+        "name": "flag-like queries are refused only for explicit QMD and invalid collections are controlled",
+        "status": "ok"
+      },
+      {
+        "index": 61,
+        "name": "pre-cancelled requests stop before reading a missing corpus",
+        "status": "ok"
+      },
+      {
+        "index": 62,
+        "name": "caller cancellation kills the owned scripted QMD child and returns a safe cancellation",
+        "status": "ok"
+      },
+      {
+        "index": 63,
+        "name": "rg match offsets are checked against the vetted bytes rather than trusted from subprocess JSON",
+        "status": "ok"
+      }
+    ],
+    "sourceGuard": {
+      "before": {
+        "commit": "d6888b7ab92cc17630858831879453402397b91e",
+        "tree": "bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89",
+        "sealSha256": "bb589d6f1a642dfe52791e0c9e238c79368e8e94d94545375b041bdb45e3d98c",
+        "sources": [
+          {
+            "path": "bin/cli.mjs",
+            "mode": "100644",
+            "gitBlob": "c7a9dee9a2befb3f3f5daa9a576bd7d5704814a8",
+            "sha256": "d9b480cab48bc49372e6dc87c3befbf63899904b9bdf0604fdc2cb6309909b49"
+          },
+          {
+            "path": "bin/local/corpus.mjs",
+            "mode": "100644",
+            "gitBlob": "5c6872cc9f840daba1df00f94db4c93b6047dfff",
+            "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e"
+          },
+          {
+            "path": "bin/local/errors.mjs",
+            "mode": "100644",
+            "gitBlob": "8d2943ce8487235ad91d56c579fe52f34f530ca6",
+            "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0"
+          },
+          {
+            "path": "bin/local/output.mjs",
+            "mode": "100644",
+            "gitBlob": "b875aad8a81251d41fc4579c44f555afa99bc3ce",
+            "sha256": "28951861f637796d2f59a3d3372b45bb1e3321241484c4f544db17ec6a88dd25"
+          },
+          {
+            "path": "bin/local/process.mjs",
+            "mode": "100644",
+            "gitBlob": "c6b324516b2c3748ed1db2dd8c4036afe1888434",
+            "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0"
+          },
+          {
+            "path": "bin/local/retrieval.mjs",
+            "mode": "100644",
+            "gitBlob": "d43a729a09128d172b3dc9a258ff96879e4311cf",
+            "sha256": "1cc950e0b11b21909b4ffdbdc28502157795d895e5feb24aa32d451fee5e64aa"
+          },
+          {
+            "path": "bin/vafs.mjs",
+            "mode": "100755",
+            "gitBlob": "451c1498e96e93dbe50e4a1805f880ab7629e316",
+            "sha256": "ad933ffeab7e9d23a94d0547188720092a102dd0a66adbf948a8681edc460679"
+          },
+          {
+            "path": "tests/unit/local-cli.test.mjs",
+            "mode": "100644",
+            "gitBlob": "2aa1f4ae1725003f82b0a071d76d246d99518efd",
+            "sha256": "247bbc218c70751b24b6344b2d482b73a1981f089868bfa636944e555f8dd63b"
+          },
+          {
+            "path": "tests/unit/local-corpus.test.mjs",
+            "mode": "100644",
+            "gitBlob": "c91e182afab6860ab159b54bb690cfa5b0d0e1d8",
+            "sha256": "d9d4bf1b1ccd6a106240300792b084730f4dc6f5ce3f42f038b3831d8eb54d8a"
+          },
+          {
+            "path": "tests/unit/local-process.test.mjs",
+            "mode": "100644",
+            "gitBlob": "4a2dae61ec7ed0355a0412935b7794ce31daf387",
+            "sha256": "2a75aa1a8dbba846a0007e6a933dc1f8345df8019980b71c19149ba602f1132f"
+          },
+          {
+            "path": "tests/unit/local-retrieval.test.mjs",
+            "mode": "100644",
+            "gitBlob": "c34d38506dfd4813a584880b509061b2c5b522c8",
+            "sha256": "00e6a3f71155dc83fa0b7746bb465bc0ee71bd9e06ea794464341142bc62d20b"
+          }
+        ],
+        "names": [
+          "requires an explicit directory and returns an honest empty corpus",
+          "canonicalizes an explicitly selected root and preserves BOM, CRLF and exact byte hashes",
+          "extracts conservative scalar frontmatter while retaining the original source unchanged",
+          "labels filesystem fallback dates honestly and accepts an explicit updated scalar",
+          "uses real headings and prose rather than fenced examples or complex YAML values",
+          "uses the nearest vetted README or INDEX and does not attribute filesystem dates to folder metadata",
+          "respects .gitignore in a plain directory and never loads ignored metadata on get",
+          "excludes hidden paths, generated/vendor folders and non-text extensions even when raw is enabled",
+          "requires an explicit raw opt-in for both index and get",
+          "never follows symlink descendants to a file or directory outside the selected root",
+          "rejects traversal, absolute, hidden and noncanonical get paths",
+          "skips invalid UTF-8 and NUL text with fixed reasons and fails direct gets",
+          "accepts exactly 512 KiB, skips a larger file and refuses its direct get",
+          "refuses more than 1000 eligible documents instead of silently truncating results",
+          "enforces the 16 MiB aggregate read budget for accepted and invalid documents",
+          "returns the same vetted document projection from get and index",
+          "honors an already-cancelled request without starting a corpus scan",
+          "real rg matches bind original UTF-8 BOM and CRLF bytes with current content hashes",
+          "folder titles descriptions and explicit dates contribute metadata without fabricated grep matches",
+          "raw documents are excluded by default and included only by explicit selection",
+          "literal metacharacters leading dashes and shell-looking text remain literal rg terms",
+          "RRF60 combines opposite leg ranks and resolves equal scores by stable relative path",
+          "query UTF-8 term and result limits fail before corpus or subprocess access",
+          "one document returns no more than eight byte-checked matches with bounded excerpts",
+          "QMD stays disabled unless a collection is explicitly requested",
+          "scripted QMD contributes vetted candidates while stale and cross-root paths are reported",
+          "QMD invocation uses only BM25 search and the operator home with sanitized environment",
+          "a requested missing QMD binary fails visibly instead of fabricating a ranking leg",
+          "malformed scripted QMD JSON and result records fail with one controlled protocol error",
+          "flag-like queries are refused only for explicit QMD and invalid collections are controlled",
+          "pre-cancelled requests stop before reading a missing corpus",
+          "caller cancellation kills the owned scripted QMD child and returns a safe cancellation",
+          "rg match offsets are checked against the vetted bytes rather than trusted from subprocess JSON",
+          "local index is offline and emits metadata with relative paths and a stable root identity",
+          "local get returns exact source bytes and canonical relative document metadata",
+          "local search retains every repeated query token and applies the explicit limit",
+          "raw documents remain opt-in for index and get",
+          "local root is mandatory and argument errors never consult remote settings",
+          "sequential flag parsing rejects unknown, repeated, missing and command-inapplicable flags",
+          "local limit rejects noncanonical or out-of-range values before retrieval",
+          "local get rejects traversal and symlink documents without disclosing outside content",
+          "explicit index export is private, outside the checkout, stable and never overwrites different data",
+          "index output cannot write into the source checkout directly or through a parent symlink",
+          "remote health and workspace routes retain GET and bearer behavior without real HTTP",
+          "remote search preserves the first query token and tokens equal to a workspace flag value",
+          "remote get, raw upload, sync and cleanup preserve their HTTP payload surfaces",
+          "remote failures return nonzero fixed errors without raw server bodies or tokens",
+          "invalid remote URLs, JSON, oversized bodies and transport failures stay bounded and safe",
+          "help, unknown commands and literal dash query text have explicit JSON outcomes",
+          "native entry executes a local get with unusable remote credentials and no loader",
+          "file-tool runner keeps shell characters literal and captures bounded streams",
+          "file-tool runner forwards stdin without converting it to command arguments",
+          "file-tool environment omits tokens, preload and config trust overrides",
+          "missing and unsuccessful commands produce stable errors without private stderr",
+          "explicitly permitted no-match status is retained without inventing successful matches",
+          "a referenced deadline terminates only the owned running process",
+          "caller cancellation terminates the owned process and pre-cancellation never spawns",
+          "combined stdout and stderr enforce the same byte budget",
+          "invalid runner options and unknown local error codes cannot echo supplied data",
+          "derived index publication is private, complete and replays identical bytes without replacement",
+          "derived index publication preserves different existing files and symlink targets",
+          "concurrent derived index writers publish exactly one complete winner",
+          "runner deadline settles while inherited pipes are open and stops its owned finite descendant"
+        ]
+      },
+      "after": {
+        "commit": "d6888b7ab92cc17630858831879453402397b91e",
+        "tree": "bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89",
+        "sealSha256": "bb589d6f1a642dfe52791e0c9e238c79368e8e94d94545375b041bdb45e3d98c",
+        "sources": [
+          {
+            "path": "bin/cli.mjs",
+            "mode": "100644",
+            "gitBlob": "c7a9dee9a2befb3f3f5daa9a576bd7d5704814a8",
+            "sha256": "d9b480cab48bc49372e6dc87c3befbf63899904b9bdf0604fdc2cb6309909b49"
+          },
+          {
+            "path": "bin/local/corpus.mjs",
+            "mode": "100644",
+            "gitBlob": "5c6872cc9f840daba1df00f94db4c93b6047dfff",
+            "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e"
+          },
+          {
+            "path": "bin/local/errors.mjs",
+            "mode": "100644",
+            "gitBlob": "8d2943ce8487235ad91d56c579fe52f34f530ca6",
+            "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0"
+          },
+          {
+            "path": "bin/local/output.mjs",
+            "mode": "100644",
+            "gitBlob": "b875aad8a81251d41fc4579c44f555afa99bc3ce",
+            "sha256": "28951861f637796d2f59a3d3372b45bb1e3321241484c4f544db17ec6a88dd25"
+          },
+          {
+            "path": "bin/local/process.mjs",
+            "mode": "100644",
+            "gitBlob": "c6b324516b2c3748ed1db2dd8c4036afe1888434",
+            "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0"
+          },
+          {
+            "path": "bin/local/retrieval.mjs",
+            "mode": "100644",
+            "gitBlob": "d43a729a09128d172b3dc9a258ff96879e4311cf",
+            "sha256": "1cc950e0b11b21909b4ffdbdc28502157795d895e5feb24aa32d451fee5e64aa"
+          },
+          {
+            "path": "bin/vafs.mjs",
+            "mode": "100755",
+            "gitBlob": "451c1498e96e93dbe50e4a1805f880ab7629e316",
+            "sha256": "ad933ffeab7e9d23a94d0547188720092a102dd0a66adbf948a8681edc460679"
+          },
+          {
+            "path": "tests/unit/local-cli.test.mjs",
+            "mode": "100644",
+            "gitBlob": "2aa1f4ae1725003f82b0a071d76d246d99518efd",
+            "sha256": "247bbc218c70751b24b6344b2d482b73a1981f089868bfa636944e555f8dd63b"
+          },
+          {
+            "path": "tests/unit/local-corpus.test.mjs",
+            "mode": "100644",
+            "gitBlob": "c91e182afab6860ab159b54bb690cfa5b0d0e1d8",
+            "sha256": "d9d4bf1b1ccd6a106240300792b084730f4dc6f5ce3f42f038b3831d8eb54d8a"
+          },
+          {
+            "path": "tests/unit/local-process.test.mjs",
+            "mode": "100644",
+            "gitBlob": "4a2dae61ec7ed0355a0412935b7794ce31daf387",
+            "sha256": "2a75aa1a8dbba846a0007e6a933dc1f8345df8019980b71c19149ba602f1132f"
+          },
+          {
+            "path": "tests/unit/local-retrieval.test.mjs",
+            "mode": "100644",
+            "gitBlob": "c34d38506dfd4813a584880b509061b2c5b522c8",
+            "sha256": "00e6a3f71155dc83fa0b7746bb465bc0ee71bd9e06ea794464341142bc62d20b"
+          }
+        ],
+        "names": [
+          "requires an explicit directory and returns an honest empty corpus",
+          "canonicalizes an explicitly selected root and preserves BOM, CRLF and exact byte hashes",
+          "extracts conservative scalar frontmatter while retaining the original source unchanged",
+          "labels filesystem fallback dates honestly and accepts an explicit updated scalar",
+          "uses real headings and prose rather than fenced examples or complex YAML values",
+          "uses the nearest vetted README or INDEX and does not attribute filesystem dates to folder metadata",
+          "respects .gitignore in a plain directory and never loads ignored metadata on get",
+          "excludes hidden paths, generated/vendor folders and non-text extensions even when raw is enabled",
+          "requires an explicit raw opt-in for both index and get",
+          "never follows symlink descendants to a file or directory outside the selected root",
+          "rejects traversal, absolute, hidden and noncanonical get paths",
+          "skips invalid UTF-8 and NUL text with fixed reasons and fails direct gets",
+          "accepts exactly 512 KiB, skips a larger file and refuses its direct get",
+          "refuses more than 1000 eligible documents instead of silently truncating results",
+          "enforces the 16 MiB aggregate read budget for accepted and invalid documents",
+          "returns the same vetted document projection from get and index",
+          "honors an already-cancelled request without starting a corpus scan",
+          "real rg matches bind original UTF-8 BOM and CRLF bytes with current content hashes",
+          "folder titles descriptions and explicit dates contribute metadata without fabricated grep matches",
+          "raw documents are excluded by default and included only by explicit selection",
+          "literal metacharacters leading dashes and shell-looking text remain literal rg terms",
+          "RRF60 combines opposite leg ranks and resolves equal scores by stable relative path",
+          "query UTF-8 term and result limits fail before corpus or subprocess access",
+          "one document returns no more than eight byte-checked matches with bounded excerpts",
+          "QMD stays disabled unless a collection is explicitly requested",
+          "scripted QMD contributes vetted candidates while stale and cross-root paths are reported",
+          "QMD invocation uses only BM25 search and the operator home with sanitized environment",
+          "a requested missing QMD binary fails visibly instead of fabricating a ranking leg",
+          "malformed scripted QMD JSON and result records fail with one controlled protocol error",
+          "flag-like queries are refused only for explicit QMD and invalid collections are controlled",
+          "pre-cancelled requests stop before reading a missing corpus",
+          "caller cancellation kills the owned scripted QMD child and returns a safe cancellation",
+          "rg match offsets are checked against the vetted bytes rather than trusted from subprocess JSON",
+          "local index is offline and emits metadata with relative paths and a stable root identity",
+          "local get returns exact source bytes and canonical relative document metadata",
+          "local search retains every repeated query token and applies the explicit limit",
+          "raw documents remain opt-in for index and get",
+          "local root is mandatory and argument errors never consult remote settings",
+          "sequential flag parsing rejects unknown, repeated, missing and command-inapplicable flags",
+          "local limit rejects noncanonical or out-of-range values before retrieval",
+          "local get rejects traversal and symlink documents without disclosing outside content",
+          "explicit index export is private, outside the checkout, stable and never overwrites different data",
+          "index output cannot write into the source checkout directly or through a parent symlink",
+          "remote health and workspace routes retain GET and bearer behavior without real HTTP",
+          "remote search preserves the first query token and tokens equal to a workspace flag value",
+          "remote get, raw upload, sync and cleanup preserve their HTTP payload surfaces",
+          "remote failures return nonzero fixed errors without raw server bodies or tokens",
+          "invalid remote URLs, JSON, oversized bodies and transport failures stay bounded and safe",
+          "help, unknown commands and literal dash query text have explicit JSON outcomes",
+          "native entry executes a local get with unusable remote credentials and no loader",
+          "file-tool runner keeps shell characters literal and captures bounded streams",
+          "file-tool runner forwards stdin without converting it to command arguments",
+          "file-tool environment omits tokens, preload and config trust overrides",
+          "missing and unsuccessful commands produce stable errors without private stderr",
+          "explicitly permitted no-match status is retained without inventing successful matches",
+          "a referenced deadline terminates only the owned running process",
+          "caller cancellation terminates the owned process and pre-cancellation never spawns",
+          "combined stdout and stderr enforce the same byte budget",
+          "invalid runner options and unknown local error codes cannot echo supplied data",
+          "derived index publication is private, complete and replays identical bytes without replacement",
+          "derived index publication preserves different existing files and symlink targets",
+          "concurrent derived index writers publish exactly one complete winner",
+          "runner deadline settles while inherited pipes are open and stops its owned finite descendant"
+        ]
+      }
+    },
+    "stdout": {
+      "bytes": 14617,
+      "capturedBytes": 14617,
+      "sha256": "16b8dc9bd8a8977154bd94e7c3afb714615a660da29a64e845de01e4ebff99ac",
+      "complete": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "capturedBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    },
+    "cleanup": {
+      "processesStopped": true,
+      "ownedTmpRemoved": true,
+      "forced": false
+    },
+    "passed": true,
+    "proofLimits": "Authored local fixtures/real rg/scripted QMD only; runner Node/RG tools provided, no application dependency/model install, real QMD index/model, private corpus, external service, browser, database or hosted/MCP acceptance."
+  },
+  "history": [
+    {
+      "path": "docs/results/2026/10-31/local-reader-checks.md",
+      "status": "62-pass-1-fail",
+      "qualification": "Historical macOS Node26.8.2/RG15.2.0 execution; only owned-descendant process inspection failed with ps EPERM. No local permission retry or source change followed."
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-attempt1.md",
+      "runId": 41240582792,
+      "status": "0-cases-preflight-failed",
+      "qualification": "rg_missing after only three fixed lookup locations."
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-attempt2.md",
+      "runId": 41241021475,
+      "status": "0-cases-preflight-failed",
+      "qualification": "rg_missing after the validated current-PATH lookup; no test or source guard ran."
+    }
+  ],
+  "proofLimits": [
+    "Authored T2 corpora, real rg and scripted QMD protocol only; no private corpus or real QMD binary/index/model acceptance.",
+    "Remote API fixtures mock fetch; no product HTTP server, provider/model call, Auth, account, database, browser or hosted/MCP acceptance.",
+    "Runner setup-node and signed Ubuntu ripgrep are ephemeral test tooling; no application dependency/model installation or local installation.",
+    "The unchanged 63-case reader packet passed on this exact Linux profile; broader product and native-client acceptance remain separate.",
+    "Only these two result files were authored after observation. No source/test/seal edit, additional run, workflow removal or publication was performed by the receipt author."
+  ]
+}
