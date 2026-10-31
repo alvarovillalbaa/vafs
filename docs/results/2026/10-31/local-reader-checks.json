@@ -1,0 +1,578 @@
+{
+  "schemaVersion": "vafs.local-reader-checks.v1",
+  "date": "2026-10-31",
+  "status": "failed",
+  "authorization": "Current owner's broad all-work instruction and root's exact four-file 63-case assignment. Source/test changes and retries after an actual failure were not authorized by this run.",
+  "source": {
+    "repository": "alvarovillalbaa/vafs",
+    "commit": "d6888b7ab92cc17630858831879453402397b91e",
+    "tree": "bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89",
+    "url": "https://github.com/alvarovillalbaa/vafs/commit/d6888b7ab92cc17630858831879453402397b91e",
+    "manifest": "docs/results/2026/10-28/local-retrieval-source.json",
+    "manifestSha256": "bb589d6f1a642dfe52791e0c9e238c79368e8e94d94545375b041bdb45e3d98c",
+    "selection": "Dependency-closed selected bundle, not a full checkout.",
+    "sourceCount": 11,
+    "sources": {
+      "bin/cli.mjs": {
+        "sha256": "d9b480cab48bc49372e6dc87c3befbf63899904b9bdf0604fdc2cb6309909b49",
+        "gitBlob": "c7a9dee9a2befb3f3f5daa9a576bd7d5704814a8",
+        "bytes": 11682,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/corpus.mjs": {
+        "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e",
+        "gitBlob": "5c6872cc9f840daba1df00f94db4c93b6047dfff",
+        "bytes": 13514,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/errors.mjs": {
+        "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0",
+        "gitBlob": "8d2943ce8487235ad91d56c579fe52f34f530ca6",
+        "bytes": 905,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/output.mjs": {
+        "sha256": "28951861f637796d2f59a3d3372b45bb1e3321241484c4f544db17ec6a88dd25",
+        "gitBlob": "b875aad8a81251d41fc4579c44f555afa99bc3ce",
+        "bytes": 2040,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/process.mjs": {
+        "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0",
+        "gitBlob": "c6b324516b2c3748ed1db2dd8c4036afe1888434",
+        "bytes": 4030,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/retrieval.mjs": {
+        "sha256": "1cc950e0b11b21909b4ffdbdc28502157795d895e5feb24aa32d451fee5e64aa",
+        "gitBlob": "d43a729a09128d172b3dc9a258ff96879e4311cf",
+        "bytes": 13062,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/vafs.mjs": {
+        "sha256": "ad933ffeab7e9d23a94d0547188720092a102dd0a66adbf948a8681edc460679",
+        "gitBlob": "451c1498e96e93dbe50e4a1805f880ab7629e316",
+        "bytes": 209,
+        "mode": "100755",
+        "permissions": "755"
+      },
+      "tests/unit/local-cli.test.mjs": {
+        "sha256": "247bbc218c70751b24b6344b2d482b73a1981f089868bfa636944e555f8dd63b",
+        "gitBlob": "2aa1f4ae1725003f82b0a071d76d246d99518efd",
+        "bytes": 18110,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "tests/unit/local-corpus.test.mjs": {
+        "sha256": "d9d4bf1b1ccd6a106240300792b084730f4dc6f5ce3f42f038b3831d8eb54d8a",
+        "gitBlob": "c91e182afab6860ab159b54bb690cfa5b0d0e1d8",
+        "bytes": 11772,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "tests/unit/local-process.test.mjs": {
+        "sha256": "2a75aa1a8dbba846a0007e6a933dc1f8345df8019980b71c19149ba602f1132f",
+        "gitBlob": "4a2dae61ec7ed0355a0412935b7794ce31daf387",
+        "bytes": 9701,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "tests/unit/local-retrieval.test.mjs": {
+        "sha256": "00e6a3f71155dc83fa0b7746bb465bc0ee71bd9e06ea794464341142bc62d20b",
+        "gitBlob": "c34d38506dfd4813a584880b509061b2c5b522c8",
+        "bytes": 16133,
+        "mode": "100644",
+        "permissions": "644"
+      }
+    },
+    "sha256GitBlobSizeModeMatchedCurrentRemote": true,
+    "inputsUnchangedBeforeAfter": true,
+    "sourceGuardError": null,
+    "closure": {
+      "modules": 11,
+      "relativeImportEdges": 18,
+      "externalPackages": 0,
+      "dynamicImports": "Node builtins only; child fixture script require calls also use Node builtins."
+    }
+  },
+  "deliveryCopyRepair": {
+    "path": "bin/vafs.mjs",
+    "before": "100644",
+    "after": "100755",
+    "expectedCanonicalMode": "100755",
+    "bytesUnchanged": true,
+    "sha256": "ad933ffeab7e9d23a94d0547188720092a102dd0a66adbf948a8681edc460679",
+    "meaning": "Restored only the operation-owned delivery copy's executable metadata to current canonical mode before source guards. No canonical source, original seal or file bytes changed."
+  },
+  "runtime": {
+    "node": {
+      "version": "v26.8.2",
+      "executable": "node",
+      "platform": "darwin",
+      "architecture": "arm64",
+      "selection": "Existing absolute resolved executable; controller self-reported version/execPath and used the same resolved executable for the test child. Published receipt retains portable basenames only."
+    },
+    "ripgrep": {
+      "executable": "rg",
+      "version": "ripgrep 15.2.0",
+      "preflightExitCode": 0,
+      "preflightSignal": null,
+      "preflightErrorCode": null,
+      "preflightStderrBytes": 0
+    },
+    "profileLimit": "Actual Node v26.8.2 / ripgrep 15.2.0 Darwin arm64 execution; preparation used an older Node profile and is not this outcome."
+  },
+  "environment": {
+    "passedKeys": [
+      "PATH",
+      "TMPDIR",
+      "TZ"
+    ],
+    "timezone": "UTC",
+    "path": "Allowlisted existing rg directory and system utility directories.",
+    "tmpdir": "Operation-owned fixture parent checked by device/inode and owner marker; empty at completion and removed.",
+    "homePassed": false,
+    "accountOrProviderCredentialsPassed": false,
+    "nodeOptionsPassed": false
+  },
+  "command": [
+    "node",
+    "--test",
+    "--test-concurrency=1",
+    "--test-reporter=tap",
+    "tests/unit/local-corpus.test.mjs",
+    "tests/unit/local-retrieval.test.mjs",
+    "tests/unit/local-cli.test.mjs",
+    "tests/unit/local-process.test.mjs"
+  ],
+  "controller": {
+    "deadlineMs": 120000,
+    "caseTimeoutMs": null,
+    "terminationGraceMs": 3000,
+    "stdoutLimitBytes": 262144,
+    "stderrLimitBytes": 65536,
+    "caseTimeoutMeaning": "Original authored case/process timeouts preserved; no global per-case override added."
+  },
+  "execution": {
+    "startedAt": "2026-10-31T20:33:57.525Z",
+    "finishedAt": "2026-10-31T20:34:02.383Z",
+    "reportedElapsedMs": 4851,
+    "exitCode": 1,
+    "signal": null,
+    "spawnError": null,
+    "timedOut": false,
+    "interrupted": false,
+    "outputExceeded": false,
+    "actualInvocations": 1,
+    "totals": {
+      "tests": 63,
+      "suites": 0,
+      "pass": 62,
+      "fail": 1,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "tapDurationMs": 4784.833584,
+    "stdout": {
+      "bytes": 15781,
+      "sha256": "32969a712ed00c1ed9d14f00627b71bcd7e8e411bf78800ffb1e8306d6c1e116"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "caseIdentity": {
+      "discovered": 63,
+      "unique": 63,
+      "exactSourceNamesMatched": true,
+      "allNumberedOutcomesMatched": true,
+      "passed": 62,
+      "failed": 1
+    },
+    "allCasesPassed": false,
+    "caseGroups": [
+      {
+        "path": "tests/unit/local-corpus.test.mjs",
+        "cases": 17,
+        "pass": 17,
+        "fail": 0
+      },
+      {
+        "path": "tests/unit/local-retrieval.test.mjs",
+        "cases": 16,
+        "pass": 16,
+        "fail": 0
+      },
+      {
+        "path": "tests/unit/local-cli.test.mjs",
+        "cases": 17,
+        "pass": 17,
+        "fail": 0
+      },
+      {
+        "path": "tests/unit/local-process.test.mjs",
+        "cases": 13,
+        "pass": 12,
+        "fail": 1
+      }
+    ],
+    "caseOutcomes": [
+      {
+        "passed": true,
+        "number": 1,
+        "name": "local index is offline and emits metadata with relative paths and a stable root identity"
+      },
+      {
+        "passed": true,
+        "number": 2,
+        "name": "local get returns exact source bytes and canonical relative document metadata"
+      },
+      {
+        "passed": true,
+        "number": 3,
+        "name": "local search retains every repeated query token and applies the explicit limit"
+      },
+      {
+        "passed": true,
+        "number": 4,
+        "name": "raw documents remain opt-in for index and get"
+      },
+      {
+        "passed": true,
+        "number": 5,
+        "name": "local root is mandatory and argument errors never consult remote settings"
+      },
+      {
+        "passed": true,
+        "number": 6,
+        "name": "sequential flag parsing rejects unknown, repeated, missing and command-inapplicable flags"
+      },
+      {
+        "passed": true,
+        "number": 7,
+        "name": "local limit rejects noncanonical or out-of-range values before retrieval"
+      },
+      {
+        "passed": true,
+        "number": 8,
+        "name": "local get rejects traversal and symlink documents without disclosing outside content"
+      },
+      {
+        "passed": true,
+        "number": 9,
+        "name": "explicit index export is private, outside the checkout, stable and never overwrites different data"
+      },
+      {
+        "passed": true,
+        "number": 10,
+        "name": "index output cannot write into the source checkout directly or through a parent symlink"
+      },
+      {
+        "passed": true,
+        "number": 11,
+        "name": "remote health and workspace routes retain GET and bearer behavior without real HTTP"
+      },
+      {
+        "passed": true,
+        "number": 12,
+        "name": "remote search preserves the first query token and tokens equal to a workspace flag value"
+      },
+      {
+        "passed": true,
+        "number": 13,
+        "name": "remote get, raw upload, sync and cleanup preserve their HTTP payload surfaces"
+      },
+      {
+        "passed": true,
+        "number": 14,
+        "name": "remote failures return nonzero fixed errors without raw server bodies or tokens"
+      },
+      {
+        "passed": true,
+        "number": 15,
+        "name": "invalid remote URLs, JSON, oversized bodies and transport failures stay bounded and safe"
+      },
+      {
+        "passed": true,
+        "number": 16,
+        "name": "help, unknown commands and literal dash query text have explicit JSON outcomes"
+      },
+      {
+        "passed": true,
+        "number": 17,
+        "name": "native entry executes a local get with unusable remote credentials and no loader"
+      },
+      {
+        "passed": true,
+        "number": 18,
+        "name": "requires an explicit directory and returns an honest empty corpus"
+      },
+      {
+        "passed": true,
+        "number": 19,
+        "name": "canonicalizes an explicitly selected root and preserves BOM, CRLF and exact byte hashes"
+      },
+      {
+        "passed": true,
+        "number": 20,
+        "name": "extracts conservative scalar frontmatter while retaining the original source unchanged"
+      },
+      {
+        "passed": true,
+        "number": 21,
+        "name": "labels filesystem fallback dates honestly and accepts an explicit updated scalar"
+      },
+      {
+        "passed": true,
+        "number": 22,
+        "name": "uses real headings and prose rather than fenced examples or complex YAML values"
+      },
+      {
+        "passed": true,
+        "number": 23,
+        "name": "uses the nearest vetted README or INDEX and does not attribute filesystem dates to folder metadata"
+      },
+      {
+        "passed": true,
+        "number": 24,
+        "name": "respects .gitignore in a plain directory and never loads ignored metadata on get"
+      },
+      {
+        "passed": true,
+        "number": 25,
+        "name": "excludes hidden paths, generated/vendor folders and non-text extensions even when raw is enabled"
+      },
+      {
+        "passed": true,
+        "number": 26,
+        "name": "requires an explicit raw opt-in for both index and get"
+      },
+      {
+        "passed": true,
+        "number": 27,
+        "name": "never follows symlink descendants to a file or directory outside the selected root"
+      },
+      {
+        "passed": true,
+        "number": 28,
+        "name": "rejects traversal, absolute, hidden and noncanonical get paths"
+      },
+      {
+        "passed": true,
+        "number": 29,
+        "name": "skips invalid UTF-8 and NUL text with fixed reasons and fails direct gets"
+      },
+      {
+        "passed": true,
+        "number": 30,
+        "name": "accepts exactly 512 KiB, skips a larger file and refuses its direct get"
+      },
+      {
+        "passed": true,
+        "number": 31,
+        "name": "refuses more than 1000 eligible documents instead of silently truncating results"
+      },
+      {
+        "passed": true,
+        "number": 32,
+        "name": "enforces the 16 MiB aggregate read budget for accepted and invalid documents"
+      },
+      {
+        "passed": true,
+        "number": 33,
+        "name": "returns the same vetted document projection from get and index"
+      },
+      {
+        "passed": true,
+        "number": 34,
+        "name": "honors an already-cancelled request without starting a corpus scan"
+      },
+      {
+        "passed": true,
+        "number": 35,
+        "name": "file-tool runner keeps shell characters literal and captures bounded streams"
+      },
+      {
+        "passed": true,
+        "number": 36,
+        "name": "file-tool runner forwards stdin without converting it to command arguments"
+      },
+      {
+        "passed": true,
+        "number": 37,
+        "name": "file-tool environment omits tokens, preload and config trust overrides"
+      },
+      {
+        "passed": true,
+        "number": 38,
+        "name": "missing and unsuccessful commands produce stable errors without private stderr"
+      },
+      {
+        "passed": true,
+        "number": 39,
+        "name": "explicitly permitted no-match status is retained without inventing successful matches"
+      },
+      {
+        "passed": true,
+        "number": 40,
+        "name": "a referenced deadline terminates only the owned running process"
+      },
+      {
+        "passed": true,
+        "number": 41,
+        "name": "caller cancellation terminates the owned process and pre-cancellation never spawns"
+      },
+      {
+        "passed": true,
+        "number": 42,
+        "name": "combined stdout and stderr enforce the same byte budget"
+      },
+      {
+        "passed": true,
+        "number": 43,
+        "name": "invalid runner options and unknown local error codes cannot echo supplied data"
+      },
+      {
+        "passed": true,
+        "number": 44,
+        "name": "derived index publication is private, complete and replays identical bytes without replacement"
+      },
+      {
+        "passed": true,
+        "number": 45,
+        "name": "derived index publication preserves different existing files and symlink targets"
+      },
+      {
+        "passed": true,
+        "number": 46,
+        "name": "concurrent derived index writers publish exactly one complete winner"
+      },
+      {
+        "passed": false,
+        "number": 47,
+        "name": "runner deadline settles while inherited pipes are open and stops its owned finite descendant"
+      },
+      {
+        "passed": true,
+        "number": 48,
+        "name": "real rg matches bind original UTF-8 BOM and CRLF bytes with current content hashes"
+      },
+      {
+        "passed": true,
+        "number": 49,
+        "name": "folder titles descriptions and explicit dates contribute metadata without fabricated grep matches"
+      },
+      {
+        "passed": true,
+        "number": 50,
+        "name": "raw documents are excluded by default and included only by explicit selection"
+      },
+      {
+        "passed": true,
+        "number": 51,
+        "name": "literal metacharacters leading dashes and shell-looking text remain literal rg terms"
+      },
+      {
+        "passed": true,
+        "number": 52,
+        "name": "RRF60 combines opposite leg ranks and resolves equal scores by stable relative path"
+      },
+      {
+        "passed": true,
+        "number": 53,
+        "name": "query UTF-8 term and result limits fail before corpus or subprocess access"
+      },
+      {
+        "passed": true,
+        "number": 54,
+        "name": "one document returns no more than eight byte-checked matches with bounded excerpts"
+      },
+      {
+        "passed": true,
+        "number": 55,
+        "name": "QMD stays disabled unless a collection is explicitly requested"
+      },
+      {
+        "passed": true,
+        "number": 56,
+        "name": "scripted QMD contributes vetted candidates while stale and cross-root paths are reported"
+      },
+      {
+        "passed": true,
+        "number": 57,
+        "name": "QMD invocation uses only BM25 search and the operator home with sanitized environment"
+      },
+      {
+        "passed": true,
+        "number": 58,
+        "name": "a requested missing QMD binary fails visibly instead of fabricating a ranking leg"
+      },
+      {
+        "passed": true,
+        "number": 59,
+        "name": "malformed scripted QMD JSON and result records fail with one controlled protocol error"
+      },
+      {
+        "passed": true,
+        "number": 60,
+        "name": "flag-like queries are refused only for explicit QMD and invalid collections are controlled"
+      },
+      {
+        "passed": true,
+        "number": 61,
+        "name": "pre-cancelled requests stop before reading a missing corpus"
+      },
+      {
+        "passed": true,
+        "number": 62,
+        "name": "caller cancellation kills the owned scripted QMD child and returns a safe cancellation"
+      },
+      {
+        "passed": true,
+        "number": 63,
+        "name": "rg match offsets are checked against the vetted bytes rather than trusted from subprocess JSON"
+      }
+    ],
+    "fixtureCleanup": {
+      "rootIdentityMatched": true,
+      "remainingEntries": [],
+      "fixturesClean": true,
+      "ownedRootRemoved": true,
+      "error": null
+    }
+  },
+  "failure": {
+    "number": 47,
+    "name": "runner deadline settles while inherited pipes are open and stops its owned finite descendant",
+    "source": "tests/unit/local-process.test.mjs",
+    "sourceLine": 113,
+    "code": "EPERM",
+    "error": "spawn EPERM",
+    "boundary": "The Darwin test invokes execFile('ps', ...) for owned descendant inspection at line124; the error surfaced during its cleanup verification at line159.",
+    "classification": "Local process-inspection permission prevented the authored descendant-termination case from completing. This result does not establish whether the termination assertion would otherwise pass.",
+    "diagnostic": "not ok 47 - runner deadline settles while inherited pipes are open and stops its owned finite descendant\n  ---\n  duration_ms: 256.159791\n  type: 'test'\n  location: 'tests/unit/local-process.test.mjs:113:1'\n  failureType: 'testCodeFailure'\n  error: 'spawn EPERM'\n  code: 'EPERM'\n  stack: |-\n    ChildProcess.spawn (node:internal/child_process:457:11)\n    spawn (node:child_process:813:9)\n    execFile (node:child_process:349:17)\n    tests/unit/local-process.test.mjs:124:7\n    new Promise (<anonymous>)\n    ps (tests/unit/local-process.test.mjs:123:32)\n    tests/unit/local-process.test.mjs:159:19\n    async withDirectory (tests/unit/local-process.test.mjs:71:16)\n    async TestContext.<anonymous> (tests/unit/local-process.test.mjs:114:3)\n    async Test.run (node:internal/test_runner/test:1409:7)\n  ...",
+    "diagnosticEncoding": "Verbatim TAP failure block except candidate absolute path prefixes replaced with relative source paths. Raw stdout hash above remains the original unmodified bytes.",
+    "descendantTerminationVerified": false,
+    "alternatePermissionSurfaceOrRetryAttempted": false
+  },
+  "scope": [
+    "17 corpus cases use authored local files, real rg, byte/hash/ignore/path/symlink and size/count limits.",
+    "16 retrieval cases use real rg and controlled Node scripts named QMD or rg; no installed QMD, index, model or inference is used.",
+    "17 CLI cases execute actual Node entry/local commands and mock remote fetch without HTTP requests.",
+    "13 process/export cases include real child processes and no-clobber output. Twelve passed; one owned-descendant inspection failed with EPERM."
+  ],
+  "limits": [
+    "This exact run is 62 pass and one failure; it is not a successful 63-case acceptance. There was no retry or product/test source edit.",
+    "All fixtures stayed within the small disposable scope (roughly 17 MiB and up to 1001 tiny files). The outer directory was empty and identity-checked/removed, but this does not establish the failed descendant-termination proof.",
+    "No real QMD, provider/model, HTTP network, private corpus, registered native client, hosted service, account, database, installation, clone, build, CI or paid resource was exercised.",
+    "The separate completed 34-case MCP receipt is unchanged; it did not claim OS-child termination proof.",
+    "Only the selected copy's executable metadata repair and these two local result files were written. Canonical publication and any next execution profile belong to root."
+  ]
+}
