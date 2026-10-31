@@ -33,7 +33,7 @@ jobs:
           import { spawn, execFileSync } from 'node:child_process';
           import { createHash } from 'node:crypto';
           import { accessSync, constants, createReadStream, lstatSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, realpathSync, rmSync } from 'node:fs';
-          import { dirname, join } from 'node:path';
+          import { dirname, isAbsolute, join } from 'node:path';
           const pin = 'd6888b7ab92cc17630858831879453402397b91e';
           const treePin = 'bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89';
           const sealPath = 'docs/results/2026/10-28/local-retrieval-source.json';
@@ -48,9 +48,14 @@ jobs:
           const output = [], errors = [];
           const git = (...values) => execFileSync('/usr/bin/git', values, { env, encoding: 'utf8', timeout: 10000, maxBuffer: 1048576 }).trim();
           function resolveRg() {
-            for (const directory of ['/usr/bin', '/bin', '/usr/local/bin']) {
+            for (const directory of new Set((process.env.PATH ?? '').split(':'))) {
+              if (!directory || !isAbsolute(directory) || /[\r\n\0]/.test(directory)) continue;
               const path = join(directory, 'rg');
-              try { accessSync(path, constants.X_OK); if (lstatSync(realpathSync(path)).isFile()) return realpathSync(path); } catch {}
+              try {
+                const resolved = realpathSync(path);
+                if (!isAbsolute(resolved) || /[\r\n\0]/.test(resolved) || !lstatSync(resolved).isFile()) continue;
+                accessSync(resolved, constants.X_OK); return resolved;
+              } catch {}
             }
             fail('rg_missing');
           }
