@@ -1,6 +1,10 @@
 # Published QMD package metadata inspection
 
-Status: preparation only. No job or QMD integration result is claimed.
+Status: the [first metadata inspection](../results/2026/11-07/qmd-package-metadata-attempt-1.md)
+completed at source `4f4a4c56d1c037af79de933b9805af4888a3b7f4` in run
+`42358143244`. All five exact registry responses and source guards passed;
+the temporary workflow is disabled. This establishes published metadata only.
+No package installation, native-binding admission or QMD journey occurred.
 
 The next local-retrieval gap is actual QMD keyword-search interoperability.
 The [vAFS baseline](https://github.com/alvarovillalbaa/vafs/tree/f1d8515ac18d128af2b622ae2a76ef1b09d2af07)
