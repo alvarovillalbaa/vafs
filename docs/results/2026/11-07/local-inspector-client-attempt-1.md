@@ -66,3 +66,25 @@ Markdown, not one persistent session or native-client registration. It does not
 prove macOS process-inspection permission, private-corpus access, hosted identity,
 QMD/models, GUI behavior or full vAFS acceptance. The npm archive SRI and pinned
 source-documentation revision remain separate provenance claims.
+
+## Publication follow-up
+
+The original 4,265-byte audit above is preserved (SHA-256
+`5fa3f5a25f598322437282edefe8f2644afefcaff0541c9d2b41679b5dbc0510`).
+The original 853,964-byte JSON is unchanged. Receipt/status commit
+`b1cd340ed675b3bb2568f0765653aeae94b1e129` was published to main and
+`work/vafs-inspector-20261107` with checked expected heads and fresh readback at
+08:44:09 UTC. These were sequential lease-checked updates, not an atomic push.
+
+The owned QA branch is retired at
+`18efb25b4e55591fe8a6f2c8f650c918187bcc48`, with parents activation and the
+published receipt commit. Its tree `2ad15b85d3e14222f078b4b8c9bf4454231ade0a`
+exactly matches that published main and contains no active workflow file.
+
+957 of the 963 checked inputs remain exact. Only six status documents changed;
+the two receipt files were added separately. All seven runtime modules, app
+package/lock, integration driver, operational runner and inactive workflow
+example remain byte-exact to the checked source. No closed case was repeated.
+There is still no canonical local checkout: small review files were prepared in
+a non-repository bundle and Git objects/refs were published through GitHub APIs.
+No local dependency install, runtime launch or large worktree was created.
