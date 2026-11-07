@@ -100,7 +100,10 @@ Original outputs, package integrity, source guards and owned cleanup passed.
 Neither old suite was rerun. This is configured CLI interoperability, not one
 persistent session, native-client registration or full MCP conformance.
 
-Hosted Auth, persistent services, API/integration activation, real QMD, native
-clients, distribution and the wider vAFS architecture remain unfinished. No
+The separate [CLI QMD keyword journey](results/2026/11-07/local-qmd-keyword-attempt-1.md)
+passed on authored files. It does not enable QMD in this MCP profile or repeat
+I01. Hosted Auth, persistent services, API/integration activation, QMD model
+retrieval, native clients, distribution and the wider vAFS architecture remain
+unfinished. No
 provider, model, schema, dependency, hosted configuration or paid action is
 introduced by this local interface.

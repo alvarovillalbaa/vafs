@@ -3,8 +3,11 @@
 Status: the [63-case Linux receipt](results/2026/10-31/local-reader-ci-checks.md)
 accepts the focused reader/CLI scope; the earlier macOS process-inspection
 permission failure remains separate. The [Inspector result](results/2026/11-07/local-inspector-client-attempt-1.md)
-adds one configured legacy stdio journey on disposable authored files. No
-personal-corpus, real QMD or provider acceptance follows. This file-based bridge
+adds one configured legacy stdio journey on disposable authored files. The
+separate [real QMD keyword result](results/2026/11-07/local-qmd-keyword-attempt-1.md)
+accepts Q01 with an actual configured collection/FTS index, fresh and stale
+candidates and current-file provenance. Neither result accepts a personal
+corpus, models or hosted providers. This file-based bridge
 does not create a new filesystem or move AFS truth away from existing Markdown
 files and their owning repository.
 
@@ -115,9 +118,20 @@ contracts retain their separate ownership and acceptance requirements.
 
 ## Runtime and proof boundary
 
-The executable uses existing Node facilities and installed `rg`; package and
-lockfile changes are unnecessary. QMD is optional and was not found on the
-implementation host. No QMD index/model acceptance can be inferred from an
-authored protocol fixture. Future execution follows the owning approval and
-storage rules; do not repeat closed scopes without changed inputs or a concrete
-concern. Source syntax alone does not establish runtime or hosted acceptance.
+The executable uses existing Node facilities and installed `rg`; application
+package and lockfile changes are unnecessary. QMD remains optional. Q01 used a
+separate isolated CI tool installation: QMD 2.8.3, Node 26.13.0, ripgrep 14.1.0,
+better-sqlite3 13.0.3 and sqlite-vec 0.1.9. Its frozen lock, actual native
+SQLite/vector admission, five CLI commands, original outputs and cleanup passed.
+Observed live paths were `./` paths; the removed page became an exact `qmd://`
+fallback and was excluded. No baseline document ID was exposed or assumed.
+
+The edited eligible page retained QMD rank while vAFS returned its revised
+title, description and current hash with no literal query match. This accepts
+the documented stale-rank/current-bytes contract, not fresh-index ranking,
+retrieval quality, other producer path forms or concurrent-write behavior.
+QMD was not installed on the local implementation host. No embedding, semantic
+query or reranking command ran. Owned model-cache absence is a scoped observation,
+not host-wide network attestation. Models, private corpora and hosted integration
+remain separate. Do not repeat closed scopes without changed inputs or a concrete
+concern; source syntax alone does not establish runtime or hosted acceptance.

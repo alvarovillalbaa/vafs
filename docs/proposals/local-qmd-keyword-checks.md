@@ -1,7 +1,12 @@
 # First real QMD keyword journey
 
-Status: authored preparation, unrun. Published-package and native-binding gates
-remain separate from the accepted Inspector and earlier reader/MCP receipts.
+Status: the [first Q01 execution](../results/2026/11-07/local-qmd-keyword-attempt-1.md)
+passed at source `0a84a57b23c5f642d738e956d09d5d31a8029bd9`, run
+`42360057095`. Published-package pins, a frozen isolated lock, actual
+SQLite/vector admission and all five commands passed, with original outputs,
+source and cleanup audited. The workflow is disabled. Inspector and earlier
+reader/MCP scopes were not rerun. The preparation contract below retains its
+original scope; models, private corpora and hosted behavior remain unverified.
 
 Q01 runs the actual `qmd collection add`, direct keyword `qmd search` controls
 and `node bin/vafs.mjs local search` against six small authored Markdown files.

@@ -50,10 +50,14 @@ node bin/vafs.mjs local get knowledge/retrieval.md --root /path/to/agents-fs
 Local retrieval reads literal files and reports each signal's availability.
 It does not upload a checkout, create a hosted workspace or manufacture search
 results from the demo catalogue. Raw intake is excluded unless requested.
-QMD collection setup and live QMD acceptance remain separate prerequisites.
+QMD collection setup remains an operator-owned prerequisite. The
+[first real QMD keyword journey](docs/results/2026/11-07/local-qmd-keyword-attempt-1.md)
+passed on six disposable authored files with QMD 2.8.3, current-byte provenance,
+stale-index candidates and raw/foreign/missing exclusions. It does not establish
+private-corpus, semantic/model or hosted integration acceptance.
 The [63-case Linux reader receipt](docs/results/2026/10-31/local-reader-ci-checks.md)
 records actual authored file, rg and CLI checks. The earlier macOS process-inspection
-permission failure remains separate; real QMD and private-corpus acceptance remain open.
+permission failure and private-corpus acceptance remain separate.
 
 MCP stdio bridge:
 
