@@ -1,10 +1,12 @@
 # Local AFS retrieval
 
-Status: implementation and focused checks are being prepared. No functional
-check, personal-corpus scan, QMD invocation or provider call has run for this
-increment. The new Node modules form a file-based bridge over a deliberately
-selected local checkout. They do not create a new filesystem or move AFS truth
-away from its existing Markdown files and owning repository.
+Status: the [63-case Linux receipt](results/2026/10-31/local-reader-ci-checks.md)
+accepts the focused reader/CLI scope; the earlier macOS process-inspection
+permission failure remains separate. The [Inspector result](results/2026/11-07/local-inspector-client-attempt-1.md)
+adds one configured legacy stdio journey on disposable authored files. No
+personal-corpus, real QMD or provider acceptance follows. This file-based bridge
+does not create a new filesystem or move AFS truth away from existing Markdown
+files and their owning repository.
 
 ## Commands
 
@@ -116,6 +118,6 @@ contracts retain their separate ownership and acceptance requirements.
 The executable uses existing Node facilities and installed `rg`; package and
 lockfile changes are unnecessary. QMD is optional and was not found on the
 implementation host. No QMD index/model acceptance can be inferred from an
-authored protocol fixture. Backend/domain checks require the owner's separate
-approval under supplied AGENTS.md §7. Source syntax, import and whitespace
-checks do not establish functional or hosted acceptance.
+authored protocol fixture. Future execution follows the owning approval and
+storage rules; do not repeat closed scopes without changed inputs or a concrete
+concern. Source syntax alone does not establish runtime or hosted acceptance.

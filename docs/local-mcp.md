@@ -1,7 +1,9 @@
 # Local MCP retrieval
 
-30 October 2026. Additive source implementation; functional checks are authored
-and unrun pending their separate approval. The hosted API/MCP path is unchanged.
+Updated 7 November 2026. The separate 34-case protocol and 63-case reader
+receipts are recorded in the [testing guide](testing.md). The first configured
+[Inspector CLI journey](results/2026/11-07/local-inspector-client-attempt-1.md)
+passed on authored files. The hosted API/MCP path is unchanged.
 
 The owning architecture permits local CLI/MCP retrieval. Previously only the
 CLI could use the actual file reader: `bin/vafs-mcp.mjs` exclusively forwarded
@@ -18,8 +20,9 @@ or platform compatibility matrix is not established.
 
 ## Client configuration
 
-This is an example for a client supporting stdio MCP; it has not been installed
-in any client. Replace both placeholder paths with explicitly selected paths:
+This is an example for a client supporting stdio MCP. The accepted Inspector
+check used generated configuration in disposable CI storage; it did not register
+a native client. Replace both placeholder paths with explicitly selected paths:
 
 ```json
 {
@@ -88,11 +91,14 @@ stdin. Uncertain or interrupted operations are not successful acceptance.
 
 ## Evidence and remaining delivery
 
-The [focused proposal](proposals/local-mcp-checks.md) owns the new protocol,
-reader-integration and stdio scope. Source parsing, import/JSON/link/whitespace
-checks and independent inspection do not establish a working client session.
-The earlier 63-case local reader proposal remains separately pinned and unrun;
-no other project's approval is reused.
+The [protocol proposal](proposals/local-mcp-checks.md) and the separate accepted
+34-case MCP / 63-case reader receipts retain their original sources and limits.
+The [Inspector result](results/2026/11-07/local-inspector-client-attempt-1.md)
+adds I01: five actual Inspector 2.14.0 connect/disconnect sessions on Linux,
+covering legacy initialize, discovery, index, literal search and exact UTF-8 get.
+Original outputs, package integrity, source guards and owned cleanup passed.
+Neither old suite was rerun. This is configured CLI interoperability, not one
+persistent session, native-client registration or full MCP conformance.
 
 Hosted Auth, persistent services, API/integration activation, real QMD, native
 clients, distribution and the wider vAFS architecture remain unfinished. No
