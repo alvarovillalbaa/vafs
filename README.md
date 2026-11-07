@@ -1,5 +1,5 @@
 # vAFS
-Last updated: 2026-10-30
+Last updated: 2026-11-07
 
 vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compatible `agents-fs` GitHub repositories.
 
@@ -11,7 +11,7 @@ vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compa
 - GitHub `agents-fs` source-of-truth model with branch-and-PR writeback.
 - Hosted retrieval contracts for metadata, keyword/vector adapters and reranking hooks; their external integration remains unfinished.
 - A file-based local CLI bridge with explicit-root metadata, real `rg`, optional configured QMD keyword retrieval, fresh content hashes and line/byte provenance. See [local retrieval](docs/local-retrieval.md).
-- A separate read-only local MCP stdio entrypoint for that reader, without a hosted API. See [local MCP](docs/local-mcp.md); its focused functional checks remain pending approval.
+- A separate read-only local MCP stdio entrypoint for that reader, without a hosted API. See [local MCP](docs/local-mcp.md) for separate protocol/reader evidence and the first accepted configured Inspector CLI journey.
 - OpenAI Agents SDK cleanup-agent contract in `lib/vafs/cleanup-agent.ts`.
 - CLI and MCP bridge in `bin/vafs.mjs` and `bin/vafs-mcp.mjs`.
 - Exportable skills in `packages/skills/vafs-use` and `packages/skills/vafs-devs`.
@@ -51,8 +51,9 @@ Local retrieval reads literal files and reports each signal's availability.
 It does not upload a checkout, create a hosted workspace or manufacture search
 results from the demo catalogue. Raw intake is excluded unless requested.
 QMD collection setup and live QMD acceptance remain separate prerequisites.
-The new focused checks are authored but have not run; source inspection is not
-functional acceptance.
+The [63-case Linux reader receipt](docs/results/2026/10-31/local-reader-ci-checks.md)
+records actual authored file, rg and CLI checks. The earlier macOS process-inspection
+permission failure remains separate; real QMD and private-corpus acceptance remain open.
 
 MCP stdio bridge:
 
@@ -68,8 +69,10 @@ node bin/vafs-local-mcp.mjs --root /path/to/agents-fs
 
 It exposes metadata index, literal search and exact page reads. Raw intake is
 excluded and QMD is disabled. It does not connect to the hosted API, change
-account access or implement sync/write tools. Source/static evidence and
-pending protocol/stdio acceptance are kept separate in [local MCP](docs/local-mcp.md).
+account access or implement sync/write tools. The
+[first Inspector CLI result](docs/results/2026/11-07/local-inspector-client-attempt-1.md)
+accepts one authored-file legacy interoperability journey across five separate
+sessions. It does not establish native-client registration or hosted access.
 
 ## API
 
@@ -131,4 +134,5 @@ and MCP, schema and worker boundaries. Its inspected search remains
 fixture-backed; credentialed Supabase/GitHub/AWS/OpenAI behavior and production
 access enforcement are unverified. Do not treat these surfaces as completed
 integrations. The local file bridge has an independent explicit-root contract
-and pending focused proof recorded under `docs/`.
+with separate accepted reader, protocol and configured CLI evidence in the
+[testing guide](docs/testing.md). Those scopes do not complete the hosted integrations.

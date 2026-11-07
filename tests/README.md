@@ -1,5 +1,9 @@
 # Focused local-client integration contract
 
+I01 [passed its first invocation](../docs/results/2026/11-07/local-inspector-client-attempt-1.md)
+at source `229803f1d8bd46b2217b21b01af7800d460d65fc`. Do not repeat this closed
+scope without changed inputs or a concrete concern.
+
 `integration/local-inspector-client.mjs` declares **tier2 / integration**.
 Its disposable authored Markdown is a fixture for a private corpus; the actual
 Inspector CLI, vAFS stdio server, filesystem and reader are used without mocks.

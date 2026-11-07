@@ -1,4 +1,11 @@
-# Configured Inspector CLI interoperability — preparation
+# Configured Inspector CLI interoperability — I01 accepted
+
+The [first result](../results/2026/11-07/local-inspector-client-attempt-1.md)
+passed at `229803f1d8bd46b2217b21b01af7800d460d65fc`: five actual legacy
+Inspector sessions, complete original outputs, exact authored UTF-8 retrieval,
+source/package guards and owned cleanup. There was no retry or product-source
+fix. The earlier 34/63 scopes remain separate. The preparation below is historical
+scope; actual observations and limitations belong to the receipt.
 
 7 November 2026. The [testing guide](../testing.md) records separate accepted
 34-case MCP and 63-case reader scopes. Neither proves real configured-client

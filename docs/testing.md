@@ -1,5 +1,5 @@
 # Testing
-Last updated: 2026-10-31
+Last updated: 2026-11-07
 
 ## Current Gates
 
@@ -29,8 +29,15 @@ unchanged, and owned fixture cleanup passed. The temporary reader workflow is
 retired with the final result publication.
 
 These focused results are separate from the surface-presence validator above.
-Hosted identity/RLS, real QMD collections/models, registered MCP-client
-interoperability and the full application remain unverified by these scopes.
+The [first configured Inspector CLI result](results/2026/11-07/local-inspector-client-attempt-1.md)
+adds one Tier 2 integration identity using official Inspector 2.14.0 and Node
+26.13.0. Five separate legacy stdio sessions initialized, discovered tools,
+indexed, searched and retrieved exact authored UTF-8 bytes; raw intake was
+excluded. Package/lock, original output, source and cleanup checks passed.
+The 34/63 scopes were not rerun or added to this case count.
+
+Hosted identity/RLS, real QMD collections/models, native-client registration
+and the full application remain unverified. See the new [integration contract](../tests/README.md).
 
 ## Next Test Additions
 
