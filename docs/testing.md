@@ -36,7 +36,19 @@ indexed, searched and retrieved exact authored UTF-8 bytes; raw intake was
 excluded. Package/lock, original output, source and cleanup checks passed.
 The 34/63 scopes were not rerun or added to this case count.
 
-Hosted identity/RLS, real QMD collections/models, native-client registration
+The [first real QMD keyword result](results/2026/11-07/local-qmd-keyword-attempt-1.md)
+adds Q01, one Tier 2 integration identity at source
+`0a84a57b23c5f642d738e956d09d5d31a8029bd9`. Actual QMD 2.8.3 collection/FTS
+setup, two direct producer controls and two vAFS searches passed on six authored
+files. A frozen isolated tool lock and actual SQLite/vector loading preceded
+the five commands. Fresh/stale provenance, UTF-8 offsets, raw/foreign/missing
+exclusions, original outputs, source guards and owned teardown passed. Nine
+observed `./` paths and one removed-file URI fallback do not establish every
+producer path branch, document-ID continuity or private-corpus behavior. The
+earlier 34/63/I01 scopes were not rerun. Package metadata inspection remains
+separate preparation evidence, not an additional integration case.
+
+Hosted identity/RLS, QMD model retrieval, native-client registration
 and the full application remain unverified. See the new [integration contract](../tests/README.md).
 
 ## Next Test Additions
