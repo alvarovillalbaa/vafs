@@ -7,9 +7,9 @@ scope without changed inputs or a concrete concern.
 `integration/local-inspector-client.mjs` declares **tier2 / integration**.
 Its disposable authored Markdown is a fixture for a private corpus; the actual
 Inspector CLI, vAFS stdio server, filesystem and reader are used without mocks.
-No production, staging, private data, account, model or QMD resource is allowed.
+I01 allows no production, staging, private data, account, model or QMD resource.
 
-Invoke only through the explicitly scoped CI runner in
+Invoke I01 only through the explicitly scoped CI runner in
 `scripts/run-local-inspector-checks.mjs`, following the
 [proposal](../docs/proposals/local-inspector-client-checks.md). The operational
 runner is support code, not a default-suite collector. Package scripts and the
@@ -19,3 +19,21 @@ I01 contains five sequential connect/disconnect operations and has no retries.
 Original partial/error outputs, exact source bindings and verified teardown
 are required. Source preparation, native-client registration and a passing
 configured CLI session remain separate claims.
+
+## QMD keyword candidate
+
+Q01 is **unrun**. `integration/local-qmd-keyword.mjs` declares **tier2 /
+integration** and uses six authored disposable Markdown files with the actual
+QMD collection/FTS engine, vAFS CLI and filesystem. Its
+[proposal](../docs/proposals/local-qmd-keyword-checks.md) defines one journey
+with direct producer controls before and after intentional file changes.
+Current-byte provenance and candidate filtering are the acceptance boundary.
+No own services are mocked. No private data, embeddings, reranking, models,
+accounts, hosted APIs, Inspector or browser resources belong to this scope.
+
+The separate [published-package inspection](../docs/proposals/qmd-package-metadata.md)
+is operational preparation, not a test case or native-binding proof. Its
+`scripts/inspect-qmd-package-metadata.py` reads exact registry JSON only and
+does not install or execute package contents. Q01 activation remains held
+until published-package provenance, an isolated frozen tool lock and working
+SQLite/vector bindings pass their reviewed gates. Existing suites stay closed.
