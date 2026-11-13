@@ -42,7 +42,7 @@ admission before its five commands. This does not accept models, private files
 or hosted behavior. Do not repeat the closed journey without changed inputs or
 a concrete concern. Existing suites stay closed.
 
-## Configured QMD over MCP — prepared and unrun
+## Configured QMD over MCP — eight contracts and Q02 accepted
 
 `unit/local-mcp-qmd.test.mjs` contains eight new T2 startup/profile contracts
 with search seams; these are not real engine proof. The separate
@@ -51,6 +51,9 @@ persistent actual stdio server, real pinned QMD keyword/SQLite index and authore
 files. A transparent PATH observer executes the admitted CLI and preserves its
 unchanged original streams. It never substitutes an engine response.
 
+The [13 November result](../docs/results/2026/11-13/local-mcp-qmd.md) accepts all
+eight contracts and Q02 at source 71c1e8fd. Both failed prerequisites, the
+accepted original artifact and a portable receipt-only audit remain retained.
 Run only through the [bounded exact packet](../docs/proposals/local-mcp-qmd-checks.md).
 Reuse the canonical Q01 tool lock, but no old application case/result is carried
 as a new pass. The old34/63/I01/Q01 scopes stay at their own sources. No Next,

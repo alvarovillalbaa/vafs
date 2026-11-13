@@ -81,8 +81,8 @@ node bin/vafs-local-mcp.mjs --root /path/to/agents-fs --qmd-collection personal
 
 Only startup chooses that collection; tool requests cannot change it or expand
 the root. Current eligible files still own returned content/hashes even when
-index ranking is stale. This new profile's [focused packet](docs/proposals/local-mcp-qmd-checks.md)
-is prepared and unrun; the earlier Q01 result covers the CLI only.
+index ranking is stale. This profile's [eight contracts and real Q02 journey](docs/results/2026/11-13/local-mcp-qmd.md)
+passed on authored files; the earlier Q01 result covers the CLI only.
 The local MCP server does not connect to the hosted API, change
 account access or implement sync/write tools. The
 [first Inspector CLI result](docs/results/2026/11-07/local-inspector-client-attempt-1.md)

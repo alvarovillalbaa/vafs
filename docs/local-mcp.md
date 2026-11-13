@@ -61,8 +61,8 @@ files under the pinned root; raw intake and foreign paths remain excluded.
 Returned metadata/text hashes come from current files while ranking can remain
 stale. Configured discovery reports this explicitly. Default startup remains
 QMD-disabled with the original discovery text and tool argument schema. The
-[eight-profile/one-real-journey packet](proposals/local-mcp-qmd-checks.md) is
-prepared and unrun; CLI Q01 and Inspector I01 are separate old evidence.
+[eight-profile/one-real-journey result](results/2026/11-13/local-mcp-qmd.md)
+passed on authored files; CLI Q01 and Inspector I01 retain separate scopes.
 
 ## Read-only tool contract
 

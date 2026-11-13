@@ -14,8 +14,8 @@ files and their owning repository.
 The [local MCP server](local-mcp.md) can now opt into that same keyword candidate
 leg through an operator-selected startup collection. QMD remains off by default;
 clients cannot select or change it through tool arguments. The existing CLI Q01
-acceptance does not establish this new MCP profile; its separate focused packet
-is prepared and unrun.
+acceptance remains separate from this new MCP profile. Its [eight contracts and
+real Q02 journey](results/2026/11-13/local-mcp-qmd.md) passed on authored files.
 
 ## Commands
 

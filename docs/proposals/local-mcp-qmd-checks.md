@@ -6,6 +6,9 @@ MCP/CLI/API. CLI Q01 and Inspector I01 are already accepted at their original
 sources. This adds the missing explicit QMD startup choice to the local MCP
 server; it does not replay or relabel those old journeys.
 
+Completed 13 November at source 71c1e8fd: [result and retained attempts](../results/2026/11-13/local-mcp-qmd.md).
+The third separate run passed; the first two failures remain negative evidence.
+
 ## Product behavior
 
 `node bin/vafs-local-mcp.mjs --root /selected/agents-fs --qmd-collection personal`

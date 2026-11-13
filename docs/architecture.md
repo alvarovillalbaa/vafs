@@ -37,7 +37,8 @@ functions, with a pinned startup root and no write tools. Raw intake stays
 disabled; QMD is off by default and can be selected through an explicit
 startup collection. Client arguments cannot choose a collection or executable.
 The earlier configured Inspector and CLI-QMD results retain their own scopes;
-the new MCP/QMD profile's focused checks are prepared and unrun. The existing hosted MCP
+the new MCP/QMD profile's [eight contracts and real Q02 journey](results/2026/11-13/local-mcp-qmd.md)
+passed separately on authored files. The existing hosted MCP
 bridge and access behavior are unchanged. Hosted Supabase Edge workers do not
 run arbitrary shell commands.
 

@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-11-13 12:24:09 UTC",
+  "repository": "alvarovillalbaa/vafs",
+  "sourceCommit": "71c1e8fdc460277f3fbf31e0a7867166c8fa1399",
+  "workflows": [
+    {
+      "id": 417231776,
+      "path": ".github/workflows/local-mcp-qmd-1.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417233775,
+      "path": ".github/workflows/local-mcp-qmd-2.yml",
+      "state": "disabled_manually"
+    },
+    {
+      "id": 417236241,
+      "path": ".github/workflows/local-mcp-qmd-3.yml",
+      "state": "disabled_manually"
+    }
+  ],
+  "qaRefs": [],
+  "deletedOnlyAfterExactShaCheck": [
+    "7d4336eab615f1bf840715b0bcc1cdf1adad2a9f",
+    "535a91e78b74bb65f0bb9cbea4391b1432ad011e",
+    "8e23aff5a2cd29e4075323e4fad5f7a8eddfd3cb"
+  ],
+  "oldCasesReexecuted": false
+}
