@@ -41,6 +41,14 @@ def need(value, message):
         raise RuntimeError(message)
 
 
+def absent(path):
+    try:
+        path.lstat()
+        return False
+    except FileNotFoundError:
+        return True
+
+
 def admit():
     need(os.environ.get("CI") == "true" and os.environ.get("GITHUB_REPOSITORY") == REPOSITORY and run_id.isdigit(), "Owned public CI only")
     need(os.environ.get("GITHUB_EVENT_NAME") == "create" and os.environ.get("GITHUB_REF") == BRANCH, "Exact create event/ref")
@@ -252,7 +260,7 @@ try:
     need((repo / "AGENTS.md").read_bytes().startswith(subprocess.check_output(["git", "show", BASE + ":AGENTS.md"])), "Append-only root instructions")
     report["sourceFiles"] = source_files
     guard("before-owned-work")
-    root = Path(tempfile.mkdtemp(prefix="vafs-mcp-qmd-", dir=os.environ["RUNNER_TEMP"]))
+    root = Path(tempfile.mkdtemp(prefix="vafs-mcp-qmd-", dir=os.environ["RUNNER_TEMP"])).resolve()
     os.chmod(root, 0o700)
     identity = (root.stat().st_dev, root.stat().st_ino, root.stat().st_uid)
     nonce = secrets.token_hex(16)
@@ -312,7 +320,7 @@ try:
     need(json.loads((qmd / "package.json").read_bytes())["version"] == "2.8.3"
          and sha((qmd / "bin/qmd").read_bytes()) == "b7162aa4da31d602c687f2c3dd2d7fcae753def25066d4b07dc262d790f4ea23"
          and sha((qmd / "dist/cli/qmd.js").read_bytes()) == "0dd4fd702adb83f27a69e59725478524ee48d00580ab6e9848dcde933000d99a", "Actual prior qualified QMD code")
-    need(not (tools / "node_modules/@node-llama-cpp").exists(), "No optional native llama platform")
+    need(absent(tools / "node_modules/@node-llama-cpp"), "No optional native llama platform")
     native_source = (repo / HELPERS[1]).read_bytes()
     need(sha(native_source) == NATIVE_SHA, "Exact qualified native-admission prerequisite")
     (tools / "native-admission.mjs").write_bytes(native_source)
@@ -328,7 +336,7 @@ try:
     environment["PATH"] = str(tools / "bin") + os.pathsep + environment["PATH"]
     (root / "cache/mcp-qmd-originals.jsonl").write_bytes(b"")
     for directory in [Path(environment["HOME"]), *Path(environment["HOME"]).parents]:
-        need(not (directory / ".qmd").exists(), "No inherited ancestor QMD configuration")
+        need(absent(directory / ".qmd"), "No inherited ancestor QMD configuration")
     report["installedBefore"] = inventory(tools)
     guard("before-real-mcp")
     output = run([node, str(exported / CASE)], timeout=210)
@@ -339,7 +347,7 @@ try:
     need(case["identity"] == "Q02" and case["passed"] is True and case["errors"] == [] and len(case["qmdOriginals"]) == 5, "Actual persistent MCP QMD journey")
     need(inventory(tools) == report["installedBefore"] and inventory(exported) == report["exportedBefore"], "Tool/export bytes unchanged")
     for name in ("cache/qmd/models", "data/qmd/models", "config/qmd/models"):
-        need(not (root / name).exists(), "No owned QMD model cache")
+        need(absent(root / name), "No owned QMD model cache")
     guard("after-real-mcp")
     status = 0
 except BaseException as error:
