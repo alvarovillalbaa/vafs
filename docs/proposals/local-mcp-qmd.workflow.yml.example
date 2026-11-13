@@ -5,7 +5,7 @@ permissions:
   contents: read
 jobs:
   configured-qmd:
-    if: github.repository == 'alvarovillalbaa/vafs' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/vafs-local-mcp-qmd-20261113-2'
+    if: github.repository == 'alvarovillalbaa/vafs' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/vafs-local-mcp-qmd-20261113-3'
     runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
@@ -18,12 +18,18 @@ jobs:
         with:
           ref: ${{ env.SOURCE_COMMIT }}
           persist-credentials: false
-          fetch-depth: 4
+          fetch-depth: 5
           clean: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
         with:
           node-version: 26.13.0
           package-manager-cache: false
+      - name: Install the previously admitted signed Ubuntu ripgrep package
+        timeout-minutes: 3
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends --no-upgrade ripgrep=14.1.0-1
+          test "$(dpkg-query -W -f='${Version}' ripgrep)" = '14.1.0-1'
       - name: Eight profile contracts and real native MCP Q02
         id: scope
         run: python3 tests/scripts/run-local-mcp-qmd.py

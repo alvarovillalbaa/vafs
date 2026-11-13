@@ -77,7 +77,7 @@ Base mainc72dab87 has978 blobs. Preserve all except the exact eight reviewed
 runtime/instruction/status paths; eight source/test/helper/proposal/template
 files are added. The root controller checks these exact path sets. Publish a
 frozen work source before activation. QA
-`qa/vafs-local-mcp-qmd-20261113-1` adds only its reviewed workflow. Follow that
+`qa/vafs-local-mcp-qmd-20261113-3` adds only its reviewed workflow. Follow that
 same run to terminal; retain failures before any changed candidate. Retire only
 its exact workflow/ref after originals. Main remains old until qualification.
 

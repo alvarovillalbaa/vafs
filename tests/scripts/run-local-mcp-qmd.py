@@ -16,7 +16,7 @@ import traceback
 
 REPOSITORY = "alvarovillalbaa/vafs"
 BASE = "c72dab8702d924265d1397aba20587fd2db38688"
-BRANCH = "refs/heads/qa/vafs-local-mcp-qmd-20261113-2"
+BRANCH = "refs/heads/qa/vafs-local-mcp-qmd-20261113-3"
 LOCK_SHA = "98697aea8ca592674d254ca791b355a27549388451e1d2a7ba9c9366294e98a7"
 NATIVE_SHA = "7c150b7700c98ebf66b22918c82ef833da4f7c19b58df8ed2f69fd68c0822962"
 RUNTIME = ["bin/vafs-local-mcp.mjs"] + ["bin/local/" + name + ".mjs" for name in ("corpus", "errors", "output", "process", "retrieval", "mcp")]
@@ -184,7 +184,12 @@ def run(argv, *, cwd=None, timeout=90):
     observer_error = None
     seen = {}
     with out.open("xb") as stdout, err.open("xb") as stderr:
-        child = subprocess.Popen(argv, cwd=cwd or tools, env=environment, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr, start_new_session=True)
+        try:
+            child = subprocess.Popen(argv, cwd=cwd or tools, env=environment, stdin=subprocess.DEVNULL, stdout=stdout, stderr=stderr, start_new_session=True)
+        except OSError as error:
+            row.update({"spawnError": {"type": type(error).__name__, "message": str(error)}, "launched": False,
+                        "stdout": capture(out.read_bytes()), "stderr": capture(err.read_bytes()), "observedProcesses": []})
+            raise
         leaders.append(child)
         row["pid"] = child.pid
         try:
