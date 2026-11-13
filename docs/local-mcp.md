@@ -1,6 +1,6 @@
 # Local MCP retrieval
 
-Updated 7 November 2026. The separate 34-case protocol and 63-case reader
+Updated 13 November 2026. The separate 34-case protocol and 63-case reader
 receipts are recorded in the [testing guide](testing.md). The first configured
 [Inspector CLI journey](results/2026/11-07/local-inspector-client-attempt-1.md)
 passed on authored files. The hosted API/MCP path is unchanged.
@@ -40,6 +40,30 @@ process. This is not hosted OAuth, tenant isolation, a filesystem mount or an
 agent sandbox. The client owns consent to disclose retrieved text to its model.
 Treat returned file text and metadata as untrusted source material.
 
+### Optional operator-configured QMD keyword candidates
+
+For an already installed/configured QMD collection, start the same server with:
+
+```sh
+node bin/vafs-local-mcp.mjs --root /path/to/agents-fs --qmd-collection personal
+```
+
+Add the last two arguments to a client's explicit stdio configuration to use
+this profile. The collection identifier is validated and captured at startup;
+messages cannot change it. External QMD configuration remains operator-owned,
+not an immutable index snapshot. The server calls the existing bounded
+`qmd search` reader path, never collection creation, embedding or reranking.
+It installs no tool/model and builds no index automatically. Missing/failed QMD
+returns a finite tool error; it does not fabricate a ranking or switch providers.
+
+QMD contributes candidates only. Each is revalidated against current eligible
+files under the pinned root; raw intake and foreign paths remain excluded.
+Returned metadata/text hashes come from current files while ranking can remain
+stale. Configured discovery reports this explicitly. Default startup remains
+QMD-disabled with the original discovery text and tool argument schema. The
+[eight-profile/one-real-journey packet](proposals/local-mcp-qmd-checks.md) is
+prepared and unrun; CLI Q01 and Inspector I01 are separate old evidence.
+
 ## Read-only tool contract
 
 | Tool | Arguments | Result |
@@ -49,8 +73,9 @@ Treat returned file text and metadata as untrusted source material.
 | `vafs_local_get_page` | Relative `path` | Existing `vafs-local-page-v1` envelope with exact current decoded text. |
 
 Arguments cannot choose another root, include raw intake, choose QMD, export a
-file or invoke hosted tools. QMD is disabled; this profile does not claim vector
-retrieval or live QMD acceptance. The unchanged reader owns eligibility, ignore
+file or invoke hosted tools. QMD is disabled unless the operator chooses its
+startup collection; no vector/model retrieval is provided by this option.
+New actual MCP/QMD acceptance is pending. The existing reader owns eligibility, ignore
 rules, descendant symlink checks, strict UTF-8, hashing and corpus/file budgets.
 See [local retrieval](local-retrieval.md) for those limits and provenance.
 
@@ -101,8 +126,9 @@ Neither old suite was rerun. This is configured CLI interoperability, not one
 persistent session, native-client registration or full MCP conformance.
 
 The separate [CLI QMD keyword journey](results/2026/11-07/local-qmd-keyword-attempt-1.md)
-passed on authored files. It does not enable QMD in this MCP profile or repeat
-I01. Hosted Auth, persistent services, API/integration activation, QMD model
+passed on authored files. The optional MCP startup profile reuses that reader;
+its separate execution is pending and does not repeat I01 or Q01. Hosted Auth,
+persistent services, API/integration activation, QMD model
 retrieval, native clients, distribution and the wider vAFS architecture remain
 unfinished. No
 provider, model, schema, dependency, hosted configuration or paid action is

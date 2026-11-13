@@ -1,5 +1,5 @@
 # vAFS Architecture
-Last updated: 2026-10-30
+Last updated: 2026-11-13
 
 ## Ownership
 
@@ -33,9 +33,11 @@ Hosted VAFS uses:
 
 The local CLI reader uses real `rg` against a trusted explicit checkout. The
 separate [local MCP stdio entrypoint](local-mcp.md) reuses its corpus/page/search
-functions, with a pinned startup root and no write tools. Raw intake and QMD
-remain disabled in that MCP profile. Its functional checks are approval-pending;
-source implementation is not real-client acceptance. The existing hosted MCP
+functions, with a pinned startup root and no write tools. Raw intake stays
+disabled; QMD is off by default and can be selected through an explicit
+startup collection. Client arguments cannot choose a collection or executable.
+The earlier configured Inspector and CLI-QMD results retain their own scopes;
+the new MCP/QMD profile's focused checks are prepared and unrun. The existing hosted MCP
 bridge and access behavior are unchanged. Hosted Supabase Edge workers do not
 run arbitrary shell commands.
 

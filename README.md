@@ -1,5 +1,5 @@
 # vAFS
-Last updated: 2026-11-07
+Last updated: 2026-11-13
 
 vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compatible `agents-fs` GitHub repositories.
 
@@ -72,7 +72,18 @@ node bin/vafs-local-mcp.mjs --root /path/to/agents-fs
 ```
 
 It exposes metadata index, literal search and exact page reads. Raw intake is
-excluded and QMD is disabled. It does not connect to the hosted API, change
+excluded and QMD is disabled by default. An operator with an existing QMD
+collection can explicitly enable its keyword candidates for this session:
+
+```bash
+node bin/vafs-local-mcp.mjs --root /path/to/agents-fs --qmd-collection personal
+```
+
+Only startup chooses that collection; tool requests cannot change it or expand
+the root. Current eligible files still own returned content/hashes even when
+index ranking is stale. This new profile's [focused packet](docs/proposals/local-mcp-qmd-checks.md)
+is prepared and unrun; the earlier Q01 result covers the CLI only.
+The local MCP server does not connect to the hosted API, change
 account access or implement sync/write tools. The
 [first Inspector CLI result](docs/results/2026/11-07/local-inspector-client-attempt-1.md)
 accepts one authored-file legacy interoperability journey across five separate

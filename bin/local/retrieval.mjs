@@ -20,14 +20,19 @@ function queryInput(value) {
   return { query, terms: [...new Set(supplied)] };
 }
 
-function collectionInput(value, query) {
+export function validateQmdCollection(value) {
   if (value === undefined) return undefined;
   if (typeof value !== "string" || !value || value.trim() !== value || value.startsWith("-")
     || /[\u0000-\u001f\u007f]/u.test(value) || Buffer.byteLength(value) > 1024
     || Buffer.from(value, "utf8").toString("utf8") !== value) fail("local_qmd_collection_invalid");
-  // QMD's positional query parser is not given a flag-like leading argument.
-  if (query.startsWith("-")) fail("local_query_invalid");
   return value;
+}
+
+function collectionInput(value, query) {
+  const collection = validateQmdCollection(value);
+  // QMD's positional query parser is not given a flag-like leading argument.
+  if (collection !== undefined && query.startsWith("-")) fail("local_query_invalid");
+  return collection;
 }
 
 function fieldHits(value, terms) {

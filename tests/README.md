@@ -41,3 +41,17 @@ package provenance, an isolated frozen tool lock and actual SQLite/vector
 admission before its five commands. This does not accept models, private files
 or hosted behavior. Do not repeat the closed journey without changed inputs or
 a concrete concern. Existing suites stay closed.
+
+## Configured QMD over MCP — prepared and unrun
+
+`unit/local-mcp-qmd.test.mjs` contains eight new T2 startup/profile contracts
+with search seams; these are not real engine proof. The separate
+`integration/local-mcp-qmd.mjs` adds Q02, one tier2/integration journey using a
+persistent actual stdio server, real pinned QMD keyword/SQLite index and authored
+files. A transparent PATH observer executes the admitted CLI and preserves its
+unchanged original streams. It never substitutes an engine response.
+
+Run only through the [bounded exact packet](../docs/proposals/local-mcp-qmd-checks.md).
+Reuse the canonical Q01 tool lock, but no old application case/result is carried
+as a new pass. The old34/63/I01/Q01 scopes stay at their own sources. No Next,
+browser, private corpus, registered native client, model, account or hosted test.

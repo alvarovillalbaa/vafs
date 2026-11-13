@@ -11,6 +11,12 @@ corpus, models or hosted providers. This file-based bridge
 does not create a new filesystem or move AFS truth away from existing Markdown
 files and their owning repository.
 
+The [local MCP server](local-mcp.md) can now opt into that same keyword candidate
+leg through an operator-selected startup collection. QMD remains off by default;
+clients cannot select or change it through tool arguments. The existing CLI Q01
+acceptance does not establish this new MCP profile; its separate focused packet
+is prepared and unrun.
+
 ## Commands
 
 ```sh
