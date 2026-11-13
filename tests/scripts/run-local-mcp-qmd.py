@@ -16,7 +16,7 @@ import traceback
 
 REPOSITORY = "alvarovillalbaa/vafs"
 BASE = "c72dab8702d924265d1397aba20587fd2db38688"
-BRANCH = "refs/heads/qa/vafs-local-mcp-qmd-20261113-1"
+BRANCH = "refs/heads/qa/vafs-local-mcp-qmd-20261113-2"
 LOCK_SHA = "98697aea8ca592674d254ca791b355a27549388451e1d2a7ba9c9366294e98a7"
 NATIVE_SHA = "7c150b7700c98ebf66b22918c82ef833da4f7c19b58df8ed2f69fd68c0822962"
 RUNTIME = ["bin/vafs-local-mcp.mjs"] + ["bin/local/" + name + ".mjs" for name in ("corpus", "errors", "output", "process", "retrieval", "mcp")]
@@ -73,6 +73,7 @@ need(sys.argv[1:] == [], "No extra arguments")
 report = {"schemaVersion": 1, "kind": "vafs.local-mcp-qmd", "runId": run_id, "sourceCommit": source, "baseCommit": BASE,
           "commands": [], "sourceGuards": [], "checks": {}, "cleanup": {}, "oldCasesReexecuted": False}
 root = None
+status = 1
 leaders, starts, attributed = [], {}, {}
 observation_uncertain = False
 uninspected = set()
