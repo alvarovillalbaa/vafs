@@ -1,12 +1,14 @@
 # vAFS
-Last updated: 2026-11-13
+Last updated: 2026-11-18
 
-vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compatible `agents-fs` GitHub repositories.
+This repository includes a file-based local AFS reader and its separate read-only MCP entrypoint, alongside the historical Virtual Agentic FileSystem prototype. The hosted virtual filesystem layer is cancelled; current maintenance aligns the existing AFS catalog and exported scaffold with the [AFS standard](https://github.com/alvarovillalbaa/afs).
+
+Start with [AGENTS.md](AGENTS.md), [REFERENCES.md](REFERENCES.md), [SOURCES.md](SOURCES.md), and [GAPS.md](GAPS.md). Hosted runtime surfaces remain prototype contracts; the local reader/MCP evidence and its limits are documented below.
 
 ## What This Repo Implements
 
 - Next.js 16 app and route handlers for the VAFS console and public API.
-- An imported AFS draft contract in `lib/vafs/afs-contract.ts`; the [AFS repository](https://github.com/alvarovillalbaa/afs) owns the standard.
+- Existing AFS catalog and exported templates in `lib/vafs/afs-contract.ts`, aligned with the canonical standard.
 - Supabase-first metadata model for users, workspaces, memberships, OAuth grants, repo connections, jobs, and audit events.
 - GitHub `agents-fs` source-of-truth model with branch-and-PR writeback.
 - Hosted retrieval contracts for metadata, keyword/vector adapters and reranking hooks; their external integration remains unfinished.
@@ -16,7 +18,7 @@ vAFS is the Virtual Agentic FileSystem: productized infrastructure for AFS-compa
 - CLI and MCP bridge in `bin/vafs.mjs` and `bin/vafs-mcp.mjs`.
 - Exportable skills in `packages/skills/vafs-use` and `packages/skills/vafs-devs`.
 
-Supabase is intentionally not document storage. Canonical knowledge, raw inputs, root files, and AFS folders live in GitHub `agents-fs`.
+The historical prototype uses Supabase for metadata. The current AFS contract keeps maintained instructions, unique knowledge, and work history in `agents-fs`, raw artifacts in private Drive, goals in Notion, references in REFERENCES.md, and provenance in SOURCES.md. The prototype's legacy raw routes remain documented in [GAPS.md](GAPS.md).
 
 ## Commands
 
@@ -33,9 +35,8 @@ CLI examples:
 node bin/vafs.mjs health
 node bin/vafs.mjs workspaces
 node bin/vafs.mjs search "hybrid retrieval" --workspace ws_personal_alvaro
-node bin/vafs.mjs get ws_personal_alvaro knowledge/vafs-product.md
+node bin/vafs.mjs get ws_personal_alvaro PRODUCT.md
 node bin/vafs.mjs sync ws_personal_alvaro
-node bin/vafs.mjs cleanup ws_personal_alvaro "Compile raw retrieval notes"
 ```
 
 Local checkout commands require installed Node and `rg`, with no application

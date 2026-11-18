@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-18T16:29:53.945712+00:00",
+  "source_parent": "cfdeee8b367c81580c92f3d36157de2bcbf4adaa",
+  "reviews": [
+    {
+      "agent": "afs_bug_review",
+      "lens": "bug detection",
+      "findings": 0
+    },
+    {
+      "agent": "afs_history_review",
+      "lens": "Git history and provenance",
+      "findings": 0
+    },
+    {
+      "agent": "afs_prior_comments",
+      "lens": "prior PR comments",
+      "findings": 0
+    },
+    {
+      "agent": "personal_afs_compliance",
+      "lens": "root contract compliance",
+      "findings": 0
+    },
+    {
+      "agent": "personal_afs_comment_accuracy",
+      "lens": "comment and claim accuracy",
+      "findings": 0
+    }
+  ],
+  "source_sha256": {
+    "SOURCES.md": "844eb822d7fb0220d78f63e517c86afa80e35404f8eea8f3c1f8e3614c3a122f",
+    "docs/audits/2026/10-10/check-template-consumer.mjs": "b6a79cd53693b54f95d74fd13243511f5df22dedc22a03bf437654cd6e1573be",
+    "lib/vafs/afs-contract.ts": "c44f036afc47f2de036d6f8863e80705c4b4b71c5205666a9ba2da292028e67a",
+    "lib/vafs/fixtures.ts": "c1c0e00de8ae48f2103b3f954be29d393dd9c377e2e1cb02ca3aee8765b41019",
+    "packages/skills/vafs-use/assets/agents-fs-template/AGENTS.md": "071d0d230e6cadb7727ba916969425ee9f8feb8c5b9bca57ee21a4b94a18cb2a",
+    "packages/skills/vafs-use/assets/agents-fs-template/SOURCES.md": "e54ad9651c482bde99a3b7f5da769a64ac18385c607f7188b8cac57d88bb5f9e",
+    "packages/skills/vafs-use/assets/agents-fs-template/research/README.md": "bf83e1df3afce829e2d24500d788e1e032ed224edad74dd0499dc1ab381c802f"
+  },
+  "scope": "original28-filePRplus6-filecorrection; finalclaimsreviewalsocoversSOURCES/audit/log",
+  "read_only": true,
+  "repository_or_external_mutations_by_reviewers": false,
+  "no_fresh_cloud_browser_build_or_integration_proof": true
+}

@@ -1,9 +1,11 @@
 ---
 name: vafs-devs
-description: Build VAFS-first applications and agent integrations. Use when implementing OAuth, API, CLI, MCP, SDK, or AI-agent tool calls that connect an external app to VAFS.
+description: Historical VAFS integration contract retained as reference; do not develop the cancelled virtual filesystem layer.
 ---
 
 # VAFS Developers
+
+This is historical prototype guidance. The virtual filesystem layer is cancelled; the contracts below do not authorize new integrations, feature work, deployment, or changed access controls. Current AFS maintenance uses the canonical standard and the existing export template.
 
 ## Integration Contract
 

@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-18T16:22:34.800742+00:00",
+  "source_parent": "cfdeee8b367c81580c92f3d36157de2bcbf4adaa",
+  "mode": "GitHub GFM Markdown API",
+  "requests": 4,
+  "checks": [
+    {
+      "path": "packages/skills/vafs-use/assets/agents-fs-template/AGENTS.md",
+      "expected_literal_code_paths": [
+        "research/<unit>/README.md",
+        "facts/<domain>/"
+      ],
+      "literal_paths_visible_before": false,
+      "literal_paths_visible_as_code_after": true,
+      "source_sha256": "071d0d230e6cadb7727ba916969425ee9f8feb8c5b9bca57ee21a4b94a18cb2a"
+    },
+    {
+      "path": "packages/skills/vafs-use/assets/agents-fs-template/research/README.md",
+      "expected_literal_code_paths": [
+        "research/<unit>/"
+      ],
+      "literal_paths_visible_before": false,
+      "literal_paths_visible_as_code_after": true,
+      "source_sha256": "bf83e1df3afce829e2d24500d788e1e032ed224edad74dd0499dc1ab381c802f"
+    }
+  ],
+  "browser_or_application_render_acceptance": false
+}

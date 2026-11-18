@@ -1,0 +1,97 @@
+{
+  "at": "2026-11-18T16:40:24.308627+00:00",
+  "actual_main": "55eb26ccd6134176f3ef5296ed12a5dd4e00a6d5",
+  "upstream_byte_preservation_receipt": "base-reconciliation.json",
+  "upstream_byte_preservation_receipt_sha256": "562cd85ae5891355661c1425f89d9f86be86204b6ff8636e5b98b6c23302635a",
+  "upstream_changed_paths_preserved": 73,
+  "upstream_local_profile_block_sha256": "8548406c63a06cf89212937beb1c7806c08e42e9690bdbe5d7c282479d6e89dd",
+  "upstream_local_profile_block_preserved_exactly": true,
+  "upstream_local_reader_mcp_readme_block_sha256": "9b059a0bcc8fc063015dc4ec95d84498fb08728e36d009b2479d08e349adf61d",
+  "upstream_local_reader_mcp_readme_block_preserved_exactly": true,
+  "proposed_diff_against_current_main_whitespace_passed": true,
+  "full_staged_merge_whitespace_exit_code": 2,
+  "inherited_raw_log_whitespace": [
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 128
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 132
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 135
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 137
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 139
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 141
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 143
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 247
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 274
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 276
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 278
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 280
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "line": 282
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 131
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 135
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 138
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 140
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 142
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 144
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "line": 146
+    }
+  ],
+  "raw_log_originals_not_reformatted": true,
+  "additional_local_runtime_tests": false
+}

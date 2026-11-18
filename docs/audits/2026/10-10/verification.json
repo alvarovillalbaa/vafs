@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-10",
+  "source_commit": "1f243e494f14d746425192ffed77b48333ea3509",
+  "node": "v26.8.2",
+  "original_template_checksums": 3,
+  "template_files": 8,
+  "asset_byte_parity": true,
+  "repository_proposal_consumer": true,
+  "discovery_consumer": true,
+  "retired_catalog_and_template_paths_absent": true,
+  "broken_relative_markdown_links": [],
+  "existing_repository_test": { "command": "npm run test", "exit_code": 0 },
+  "focused_consumer_check": { "command": "node docs/audits/2026/10-10/check-template-consumer.mjs", "exit_code": 0 },
+  "canonical_afs_validation": { "source_commit": "c017346", "profiles": ["docs", "root"], "exit_code": 0, "warnings": "Optional shell families are absent." },
+  "whitespace_check": { "working": 0, "staged": 0 },
+  "limits": [
+    "Native TypeScript execution verifies dependency-free consumers; it does not perform a TypeScript compile or Next rendering.",
+    "Full Next build, broad lint/typecheck, browser, OAuth, database, Drive/provider and hosted-CI checks were not run.",
+    "Legacy raw runtime mocks and auth scopes were retained without integration activation or redesign.",
+    "Relative file targets were checked; remote URLs and heading fragments were not verified."
+  ]
+}

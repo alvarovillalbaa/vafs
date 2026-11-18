@@ -1,0 +1,51 @@
+{
+  "at": "2026-11-18T16:22:03.112118+00:00",
+  "canonical_afs_commit": "4935baf22571bae68caf4318843e4c1164a8c22d",
+  "validator_files": [
+    {
+      "path": "skills/use-afs/scripts/standard.mjs",
+      "sha256": "f73d846c02d4dfe4b73b0db71c5c5f7e7fb13e31feef26b781cb3bbd13b3e06e"
+    },
+    {
+      "path": "skills/use-afs/scripts/validate-afs.mjs",
+      "sha256": "8c1cf3d33624e6eefee29472a4495f9aed1b653d9ed81348f97b97608733180e"
+    }
+  ],
+  "checks": [
+    {
+      "target": ".",
+      "mode": "docs",
+      "exit_code": 0,
+      "stdout_sha256": "ab717d7a786bbca6400792845b86fae74a75d94fbec7cf43f579f3f2cbe21f7d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_lines": 17
+    },
+    {
+      "target": "packages/skills/vafs-use/assets/agents-fs-template",
+      "mode": "root",
+      "exit_code": 0,
+      "stdout_sha256": "3515bc6f79bb875f3b3efd99a182441ec0312a2e247a7fcc139f296d87aa5368",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "warning_lines": 16
+    }
+  ],
+  "original_template_hashes_rechecked": [
+    {
+      "path": "packages/skills/vafs-use/assets/agents-fs-template/BRAIN.md",
+      "bytes": 395,
+      "sha256": "c6aabb4fb9c4a45f69e0621d16416b4b9a59620b327aa56dbd199ae31e3562e2"
+    },
+    {
+      "path": "packages/skills/vafs-use/assets/agents-fs-template/raw/README.md",
+      "bytes": 151,
+      "sha256": "61887637fff2643b1bfa75e2b28b1b0e9ad504ca0161a26b2f79fe16125b15e8"
+    },
+    {
+      "path": "packages/skills/vafs-use/assets/agents-fs-template/logs/2026/2026-05-17/bootstrap.md",
+      "bytes": 143,
+      "sha256": "4caec49fe084adc6d8bee82e2005039654791d3256076769cf0cde9bd442888d"
+    }
+  ],
+  "temporary_validator_export_removed": true,
+  "install_build_or_real_workspace_migration": false
+}

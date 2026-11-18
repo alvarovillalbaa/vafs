@@ -1,0 +1,391 @@
+{
+  "at": "2026-11-18T16:38:52.812509+00:00",
+  "old_source_head": "71b860c078381d0994ecede0a82967c58acc3bb7",
+  "old_reported_pr_base": "1f243e494f14d746425192ffed77b48333ea3509",
+  "actual_remote_main": "55eb26ccd6134176f3ef5296ed12a5dd4e00a6d5",
+  "behind_actual_main_commits": 21,
+  "conflicts_resolved": [
+    "AGENTS.md",
+    "README.md"
+  ],
+  "all_other_upstream_changed_files_unchanged": [
+    {
+      "path": "bin/cli.mjs",
+      "bytes": 11682,
+      "sha256": "d9b480cab48bc49372e6dc87c3befbf63899904b9bdf0604fdc2cb6309909b49"
+    },
+    {
+      "path": "bin/local/corpus.mjs",
+      "bytes": 13514,
+      "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e"
+    },
+    {
+      "path": "bin/local/errors.mjs",
+      "bytes": 905,
+      "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0"
+    },
+    {
+      "path": "bin/local/mcp.mjs",
+      "bytes": 16132,
+      "sha256": "48d46d6b8603ee2969068bbe0d212d5691219e85f99c3642682735f263a79d36"
+    },
+    {
+      "path": "bin/local/output.mjs",
+      "bytes": 2040,
+      "sha256": "28951861f637796d2f59a3d3372b45bb1e3321241484c4f544db17ec6a88dd25"
+    },
+    {
+      "path": "bin/local/process.mjs",
+      "bytes": 4030,
+      "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0"
+    },
+    {
+      "path": "bin/local/retrieval.mjs",
+      "bytes": 13212,
+      "sha256": "1b1326d9654613cfe6de37b0ec3224350595dd7171be4e20873a38bbc64e01fe"
+    },
+    {
+      "path": "bin/vafs-local-mcp.mjs",
+      "bytes": 510,
+      "sha256": "991bf966380d4a143134fc93eb18b16cda89bcc76e38e89892a9283905381dac"
+    },
+    {
+      "path": "bin/vafs.mjs",
+      "bytes": 209,
+      "sha256": "ad933ffeab7e9d23a94d0547188720092a102dd0a66adbf948a8681edc460679"
+    },
+    {
+      "path": "docs/architecture.md",
+      "bytes": 1946,
+      "sha256": "9bf21e9a5b4c2308eafb07fa4a274f166b2386b59655ca8b5f21849785c89cff"
+    },
+    {
+      "path": "docs/local-mcp.md",
+      "bytes": 7474,
+      "sha256": "167fcce7a6bfd59cb01385bc41ed7954633791f4f86095d6b70837ae8d0d4ccf"
+    },
+    {
+      "path": "docs/local-retrieval.md",
+      "bytes": 8618,
+      "sha256": "495a860b668ae9dbd995028d129462821999778f33c4e21f017ddb2918cf7635"
+    },
+    {
+      "path": "docs/proposals/local-inspector-client-checks.md",
+      "bytes": 6283,
+      "sha256": "acf6b56a92ed66532c58d186d3286b0bf7a1cfba94e8b01663468f2df1abad0e"
+    },
+    {
+      "path": "docs/proposals/local-inspector-client.workflow.yml.example",
+      "bytes": 1703,
+      "sha256": "978c658fa939395063aed63c718ce023eff00a3bbd27fc535b8d6d4822485d64"
+    },
+    {
+      "path": "docs/proposals/local-mcp-checks.md",
+      "bytes": 4189,
+      "sha256": "15b7345fe4629236466f67d53a977afcb7fb74495ac5287ab9abb66b8ca0f287"
+    },
+    {
+      "path": "docs/proposals/local-mcp-qmd-checks.md",
+      "bytes": 5607,
+      "sha256": "eabefb5270f9d085642eaf5a0c71bef6ba15b84d3b9c99bc1b333b7fcde5af86"
+    },
+    {
+      "path": "docs/proposals/local-mcp-qmd.workflow.yml.example",
+      "bytes": 2105,
+      "sha256": "66fdb3c4acf2f366ca581b0574ce24f02859157c11a58d59e37f34c8283027f0"
+    },
+    {
+      "path": "docs/proposals/local-qmd-keyword-checks.md",
+      "bytes": 4485,
+      "sha256": "6a550715f4525624848975fa4bb987ab9f1973e64a80123b21089bd31b7ea904"
+    },
+    {
+      "path": "docs/proposals/local-qmd-keyword.workflow.yml.example",
+      "bytes": 1667,
+      "sha256": "5e9216a6012b162b012a0c7119a820dac2cd4ac4a27c0ec25031814e3fdac897"
+    },
+    {
+      "path": "docs/proposals/local-retrieval-checks.md",
+      "bytes": 3196,
+      "sha256": "4a907df21237e5fce3541a97a239aea5a8531f7559da244776415cc34cba03a2"
+    },
+    {
+      "path": "docs/proposals/qmd-package-metadata.md",
+      "bytes": 3549,
+      "sha256": "cc681359cab5e01aa84611412f8a8345dd49c23e4fce1772f02b095e3107c611"
+    },
+    {
+      "path": "docs/proposals/qmd-package-metadata.workflow.yml.example",
+      "bytes": 2335,
+      "sha256": "481d7bab56a53a7c01aa45a01255798e016f8b9e87b313f40758aaea8395d828"
+    },
+    {
+      "path": "docs/results/2026/10-28/local-retrieval-source.json",
+      "bytes": 3015,
+      "sha256": "bb589d6f1a642dfe52791e0c9e238c79368e8e94d94545375b041bdb45e3d98c"
+    },
+    {
+      "path": "docs/results/2026/10-28/local-retrieval.md",
+      "bytes": 3587,
+      "sha256": "ddfa3392c2bbaf20da530ac4a1cc2259c36b541a23469b6bbc8aa09f39925fd1"
+    },
+    {
+      "path": "docs/results/2026/10-30/local-mcp-publication.json",
+      "bytes": 2860,
+      "sha256": "b09e2cef73e0b3f48c357e61588a1bbac254ab086977e8df7243c0faf775a045"
+    },
+    {
+      "path": "docs/results/2026/10-30/local-mcp-source.json",
+      "bytes": 7438,
+      "sha256": "2e940341f5c4a8de77af2b9b60236e5517cb66a089bbe19ccd286deb9a008d1d"
+    },
+    {
+      "path": "docs/results/2026/10-30/local-mcp-source.md",
+      "bytes": 4889,
+      "sha256": "decae3803363ae1b8fc05c80b006ff6353c617148b3fccdbe898bdc61d09b649"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-mcp-checks.json",
+      "bytes": 12812,
+      "sha256": "8fb8d9c1d84bf24aadd4eef070768cf46a90a73d6fa4711c0d2c5361d1c0514e"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-mcp-checks.md",
+      "bytes": 3421,
+      "sha256": "2c640e904718a9ffb696c5af00970068cfb81eca40016b4ce2ef058ab24b8219"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-checks.json",
+      "bytes": 21348,
+      "sha256": "fe108f55bbdf2a07086638d780ee08e948bcb22ef1687a4e6405eda7287ea1c4"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-checks.md",
+      "bytes": 3892,
+      "sha256": "7be3ec4aa157818919e47a1f25225813d79363c5b9e3a5dc36474c28d2bb5f8c"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-attempt1.json",
+      "bytes": 4708,
+      "sha256": "85174019d088f8bfbff582f13e67fd2bc49995197d3adc00ec00a4f3fba137f0"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-attempt1.md",
+      "bytes": 2885,
+      "sha256": "5f3ea6e95d8c92a0408021e7afcfa93a7013ab4e75fa7bedd6ca62559b678c06"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-attempt2.json",
+      "bytes": 5521,
+      "sha256": "5acc17224982fa930a0c55f6bc508e8d3e69b04253e017ab45eefccfedc0f1ab"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-attempt2.md",
+      "bytes": 3231,
+      "sha256": "85d68b62de8989bcdf2a54914a5d25ed92547d172a64be4d296314bfbe5c3ce6"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-checks.json",
+      "bytes": 51963,
+      "sha256": "6093714eead568750193eebd5d8e41b673294f3664fca96a97ce813d10ae6415"
+    },
+    {
+      "path": "docs/results/2026/10-31/local-reader-ci-checks.md",
+      "bytes": 4190,
+      "sha256": "b20bc66ccc4e8c322808865b4a69f62b8241f53662240fdca016f879bddf9096"
+    },
+    {
+      "path": "docs/results/2026/11-07/local-inspector-client-attempt-1.json",
+      "bytes": 853964,
+      "sha256": "e64f55b04b0b8048d9998cf22bc0e3d5f001899b80169faa2f7cdefeb3fe1abb"
+    },
+    {
+      "path": "docs/results/2026/11-07/local-inspector-client-attempt-1.md",
+      "bytes": 5523,
+      "sha256": "6786b81071f09fd6db7f055a9aa09ded29080bf840875257a6152b13219845cf"
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.json",
+      "bytes": 884641,
+      "sha256": "c6020b402c586cb91c7c2336b69b40e8400dc8834560a66714b7b440ed18e6b8"
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.log",
+      "bytes": 910195,
+      "sha256": "1d5a1e55e95a737287c1b5bdef35a4214b2c6476abbddc21c71541e9aa64221b"
+    },
+    {
+      "path": "docs/results/2026/11-07/local-qmd-keyword-attempt-1.md",
+      "bytes": 4909,
+      "sha256": "e71f0c040e1a664d2aaabf5c1e6b19ec2d57e7c4c49c232d190bf10a9c4c9095"
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.json",
+      "bytes": 22950,
+      "sha256": "cba9c9f708d4dffd5db54decc83dfc4c3aef9da301197330dcafe660bb80b7cb"
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.log",
+      "bytes": 42305,
+      "sha256": "3007e7c4b8e9673ede1a0d115b11e58fbba1b38e76409742a039518ae88d6146"
+    },
+    {
+      "path": "docs/results/2026/11-07/qmd-package-metadata-attempt-1.md",
+      "bytes": 3726,
+      "sha256": "4b2a84ee5e8d7bf4a4c22efd375848608046f2d0d674178e2c364e07e816fabf"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-attempt-1-job.log.gz",
+      "bytes": 4829,
+      "sha256": "840edae5db8cfd9f85b5b135823528e9a34bbc0a407b1ca3a96bba7794b7404e"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-attempt-2-job.log.gz",
+      "bytes": 5254,
+      "sha256": "aea34cb84e721ebb7cf6b44381f9dedfbbe6454a3c2cd56026e41373daef08c7"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-attempt-2.zip",
+      "bytes": 78502,
+      "sha256": "6f6c6ee2b872587619c0cc96d11d37bb32844454ccabbe1de1664cd75e4435e9"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-attempt-3-job.log.gz",
+      "bytes": 6730,
+      "sha256": "a2a01f4892905e192e5f7bc9524f7ba72805e0324f5ed3320a79a2c37ce324c5"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-attempt-3.zip",
+      "bytes": 571320,
+      "sha256": "15573c1ba4ada8dba209a101968cfe7a77e81417f93a394caedd83a822d37cdf"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-audit.json",
+      "bytes": 4786,
+      "sha256": "c403c30a5c0031c3ef35777278dbe0ddaf1dd1b5870157ab4d3b6318338fb1b3"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-controls.json",
+      "bytes": 779,
+      "sha256": "eb4949040e2bc09430f51f4a6160cefc76e7c2211aa9db8d59596ba54d955b4a"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd-source-tree.json",
+      "bytes": 146200,
+      "sha256": "3bbec3a42022272caa44daefd9fdbc3e6ae51b03f1fbfc9680e5b9782f8a2f4b"
+    },
+    {
+      "path": "docs/results/2026/11-13/local-mcp-qmd.md",
+      "bytes": 5916,
+      "sha256": "9ed9d5ce0a37a7d72ed986873d6c2f816eac32ae217e8ee046405b82ce92223b"
+    },
+    {
+      "path": "docs/results/2026/11-13/verify-local-mcp-qmd.py",
+      "bytes": 9433,
+      "sha256": "c975b504705f80a350110add1676b593adb6f29699be8e475ada02b167fb4b82"
+    },
+    {
+      "path": "docs/testing.md",
+      "bytes": 3242,
+      "sha256": "6096bfee8d22cf0601b418d7300e4c15e00c01d62dec4ab0fc2b29aa9317d125"
+    },
+    {
+      "path": "tests/README.md",
+      "bytes": 3640,
+      "sha256": "bfe9ad5d4e008b367225cf8a900daa3b402122c7f087c3df99a75d5d8147c97d"
+    },
+    {
+      "path": "tests/fixtures/local-mcp-qmd-tool-package.json",
+      "bytes": 179,
+      "sha256": "fefb1a2da71b84e84799bcb04f18d202e2e8f111c62b20937a1748ca74435338"
+    },
+    {
+      "path": "tests/helpers/qmd-native-admission.mjs",
+      "bytes": 2509,
+      "sha256": "7c150b7700c98ebf66b22918c82ef833da4f7c19b58df8ed2f69fd68c0822962"
+    },
+    {
+      "path": "tests/helpers/record-real-qmd.mjs",
+      "bytes": 2967,
+      "sha256": "3e42e1ebfdf494a64520de5cd0cd1946e9943a965bbb68583899411e5a967f20"
+    },
+    {
+      "path": "tests/integration/local-inspector-client.mjs",
+      "bytes": 27528,
+      "sha256": "f9672bd0aefcd6e30672f4ba6219e4e9ff04e3416b903139b4602914f0823882"
+    },
+    {
+      "path": "tests/integration/local-mcp-qmd.mjs",
+      "bytes": 11457,
+      "sha256": "ddf08752eb274ecedb2a6d65dcd4f5d2ea010963924234bb48ced974c1900062"
+    },
+    {
+      "path": "tests/integration/local-qmd-keyword.mjs",
+      "bytes": 35377,
+      "sha256": "b61071b21fee2b701f3f7652defc9d84a6cb6ac75aae8730445a1895be42d347"
+    },
+    {
+      "path": "tests/scripts/inspect-qmd-package-metadata.py",
+      "bytes": 13485,
+      "sha256": "5a61bf8dfe6253d16929302e947e261f94c104c4a98d10266ca7e9755f4d455d"
+    },
+    {
+      "path": "tests/scripts/run-local-inspector-checks.mjs",
+      "bytes": 42544,
+      "sha256": "e82377bb57f5b5463ea823d837af2ea28b0d9817344f1849f162bda369f4949a"
+    },
+    {
+      "path": "tests/scripts/run-local-mcp-qmd.py",
+      "bytes": 22203,
+      "sha256": "f64d053ec1593828cc47ad3e971a3eb3279976333a813a5f0b081cbc877d4f47"
+    },
+    {
+      "path": "tests/scripts/run-local-qmd-checks.mjs",
+      "bytes": 61017,
+      "sha256": "6724f6d683edea5df69efb05713a3e3c7d676df0cf3d58a252388e35b87444e8"
+    },
+    {
+      "path": "tests/unit/local-cli.test.mjs",
+      "bytes": 18110,
+      "sha256": "247bbc218c70751b24b6344b2d482b73a1981f089868bfa636944e555f8dd63b"
+    },
+    {
+      "path": "tests/unit/local-corpus.test.mjs",
+      "bytes": 11772,
+      "sha256": "d9d4bf1b1ccd6a106240300792b084730f4dc6f5ce3f42f038b3831d8eb54d8a"
+    },
+    {
+      "path": "tests/unit/local-mcp-qmd.test.mjs",
+      "bytes": 8453,
+      "sha256": "577ba45f7176dd5115ab3766b8059e409b3f1e50bed6568b36622cff7a3f388c"
+    },
+    {
+      "path": "tests/unit/local-mcp.test.mjs",
+      "bytes": 29804,
+      "sha256": "0d40f50552480665cb0111e9ab7e02e68b7489f9437d9c040245c051612d0cd5"
+    },
+    {
+      "path": "tests/unit/local-process.test.mjs",
+      "bytes": 9701,
+      "sha256": "2a75aa1a8dbba846a0007e6a933dc1f8345df8019980b71c19149ba602f1132f"
+    },
+    {
+      "path": "tests/unit/local-retrieval.test.mjs",
+      "bytes": 16133,
+      "sha256": "00e6a3f71155dc83fa0b7746bb465bc0ee71bd9e06ea794464341142bc62d20b"
+    }
+  ],
+  "preserved_upstream_file_bytes": 4133234,
+  "prior_consumer_checked_source_hashes_unchanged": {
+    "SOURCES.md": "844eb822d7fb0220d78f63e517c86afa80e35404f8eea8f3c1f8e3614c3a122f",
+    "docs/audits/2026/10-10/check-template-consumer.mjs": "b6a79cd53693b54f95d74fd13243511f5df22dedc22a03bf437654cd6e1573be",
+    "lib/vafs/afs-contract.ts": "c44f036afc47f2de036d6f8863e80705c4b4b71c5205666a9ba2da292028e67a",
+    "lib/vafs/fixtures.ts": "c1c0e00de8ae48f2103b3f954be29d393dd9c377e2e1cb02ca3aee8765b41019",
+    "packages/skills/vafs-use/assets/agents-fs-template/AGENTS.md": "071d0d230e6cadb7727ba916969425ee9f8feb8c5b9bca57ee21a4b94a18cb2a",
+    "packages/skills/vafs-use/assets/agents-fs-template/SOURCES.md": "e54ad9651c482bde99a3b7f5da769a64ac18385c607f7188b8cac57d88bb5f9e",
+    "packages/skills/vafs-use/assets/agents-fs-template/research/README.md": "bf83e1df3afce829e2d24500d788e1e032ed224edad74dd0499dc1ab381c802f"
+  },
+  "prior_local_consumer_proof_scope": "unchanged historical scaffold modules; does not test accepted local-reader/MCP additions",
+  "additional_local_consumer_mcp_or_app_tests": false,
+  "existing_profile_gates_and_failure_evidence_preserved": true
+}

@@ -1,0 +1,14 @@
+{
+  "source_head": "cfdeee8b367c81580c92f3d36157de2bcbf4adaa",
+  "command": "node docs/audits/2026/10-10/check-template-consumer.mjs",
+  "exit_code": 1,
+  "output_chunk": "cd2b8d",
+  "review_findings": [4238960326, 4238960330, 4238960332],
+  "failed_regression_cases": [
+    "owner-neutral personal proposal",
+    "owner-neutral company proposal",
+    "PRODUCT root classification",
+    "literal Markdown placeholders"
+  ],
+  "existing_eight_asset_byte_parity_passed_before_regressions": true
+}
