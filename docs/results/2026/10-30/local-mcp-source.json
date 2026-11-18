@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "baseCommit": "9e05d6e918789e6c4f81b74d04740293250333ce",
+  "scope": "Selected dependency-closed local MCP source, authored cases and relevant contract documents; not a full repository snapshot",
+  "excluded": [
+    "docs/results/"
+  ],
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "mode": "100644",
+      "bytes": 327,
+      "sha256": "e3447d84251880fb34cfae09131cb4c57471529bbfe60976a3245793cf621627",
+      "gitSha": "8bd0e39085d5260e7f8faffcad2fdc45e10aef33"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "bytes": 5108,
+      "sha256": "73a341079a7d88ae705d4233ddf007ef575f4d5582a771151a6472a178e2eff9",
+      "gitSha": "20520f898819288e868de3ff5e1ba58c28a83700"
+    },
+    {
+      "path": "bin/local/corpus.mjs",
+      "mode": "100644",
+      "bytes": 13514,
+      "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e",
+      "gitSha": "5c6872cc9f840daba1df00f94db4c93b6047dfff"
+    },
+    {
+      "path": "bin/local/errors.mjs",
+      "mode": "100644",
+      "bytes": 905,
+      "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0",
+      "gitSha": "8d2943ce8487235ad91d56c579fe52f34f530ca6"
+    },
+    {
+      "path": "bin/local/mcp.mjs",
+      "mode": "100644",
+      "bytes": 14911,
+      "sha256": "42d667a4facc01a278808c2d07a34ffc6b083eec59e76e0699390eddc3a9140d",
+      "gitSha": "0f98a706802b1eb027f5886e55f5783a8789a064"
+    },
+    {
+      "path": "bin/local/process.mjs",
+      "mode": "100644",
+      "bytes": 4030,
+      "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0",
+      "gitSha": "c6b324516b2c3748ed1db2dd8c4036afe1888434"
+    },
+    {
+      "path": "bin/local/retrieval.mjs",
+      "mode": "100644",
+      "bytes": 13062,
+      "sha256": "1cc950e0b11b21909b4ffdbdc28502157795d895e5feb24aa32d451fee5e64aa",
+      "gitSha": "d43a729a09128d172b3dc9a258ff96879e4311cf"
+    },
+    {
+      "path": "bin/vafs-local-mcp.mjs",
+      "mode": "100755",
+      "bytes": 510,
+      "sha256": "991bf966380d4a143134fc93eb18b16cda89bcc76e38e89892a9283905381dac",
+      "gitSha": "20d66cfc65f6ed71a070d560c511917e8b79d164"
+    },
+    {
+      "path": "docs/architecture.md",
+      "mode": "100644",
+      "bytes": 1714,
+      "sha256": "f19a443ffeff5dc08287bfb4e22e5ab44de702168922bdeda2fc732fe5c4d646",
+      "gitSha": "8a8f6ea0acc5b348873e05721c352f76bcca427f"
+    },
+    {
+      "path": "docs/local-mcp.md",
+      "mode": "100644",
+      "bytes": 5348,
+      "sha256": "7a807a6789de7380e3a05b6da0ad1c6db465c350c84ebaa1442d8e8b1345f825",
+      "gitSha": "675d1871b3cc7d6dd30b48eddbe797afeace91b1"
+    },
+    {
+      "path": "docs/local-retrieval.md",
+      "mode": "100644",
+      "bytes": 7010,
+      "sha256": "eb6db0f54c2c04c921202ea85a0e7efee96b593fe6684a11c949754140151ce0",
+      "gitSha": "2ddfd4c9ed74be9efdc619ef1caa53813b90f3b8"
+    },
+    {
+      "path": "docs/proposals/local-mcp-checks.md",
+      "mode": "100644",
+      "bytes": 4189,
+      "sha256": "15b7345fe4629236466f67d53a977afcb7fb74495ac5287ab9abb66b8ca0f287",
+      "gitSha": "e98c50c51c3cb2226cd5e67f5703295d93c2b967"
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "bytes": 1255,
+      "sha256": "670eae5ba3f561f58af50abb108709ca7647df41b0081918aa808d8c89c35f3a",
+      "gitSha": "422f7b4f8c27235a68c7041beaec9361c830e80b"
+    },
+    {
+      "path": "tests/unit/local-mcp.test.mjs",
+      "mode": "100644",
+      "bytes": 29804,
+      "sha256": "0d40f50552480665cb0111e9ab7e02e68b7489f9437d9c040245c051612d0cd5",
+      "gitSha": "ee1590fced6de7a9ca0a96449584835d1e181b5b"
+    }
+  ],
+  "testFiles": [
+    {
+      "path": "tests/unit/local-mcp.test.mjs",
+      "count": 34,
+      "names": [
+        "local MCP requires an explicit directory before invoking any trusted reader seam",
+        "local MCP canonicalizes an explicit startup alias and passes only that root to readers",
+        "local MCP modern discovery advertises complete supported versions and read-only capabilities without legacy initialization",
+        "local MCP lists exactly three tools whose schemas cannot select roots raw intake QMD or writes",
+        "local MCP legacy initialization requires a valid initialized notification before tool use",
+        "local MCP ping works before initialization and ordinary notifications never receive responses",
+        "local MCP rejects malformed JSON-RPC envelopes without inventing a successful tool result",
+        "local MCP unknown request methods return Method not found independently of legacy state",
+        "local MCP unsupported modern versions return supported and requested protocol data",
+        "local MCP malformed or partial modern metadata cannot borrow an initialized legacy session",
+        "local MCP rejects per-call root raw QMD workspace and export overrides before invoking readers",
+        "local MCP actual metadata indexing is offline excludes raw and ignored files and changes no source bytes",
+        "local MCP actual page reads retain exact BOM CRLF Unicode bytes and their independent SHA-256",
+        "local MCP actual ripgrep search preserves byte offsets current hashes and the disabled QMD leg",
+        "local MCP repeated page calls read current vetted bytes instead of serving an earlier snapshot",
+        "local MCP page eligibility rejects traversal absolute raw ignored hidden and symlink paths without disclosing outside content",
+        "local MCP tool names argument types and result limits reject invalid params before dispatch",
+        "local MCP known operational failures preserve only finite codes in text and structured content",
+        "local MCP unexpected operational errors never expose paths queries or thrown private details",
+        "local MCP over-budget responses fail as finite errors rather than truncating a result",
+        "local MCP one active retrieval fences another tool with an explicit busy result",
+        "local MCP cancellation notifications abort their own retrieval and send no reply",
+        "local MCP stale cancellation cannot abort a different active request",
+        "local MCP close aborts active work suppresses late results and ignores later requests",
+        "local MCP rejects root directory replacement before another reader can enter",
+        "local MCP rechecks root identity after a pending read before publishing captured content",
+        "local MCP transport emits protocol-only complete modern responses and no notification acknowledgement",
+        "local MCP transport rejects malformed JSON and UTF-8 frames but remains usable",
+        "local MCP transport terminates oversized request frames with finite failure and no echoed payload",
+        "local MCP transport reports an incomplete EOF frame instead of executing it",
+        "local MCP EOF closes a buffered retrieval without publishing a tool result",
+        "local MCP transport limits outstanding handler writes and resumes only after an owned write settles",
+        "local MCP CLI rejects missing duplicate and capability-expanding startup arguments without a protocol response",
+        "local MCP output failure closes the transport with a finite nonzero outcome"
+      ]
+    }
+  ],
+  "checks": {
+    "nodeVersion": "v22.23.3",
+    "rgVersion": "15.2.0",
+    "syntaxModules": 7,
+    "importRecords": 29,
+    "localMarkdownLinks": 10,
+    "whitespace": "passed",
+    "functionalExecution": "unrun"
+  }
+}

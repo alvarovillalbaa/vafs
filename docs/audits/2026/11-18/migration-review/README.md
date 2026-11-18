@@ -11,7 +11,7 @@ Markdown are inline code; runtime strings and all eight exported files remain
 byte-identical. React catalog path values already render inside code elements
 and retain their actual values.
 
-The [focused consumer check](../../10-10/check-template-consumer.mjs) passes
+Before base reconciliation, the [focused consumer check](../../10-10/check-template-consumer.mjs) passed
 actual proposal, discovery, get and search consumers plus all four regressions.
 These are existing pure historical mock functions, not live integrations or
 repository creation. The existing route/presence validator and whitespace checks
@@ -30,6 +30,30 @@ the two Markdown assets. It does not establish browser or app rendering.
 The [verification receipt](verification.json) binds the checked source bytes.
 [Five read-only review lenses](peer-review.json) found no actionable defects;
 the final claim-accuracy pass also checks this audit, provenance and log.
+
+## Reconciliation with current main
+
+The PR metadata reported its old base `1f243e4`, but direct branch inspection
+found `55eb26c` and 21 accepted intervening commits. Git confirmed the resulting
+divergence. A normal merge resolves only AGENTS/README conflicts while retaining
+the accepted local reader/MCP profile and its original evidence. The catalogue
+and historical hosted prototype remain distinct from that accepted local reader.
+
+The [preservation record](base-reconciliation.json) verifies all 73 other upstream
+changed files byte for byte, including every failure receipt and all CLI/MCP code.
+The seven prior checked-source hashes remain unchanged. That prior consumer
+proof therefore applies to the historical scaffold modules; it does not test the
+newer local-reader/MCP code. No additional local consumer, index or MCP tests ran.
+The accepted profile's local source/static-only gates remain in force.
+
+The [final reconciliation check](base-reconciliation-final.json) preserves the
+upstream profile and local-reader README blocks exactly. The proposed diff
+against current main passes whitespace checks. The full staged merge reports
+20 inherited trailing-space findings in two original job logs; those files are
+byte-identical to upstream and were not reformatted. This limitation is retained,
+rather than represented as a clean full staged check.
+[Five fresh-base static review lenses](fresh-base-peer-review.json) found no
+actionable defects in the reconciled patch and preservation claims.
 
 The virtual filesystem layer remains cancelled. This is maintenance of its
 existing AFS catalog and export scaffold. No Next API, access control, runtime

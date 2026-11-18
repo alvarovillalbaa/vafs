@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-30 21:55:18 UTC",
+  "repository": "alvarovillalbaa/vafs",
+  "branch": "main",
+  "parentCommit": "9e05d6e918789e6c4f81b74d04740293250333ce",
+  "parentTree": "bd0d8d178af5ef7ba60220a56bb400d18ab4308e",
+  "sourceCommit": "ac3d57c077c7fc728ae18274e5c3a84107d9f552",
+  "sourceTree": "f121f3f4035ec7eb7f09574b57194ebdc32dcd7b",
+  "verification": {
+    "untruncated": true,
+    "baselineLeaves": 940,
+    "publishedLeaves": 947,
+    "modified": 2,
+    "added": 7,
+    "removed": 0,
+    "unrelatedLeavesPreserved": 938,
+    "allPathsModesTypesAndBlobShasMatched": true,
+    "branchReadbackMatches": true,
+    "proposalReadbackMatches": true,
+    "actionsRuns": 0,
+    "activeWorkflowFiles": 0
+  },
+  "changes": [
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "previousSha": "4599d668b20d286444bee72f396b8012ead1f033",
+      "sha": "20520f898819288e868de3ff5e1ba58c28a83700"
+    },
+    {
+      "path": "bin/local/mcp.mjs",
+      "mode": "100644",
+      "previousSha": null,
+      "sha": "0f98a706802b1eb027f5886e55f5783a8789a064"
+    },
+    {
+      "path": "bin/vafs-local-mcp.mjs",
+      "mode": "100755",
+      "previousSha": null,
+      "sha": "20d66cfc65f6ed71a070d560c511917e8b79d164"
+    },
+    {
+      "path": "docs/architecture.md",
+      "mode": "100644",
+      "previousSha": "12455c288b743d1252db32dcfef6ec9691238a9e",
+      "sha": "8a8f6ea0acc5b348873e05721c352f76bcca427f"
+    },
+    {
+      "path": "docs/local-mcp.md",
+      "mode": "100644",
+      "previousSha": null,
+      "sha": "675d1871b3cc7d6dd30b48eddbe797afeace91b1"
+    },
+    {
+      "path": "docs/proposals/local-mcp-checks.md",
+      "mode": "100644",
+      "previousSha": null,
+      "sha": "e98c50c51c3cb2226cd5e67f5703295d93c2b967"
+    },
+    {
+      "path": "tests/unit/local-mcp.test.mjs",
+      "mode": "100644",
+      "previousSha": null,
+      "sha": "ee1590fced6de7a9ca0a96449584835d1e181b5b"
+    },
+    {
+      "path": "docs/results/2026/10-30/local-mcp-source.md",
+      "mode": "100644",
+      "previousSha": null,
+      "sha": "a84b30cbb05efaa0ea75428dea315e365026ec50"
+    },
+    {
+      "path": "docs/results/2026/10-30/local-mcp-source.json",
+      "mode": "100644",
+      "previousSha": null,
+      "sha": "e57a3df4b4230ea62c12ec64425a12cc51b8f65f"
+    }
+  ],
+  "functionalChecks": {
+    "cases": 34,
+    "status": "unrun",
+    "approval": "requested",
+    "proposalPath": "docs/proposals/local-mcp-checks.md"
+  },
+  "limits": [
+    "Selected-text bundle, not a full local checkout or an installed client",
+    "No test, server, client, model/provider, CI, dependency, Auth, schema or deployment action",
+    "Hosted and full portfolio acceptance unfinished"
+  ],
+  "readbackNote": "Initial wrapper treated file text as JSON; corrected file/API response handling. No source/test change or test execution."
+}

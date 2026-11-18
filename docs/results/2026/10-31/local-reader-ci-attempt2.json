@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "vafs.local-reader-ci-attempt.v1",
+  "date": "2026-10-31",
+  "status": "preflight-failed-before-tests",
+  "repository": "alvarovillalbaa/vafs",
+  "source": {
+    "commit": "d6888b7ab92cc17630858831879453402397b91e",
+    "tree": "bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89",
+    "sealedInputs": 11
+  },
+  "workflow": {
+    "path": ".github/workflows/local-reader-checks.yml",
+    "commit": "5667b85e509cd62cd62eac0b6c975ed903a9eff0",
+    "sha256": "0b2249e1d2536d0373ae5160b5c7c471c5c9d37a1edafab54bc20f3396580c1c"
+  },
+  "run": {
+    "id": 41241021475,
+    "attempt": 1,
+    "event": "push",
+    "branch": "main",
+    "url": "https://github.com/alvarovillalbaa/vafs/actions/runs/41241021475",
+    "createdAt": "2026-10-31T20:53:46Z",
+    "completedAt": "2026-10-31T20:54:02Z",
+    "status": "completed",
+    "conclusion": "failure"
+  },
+  "job": {
+    "id": 124654756817,
+    "name": "reader",
+    "url": "https://github.com/alvarovillalbaa/vafs/actions/runs/41241021475/job/124654756817",
+    "conclusion": "failure",
+    "controllerExitCode": 1,
+    "reportAt": "2026-10-31T20:53:59.3853834Z"
+  },
+  "execution": {
+    "expectedCases": 63,
+    "executedCases": 0,
+    "childStarted": false,
+    "sourceGuardsRan": false,
+    "ownedProcessCaseRan": false,
+    "retries": 0
+  },
+  "runtime": {
+    "runnerLabel": "ubuntu-24.04",
+    "nodeVersionFromSetup": "v26.13.0",
+    "nodeBinarySha256": null,
+    "rgVersion": null,
+    "rgBinarySha256": null,
+    "qualification": "Setup-node logged v26.13.0. No qualifying rg executable was resolved, so the controller did not assign its runtime attribution object or record any binary hash."
+  },
+  "diagnosis": {
+    "code": "rg_missing",
+    "lookup": "The repaired resolver examined nonempty absolute runner-PATH directories and required a resolved regular executable without CR/LF/NUL. It found no qualifying rg executable through that lookup.",
+    "scope": "This establishes the supported PATH lookup failure for this job, not a scan of the whole runner filesystem."
+  },
+  "cleanupQualification": "The resolver failed before fixture allocation or child spawn. No owned task directory existed; ownedTmpRemoved=false does not indicate a leaked fixture. No process was forcibly stopped.",
+  "report": {
+    "schemaVersion": "vafs.local-reader-ci.v1",
+    "sourceCommit": "d6888b7ab92cc17630858831879453402397b91e",
+    "workflowCommit": "5667b85e509cd62cd62eac0b6c975ed903a9eff0",
+    "command": [
+      "node",
+      "--test",
+      "--test-concurrency=1",
+      "--test-reporter=tap",
+      "tests/unit/local-corpus.test.mjs",
+      "tests/unit/local-retrieval.test.mjs",
+      "tests/unit/local-cli.test.mjs",
+      "tests/unit/local-process.test.mjs"
+    ],
+    "limits": {
+      "wallMs": 120000,
+      "termKillGraceMs": 3000,
+      "stdoutBytes": 262144,
+      "stderrBytes": 65536,
+      "childEnvironment": [
+        "PATH",
+        "TMPDIR",
+        "TZ"
+      ]
+    },
+    "childCode": null,
+    "childSignal": null,
+    "stopped": null,
+    "signals": [],
+    "problems": [
+      "rg_missing"
+    ],
+    "totals": {},
+    "plans": [],
+    "exactCases": false,
+    "cases": [],
+    "sourceGuard": {},
+    "stdout": {
+      "bytes": 0,
+      "capturedBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "capturedBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    },
+    "cleanup": {
+      "processesStopped": true,
+      "ownedTmpRemoved": false,
+      "forced": false
+    },
+    "passed": false,
+    "proofLimits": "Authored local fixtures/real rg/scripted QMD only; no real QMD index/model, private corpus, external service, install, browser, database or hosted/MCP acceptance."
+  },
+  "nextPacket": {
+    "status": "prepared-static-only",
+    "runnerTool": "Ubuntu 24.04 signed-package ripgrep=14.1.0-1",
+    "packageSource": "https://packages.ubuntu.com/noble/ripgrep",
+    "installStepTimeoutMinutes": 3,
+    "commands": [
+      "sudo apt-get update",
+      "sudo apt-get install --yes --no-install-recommends ripgrep=14.1.0-1"
+    ],
+    "profile": "Proposed Ubuntu Node26.13.0/RG14.1.0 profile is separate from the prior macOS Node26.8.2/RG15.2.0 profile. Future successful preflight must record actual Node/RG versions and binary SHA-256 values; no such outcome is claimed here.",
+    "boundaries": "Ephemeral runner test tooling only; no local installation or application dependency/model install. Original 63 cases, 11 inputs, source pin and controller limits remain unchanged."
+  },
+  "history": {
+    "attempt1": "docs/results/2026/10-31/local-reader-ci-attempt1.md",
+    "macReceipt": "docs/results/2026/10-31/local-reader-checks.md",
+    "qualification": "Attempt1 searched only three fixed directories. The macOS result remains 62 passes and one ps EPERM failure; neither Ubuntu zero-case attempt replaces that history."
+  },
+  "limits": [
+    "No tests, source guards, fixture creation or Linux /proc descendant acceptance ran.",
+    "No source/test/seal change, local installation, browser, database, provider, model or hosted/MCP acceptance.",
+    "This receipt retains the actual pre-install controller report verbatim, including its historical no-install proof-limit wording; the prepared workflow now says no application dependency/model install.",
+    "No workflow execution or publication was performed while preparing this repair."
+  ]
+}

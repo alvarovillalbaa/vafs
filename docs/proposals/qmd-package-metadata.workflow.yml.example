@@ -1,0 +1,49 @@
+# INACTIVE. Root replaces the reviewed source pin before separate QA activation.
+name: Temporary vAFS QMD published package metadata 1
+on:
+  create:
+permissions:
+  contents: read
+jobs:
+  package-metadata:
+    if: github.repository == 'alvarovillalbaa/vafs' && github.event.repository.private == false && github.event.ref_type == 'branch' && github.event.ref == 'qa/vafs-qmd-metadata-20261107-1' && github.ref == 'refs/heads/qa/vafs-qmd-metadata-20261107-1'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      CI: 'true'
+      SOURCE_COMMIT: PREPARATION_SHA_REPLACED_BY_ROOT
+      VAFS_QMD_PUBLIC_REPOSITORY: ${{ github.event.repository.private == false }}
+    steps:
+      - name: Record earliest user-step clock
+        run: echo "VAFS_QMD_JOB_STARTED_MS=$(date +%s%3N)" >> "$GITHUB_ENV"
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          ref: ${{ env.SOURCE_COMMIT }}
+          persist-credentials: false
+          clean: false
+          fetch-depth: 1
+          sparse-checkout: tests/scripts/inspect-qmd-package-metadata.py
+          sparse-checkout-cone-mode: false
+      - name: Inspect only five exact public registry JSON manifests
+        run: |
+          script=tests/scripts/inspect-qmd-package-metadata.py
+          guard_source() {
+            test "$(git rev-parse HEAD)" = "$SOURCE_COMMIT" || return 1
+            source_status="$(git status --porcelain=v1 --untracked-files=all)" || return 1
+            test -z "$source_status" || return 1
+            git diff --no-ext-diff --no-textconv --quiet --exit-code HEAD -- || return 1
+            git diff --check -- "$script" docs/proposals/qmd-package-metadata.md docs/proposals/qmd-package-metadata.workflow.yml.example || return 1
+          }
+          guard_source
+          before_hash="$(sha256sum "$script")"
+          printf '%s\n' "$before_hash"
+          set +e
+          python3 -I -B "$script" --source-commit "$SOURCE_COMMIT"
+          probe_status=$?
+          guard_source
+          guard_status=$?
+          after_hash="$(sha256sum "$script")"
+          hash_status=$?
+          printf '%s\n' "$after_hash"
+          if [ "$probe_status" -ne 0 ]; then exit "$probe_status"; fi
+          if [ "$guard_status" -ne 0 ] || [ "$hash_status" -ne 0 ] || [ "$before_hash" != "$after_hash" ]; then exit 1; fi

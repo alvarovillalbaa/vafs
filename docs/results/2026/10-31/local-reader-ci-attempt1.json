@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "vafs.local-reader-ci-attempt.v1",
+  "date": "2026-10-31",
+  "status": "preflight-failed-before-tests",
+  "repository": "alvarovillalbaa/vafs",
+  "source": {
+    "commit": "d6888b7ab92cc17630858831879453402397b91e",
+    "tree": "bc30cc80f47537a8fb820a744fe0c1b2ea7b7a89",
+    "sealedInputs": 11
+  },
+  "workflow": {
+    "path": ".github/workflows/local-reader-checks.yml",
+    "commit": "fcceae7f5b8dd9a779a05b7d857faf236925a1c5",
+    "sha256": "86890a61e55d761c2dffcd64763736099da407615a48a2ba62f97842e1932df9"
+  },
+  "run": {
+    "id": 41240582792,
+    "attempt": 1,
+    "event": "push",
+    "branch": "main",
+    "url": "https://github.com/alvarovillalbaa/vafs/actions/runs/41240582792",
+    "createdAt": "2026-10-31T20:48:03Z",
+    "completedAt": "2026-10-31T20:48:18Z",
+    "status": "completed",
+    "conclusion": "failure"
+  },
+  "job": {
+    "id": 124653456687,
+    "name": "reader",
+    "url": "https://github.com/alvarovillalbaa/vafs/actions/runs/41240582792/job/124653456687",
+    "conclusion": "failure",
+    "controllerExitCode": 1,
+    "reportAt": "2026-10-31T20:48:16.0793158Z"
+  },
+  "execution": {
+    "expectedCases": 63,
+    "executedCases": 0,
+    "childStarted": false,
+    "sourceGuardsRan": false,
+    "ownedProcessCaseRan": false,
+    "retries": 0
+  },
+  "runtime": {
+    "runnerLabel": "ubuntu-24.04",
+    "nodeVersionFromSetup": "v26.13.0",
+    "nodeBinarySha256": null,
+    "rgVersion": null,
+    "rgBinarySha256": null,
+    "qualification": "Setup-node logged v26.13.0; the controller failed before its runtime attribution object was assigned. No binary digest or rg version was recorded."
+  },
+  "diagnosis": {
+    "code": "rg_missing",
+    "searchedDirectories": [
+      "/usr/bin",
+      "/bin",
+      "/usr/local/bin"
+    ],
+    "scope": "The resolver searched only these three directories. It did not inspect the runner's full PATH, so this attempt does not establish that rg was absent from the runner.",
+    "repair": "Discover rg through nonempty absolute current-PATH directories; accept only a resolved regular executable without CR, LF or NUL. Keep the child PATH restricted to Node/RG directories plus /usr/bin and /bin; no install."
+  },
+  "cleanupQualification": "No test child or task directory was created. processesStopped=true and forced=false; ownedTmpRemoved=false reflects that no owned temporary directory existed.",
+  "report": {
+    "schemaVersion": "vafs.local-reader-ci.v1",
+    "sourceCommit": "d6888b7ab92cc17630858831879453402397b91e",
+    "workflowCommit": "fcceae7f5b8dd9a779a05b7d857faf236925a1c5",
+    "command": [
+      "node",
+      "--test",
+      "--test-concurrency=1",
+      "--test-reporter=tap",
+      "tests/unit/local-corpus.test.mjs",
+      "tests/unit/local-retrieval.test.mjs",
+      "tests/unit/local-cli.test.mjs",
+      "tests/unit/local-process.test.mjs"
+    ],
+    "limits": {
+      "wallMs": 120000,
+      "termKillGraceMs": 3000,
+      "stdoutBytes": 262144,
+      "stderrBytes": 65536,
+      "childEnvironment": [
+        "PATH",
+        "TMPDIR",
+        "TZ"
+      ]
+    },
+    "childCode": null,
+    "childSignal": null,
+    "stopped": null,
+    "signals": [],
+    "problems": [
+      "rg_missing"
+    ],
+    "totals": {},
+    "plans": [],
+    "exactCases": false,
+    "cases": [],
+    "sourceGuard": {},
+    "stdout": {
+      "bytes": 0,
+      "capturedBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    },
+    "stderr": {
+      "bytes": 0,
+      "capturedBytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "complete": true
+    },
+    "cleanup": {
+      "processesStopped": true,
+      "ownedTmpRemoved": false,
+      "forced": false
+    },
+    "passed": false,
+    "proofLimits": "Authored local fixtures/real rg/scripted QMD only; no real QMD index/model, private corpus, external service, install, browser, database or hosted/MCP acceptance."
+  },
+  "history": {
+    "macReceipt": "docs/results/2026/10-31/local-reader-checks.md",
+    "qualification": "The prior macOS result remains 62 passed and one owned-descendant check failed because ps returned EPERM. This Ubuntu preflight attempt neither reran nor resolved that platform-specific failure."
+  },
+  "limits": [
+    "No product source/test/seal changes; the immutable source and 63-case scope remain fixed.",
+    "No tests, source guards or Linux /proc descendant checks ran in this attempt.",
+    "No dependency install, private corpus, real QMD/model, browser, database, provider or hosted/MCP acceptance.",
+    "The resolver repair received static checks only; it has not run in CI at the time of this receipt."
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "local-retrieval-source-v1",
+  "baseCommit": "1f243e494f14d746425192ffed77b48333ea3509",
+  "state": "source-reviewed-tests-unexecuted",
+  "syntax": {
+    "nodeVersion": "v22.23.3",
+    "platform": "darwin",
+    "arch": "arm64",
+    "files": 11,
+    "errors": 0
+  },
+  "authoredCases": {
+    "local-corpus.test.mjs": 17,
+    "local-retrieval.test.mjs": 16,
+    "local-cli.test.mjs": 17,
+    "local-process.test.mjs": 13,
+    "total": 63
+  },
+  "sources": [
+    {
+      "path": "bin/cli.mjs",
+      "sha256": "d9b480cab48bc49372e6dc87c3befbf63899904b9bdf0604fdc2cb6309909b49",
+      "gitBlob": "c7a9dee9a2befb3f3f5daa9a576bd7d5704814a8"
+    },
+    {
+      "path": "bin/local/corpus.mjs",
+      "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e",
+      "gitBlob": "5c6872cc9f840daba1df00f94db4c93b6047dfff"
+    },
+    {
+      "path": "bin/local/errors.mjs",
+      "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0",
+      "gitBlob": "8d2943ce8487235ad91d56c579fe52f34f530ca6"
+    },
+    {
+      "path": "bin/local/output.mjs",
+      "sha256": "28951861f637796d2f59a3d3372b45bb1e3321241484c4f544db17ec6a88dd25",
+      "gitBlob": "b875aad8a81251d41fc4579c44f555afa99bc3ce"
+    },
+    {
+      "path": "bin/local/process.mjs",
+      "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0",
+      "gitBlob": "c6b324516b2c3748ed1db2dd8c4036afe1888434"
+    },
+    {
+      "path": "bin/local/retrieval.mjs",
+      "sha256": "1cc950e0b11b21909b4ffdbdc28502157795d895e5feb24aa32d451fee5e64aa",
+      "gitBlob": "d43a729a09128d172b3dc9a258ff96879e4311cf"
+    },
+    {
+      "path": "bin/vafs.mjs",
+      "sha256": "ad933ffeab7e9d23a94d0547188720092a102dd0a66adbf948a8681edc460679",
+      "gitBlob": "451c1498e96e93dbe50e4a1805f880ab7629e316"
+    },
+    {
+      "path": "tests/unit/local-cli.test.mjs",
+      "sha256": "247bbc218c70751b24b6344b2d482b73a1981f089868bfa636944e555f8dd63b",
+      "gitBlob": "2aa1f4ae1725003f82b0a071d76d246d99518efd"
+    },
+    {
+      "path": "tests/unit/local-corpus.test.mjs",
+      "sha256": "d9d4bf1b1ccd6a106240300792b084730f4dc6f5ce3f42f038b3831d8eb54d8a",
+      "gitBlob": "c91e182afab6860ab159b54bb690cfa5b0d0e1d8"
+    },
+    {
+      "path": "tests/unit/local-process.test.mjs",
+      "sha256": "2a75aa1a8dbba846a0007e6a933dc1f8345df8019980b71c19149ba602f1132f",
+      "gitBlob": "4a2dae61ec7ed0355a0412935b7794ce31daf387"
+    },
+    {
+      "path": "tests/unit/local-retrieval.test.mjs",
+      "sha256": "00e6a3f71155dc83fa0b7746bb465bc0ee71bd9e06ea794464341142bc62d20b",
+      "gitBlob": "c34d38506dfd4813a584880b509061b2c5b522c8"
+    }
+  ],
+  "unchangedBoundaries": [
+    "package.json",
+    "package-lock.json",
+    "hosted app/lib modules",
+    "bin/vafs-mcp.mjs",
+    "Supabase schema/Auth/configuration"
+  ],
+  "proofLimits": [
+    "No functional test or personal corpus scan",
+    "No real QMD binary/index/model",
+    "No browser/server/database/provider/CI/hosted readiness proof"
+  ]
+}

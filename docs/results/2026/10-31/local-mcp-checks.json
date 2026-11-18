@@ -1,0 +1,279 @@
+{
+  "schemaVersion": "vafs.local-mcp-checks.v1",
+  "date": "2026-10-31",
+  "status": "passed",
+  "authorization": "Current owner instruction to keep going and do all the work explicitly covers this focused authored 34-case scope; root assigned execution. No new approval, dependency, CI, hosted or native-client scope was added.",
+  "source": {
+    "repository": "alvarovillalbaa/vafs",
+    "commit": "7a4d979353936fde7b4ed958aa6ddd653699dda3",
+    "url": "https://github.com/alvarovillalbaa/vafs/tree/7a4d979353936fde7b4ed958aa6ddd653699dda3",
+    "implementationCommit": "ac3d57c077c7fc728ae18274e5c3a84107d9f552",
+    "selection": "Dependency-closed selected source bundle; not a full Git checkout.",
+    "manifest": "docs/results/2026/10-30/local-mcp-source.json",
+    "manifestSha256": "2e940341f5c4a8de77af2b9b60236e5517cb66a089bbe19ccd286deb9a008d1d",
+    "selectedInputCount": 14,
+    "selectedInputs": {
+      "AGENTS.md": {
+        "sha256": "e3447d84251880fb34cfae09131cb4c57471529bbfe60976a3245793cf621627",
+        "bytes": 327,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "README.md": {
+        "sha256": "73a341079a7d88ae705d4233ddf007ef575f4d5582a771151a6472a178e2eff9",
+        "bytes": 5108,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/corpus.mjs": {
+        "sha256": "03bda3913f41183d14e5dc814501b929c1bd551a6d258481277e504f6e595a2e",
+        "bytes": 13514,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/errors.mjs": {
+        "sha256": "658385ab83007163f206f4efe14ab1783a1f6dd269706759998c6b055664acb0",
+        "bytes": 905,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/mcp.mjs": {
+        "sha256": "42d667a4facc01a278808c2d07a34ffc6b083eec59e76e0699390eddc3a9140d",
+        "bytes": 14911,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/process.mjs": {
+        "sha256": "bf1ca10b11b6a1939791334450df70987ad9bed6c1899e0af25a2958d06b7aa0",
+        "bytes": 4030,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/local/retrieval.mjs": {
+        "sha256": "1cc950e0b11b21909b4ffdbdc28502157795d895e5feb24aa32d451fee5e64aa",
+        "bytes": 13062,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "bin/vafs-local-mcp.mjs": {
+        "sha256": "991bf966380d4a143134fc93eb18b16cda89bcc76e38e89892a9283905381dac",
+        "bytes": 510,
+        "mode": "100755",
+        "permissions": "755"
+      },
+      "docs/architecture.md": {
+        "sha256": "f19a443ffeff5dc08287bfb4e22e5ab44de702168922bdeda2fc732fe5c4d646",
+        "bytes": 1714,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "docs/local-mcp.md": {
+        "sha256": "7a807a6789de7380e3a05b6da0ad1c6db465c350c84ebaa1442d8e8b1345f825",
+        "bytes": 5348,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "docs/local-retrieval.md": {
+        "sha256": "eb6db0f54c2c04c921202ea85a0e7efee96b593fe6684a11c949754140151ce0",
+        "bytes": 7010,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "docs/proposals/local-mcp-checks.md": {
+        "sha256": "15b7345fe4629236466f67d53a977afcb7fb74495ac5287ab9abb66b8ca0f287",
+        "bytes": 4189,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "package.json": {
+        "sha256": "670eae5ba3f561f58af50abb108709ca7647df41b0081918aa808d8c89c35f3a",
+        "bytes": 1255,
+        "mode": "100644",
+        "permissions": "644"
+      },
+      "tests/unit/local-mcp.test.mjs": {
+        "sha256": "0d40f50552480665cb0111e9ab7e02e68b7489f9437d9c040245c051612d0cd5",
+        "bytes": 29804,
+        "mode": "100644",
+        "permissions": "644"
+      }
+    },
+    "allSelectedBytesModesSizesMatchedSeal": true,
+    "selectedInputsUnchangedBeforeAfter": true
+  },
+  "runtime": {
+    "node": {
+      "version": "v26.8.2",
+      "executable": "node",
+      "platform": "darwin",
+      "architecture": "arm64",
+      "selection": "Existing absolute resolved Node executable; the preflight controller reported its own version/execPath and spawned the test runner with that same resolved executable. Host paths are omitted from this published receipt."
+    },
+    "ripgrep": {
+      "executable": "rg",
+      "version": "ripgrep 15.2.0",
+      "preflightExitCode": 0,
+      "preflightSignal": null,
+      "preflightErrorCode": null,
+      "preflightStderrBytes": 0
+    },
+    "profileLimit": "This actual execution establishes the recorded Node v26.8.2 / ripgrep 15.2.0 profile, rather than the preparation document's older Node profile."
+  },
+  "environment": {
+    "passedKeys": [
+      "PATH",
+      "TMPDIR",
+      "TZ"
+    ],
+    "timezone": "UTC",
+    "path": "Explicit allowlist of the selected existing rg binary directory and system utility directories.",
+    "tmpdir": "Fresh operation-owned fixtures directory, checked by device/inode and removed after execution.",
+    "homePassed": false,
+    "accountOrProviderCredentialsPassed": false,
+    "nodeOptionsPassed": false
+  },
+  "command": [
+    "node",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "--test-timeout=10000",
+    "tests/unit/local-mcp.test.mjs"
+  ],
+  "controller": {
+    "deadlineMs": 120000,
+    "caseTimeoutMs": 10000,
+    "terminationGraceMs": 3000,
+    "stdoutLimitBytes": 262144,
+    "stderrLimitBytes": 65536
+  },
+  "abortedWrapperAttempts": [
+    {
+      "startedAt": "2026-10-31T20:24:06.081Z",
+      "finishedAt": "2026-10-31T20:24:06.100Z",
+      "reportedElapsedMs": 12,
+      "controllerExitCode": 1,
+      "testsStarted": false,
+      "actualTestCases": 0,
+      "reason": "Controller version check required a space after ripgrep 15.2.0; the valid installed banner ended with a newline.",
+      "correction": "Runner-only regex accepts version followed by whitespace or end of string.",
+      "productOrTestFailure": false,
+      "sealedSourceChanged": false,
+      "sourceGuardsMatchedAll14": true,
+      "sourceSnapshotMatchesSuccessfulRun": true,
+      "fixtureCleanup": {
+        "rootIdentityMatched": true,
+        "remainingEntries": [],
+        "fixturesClean": true,
+        "ownedRootRemoved": true,
+        "error": null
+      }
+    },
+    {
+      "startedAt": "2026-10-31T20:25:28.937Z",
+      "finishedAt": "2026-10-31T20:25:28.962Z",
+      "reportedElapsedMs": 17,
+      "controllerExitCode": 1,
+      "testsStarted": false,
+      "actualTestCases": 0,
+      "reason": "Profile formatting passed path.basename directly to Array.map, whose numeric index became basename's optional suffix.",
+      "correction": "Runner-only callback explicitly supplies one pathname argument.",
+      "productOrTestFailure": false,
+      "sealedSourceChanged": false,
+      "sourceGuardsMatchedAll14": true,
+      "sourceSnapshotMatchesSuccessfulRun": true,
+      "fixtureCleanup": {
+        "rootIdentityMatched": true,
+        "remainingEntries": [],
+        "fixturesClean": true,
+        "ownedRootRemoved": true,
+        "error": null
+      }
+    }
+  ],
+  "execution": {
+    "startedAt": "2026-10-31T20:26:18.793Z",
+    "finishedAt": "2026-10-31T20:26:19.095Z",
+    "reportedElapsedMs": 288,
+    "exitCode": 0,
+    "signal": null,
+    "spawnError": null,
+    "timedOut": false,
+    "interrupted": false,
+    "outputExceeded": false,
+    "actualTestInvocations": 1,
+    "totals": {
+      "tests": 34,
+      "suites": 0,
+      "pass": 34,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0
+    },
+    "exact34UniqueNamesMatchedManifest": true,
+    "stdout": {
+      "bytes": 8688,
+      "sha256": "f1342ac56986ed6ea0f2edcf251fce6ab9171ce127affd44587b982c1a923d9b"
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "caseNames": [
+      "local MCP requires an explicit directory before invoking any trusted reader seam",
+      "local MCP canonicalizes an explicit startup alias and passes only that root to readers",
+      "local MCP modern discovery advertises complete supported versions and read-only capabilities without legacy initialization",
+      "local MCP lists exactly three tools whose schemas cannot select roots raw intake QMD or writes",
+      "local MCP legacy initialization requires a valid initialized notification before tool use",
+      "local MCP ping works before initialization and ordinary notifications never receive responses",
+      "local MCP rejects malformed JSON-RPC envelopes without inventing a successful tool result",
+      "local MCP unknown request methods return Method not found independently of legacy state",
+      "local MCP unsupported modern versions return supported and requested protocol data",
+      "local MCP malformed or partial modern metadata cannot borrow an initialized legacy session",
+      "local MCP rejects per-call root raw QMD workspace and export overrides before invoking readers",
+      "local MCP actual metadata indexing is offline excludes raw and ignored files and changes no source bytes",
+      "local MCP actual page reads retain exact BOM CRLF Unicode bytes and their independent SHA-256",
+      "local MCP actual ripgrep search preserves byte offsets current hashes and the disabled QMD leg",
+      "local MCP repeated page calls read current vetted bytes instead of serving an earlier snapshot",
+      "local MCP page eligibility rejects traversal absolute raw ignored hidden and symlink paths without disclosing outside content",
+      "local MCP tool names argument types and result limits reject invalid params before dispatch",
+      "local MCP known operational failures preserve only finite codes in text and structured content",
+      "local MCP unexpected operational errors never expose paths queries or thrown private details",
+      "local MCP over-budget responses fail as finite errors rather than truncating a result",
+      "local MCP one active retrieval fences another tool with an explicit busy result",
+      "local MCP cancellation notifications abort their own retrieval and send no reply",
+      "local MCP stale cancellation cannot abort a different active request",
+      "local MCP close aborts active work suppresses late results and ignores later requests",
+      "local MCP rejects root directory replacement before another reader can enter",
+      "local MCP rechecks root identity after a pending read before publishing captured content",
+      "local MCP transport emits protocol-only complete modern responses and no notification acknowledgement",
+      "local MCP transport rejects malformed JSON and UTF-8 frames but remains usable",
+      "local MCP transport terminates oversized request frames with finite failure and no echoed payload",
+      "local MCP transport reports an incomplete EOF frame instead of executing it",
+      "local MCP EOF closes a buffered retrieval without publishing a tool result",
+      "local MCP transport limits outstanding handler writes and resumes only after an owned write settles",
+      "local MCP CLI rejects missing duplicate and capability-expanding startup arguments without a protocol response",
+      "local MCP output failure closes the transport with a finite nonzero outcome"
+    ],
+    "fixtureCleanup": {
+      "rootIdentityMatched": true,
+      "remainingEntries": [],
+      "fixturesClean": true,
+      "ownedRootRemoved": true,
+      "error": null
+    }
+  },
+  "scope": [
+    "Actual local reader behavior on independently authored temporary Markdown, using the existing real rg binary; BOM/CRLF/Unicode content, hashes, byte offsets and fresh reads.",
+    "Modern/legacy MCP handling, fixed root/read-only capability boundary, cancellation/busy/root replacement, finite redacted errors and bounded responses.",
+    "In-memory Node streams exercise protocol framing, EOF, outstanding writes and write failure; these are not registered MCP client or OS-child failure tests."
+  ],
+  "limits": [
+    "Only the published 34-case file executed. The older 63-case local-reader scope was not run.",
+    "No installation, clone, build, Next.js import, CI, browser, app server, hosted HTTP, account, database, Auth/configuration change, private corpus, QMD/model/provider call or paid action occurred.",
+    "The stream EOF case proves suppression of buffered results, not actual OS-child termination. The authored cases do not measure the runtime's thirty-second retrieval or five-second write deadlines.",
+    "No native-client interoperability, real QMD, hosted identity/integration, full MCP conformance or wider vAFS/portfolio completion follows.",
+    "Only the two new local results files are authored by this step; source inputs remain unchanged. Canonical publication is a separate root-owned action."
+  ]
+}

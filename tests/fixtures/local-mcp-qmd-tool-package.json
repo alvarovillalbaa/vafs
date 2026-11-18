@@ -1,0 +1,1 @@
+{"name":"vafs-qmd-owned-ci","version":"0.0.0","private":true,"dependencies":{"@tobilu/qmd":"2.8.3","better-sqlite3":"13.0.3","sqlite-vec":"0.1.9","sqlite-vec-linux-x64":"0.1.9"}}

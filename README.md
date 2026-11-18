@@ -1,9 +1,9 @@
 # vAFS
-Last updated: 2026-10-10
+Last updated: 2026-11-18
 
-This repository preserves the historical Virtual Agentic FileSystem prototype. The virtual filesystem layer is cancelled; current maintenance aligns the existing AFS catalog and exported scaffold with the [AFS standard](https://github.com/alvarovillalbaa/afs).
+This repository includes a file-based local AFS reader and its separate read-only MCP entrypoint, alongside the historical Virtual Agentic FileSystem prototype. The hosted virtual filesystem layer is cancelled; current maintenance aligns the existing AFS catalog and exported scaffold with the [AFS standard](https://github.com/alvarovillalbaa/afs).
 
-Start with [AGENTS.md](AGENTS.md), [REFERENCES.md](REFERENCES.md), [SOURCES.md](SOURCES.md), and [GAPS.md](GAPS.md). The runtime surfaces described below are prototype contracts. Their presence is not deployment or integration proof.
+Start with [AGENTS.md](AGENTS.md), [REFERENCES.md](REFERENCES.md), [SOURCES.md](SOURCES.md), and [GAPS.md](GAPS.md). Hosted runtime surfaces remain prototype contracts; the local reader/MCP evidence and its limits are documented below.
 
 ## What This Repo Implements
 
@@ -11,7 +11,9 @@ Start with [AGENTS.md](AGENTS.md), [REFERENCES.md](REFERENCES.md), [SOURCES.md](
 - Existing AFS catalog and exported templates in `lib/vafs/afs-contract.ts`, aligned with the canonical standard.
 - Supabase-first metadata model for users, workspaces, memberships, OAuth grants, repo connections, jobs, and audit events.
 - GitHub `agents-fs` source-of-truth model with branch-and-PR writeback.
-- Hybrid retrieval: metadata, BM25, S3 Vectors adapter, rerank hooks, and local `rg` mode reserved for CLI/MCP.
+- Hosted retrieval contracts for metadata, keyword/vector adapters and reranking hooks; their external integration remains unfinished.
+- A file-based local CLI bridge with explicit-root metadata, real `rg`, optional configured QMD keyword retrieval, fresh content hashes and line/byte provenance. See [local retrieval](docs/local-retrieval.md).
+- A separate read-only local MCP stdio entrypoint for that reader, without a hosted API. See [local MCP](docs/local-mcp.md) for separate protocol/reader evidence and the first accepted configured Inspector CLI journey.
 - OpenAI Agents SDK cleanup-agent contract in `lib/vafs/cleanup-agent.ts`.
 - CLI and MCP bridge in `bin/vafs.mjs` and `bin/vafs-mcp.mjs`.
 - Exportable skills in `packages/skills/vafs-use` and `packages/skills/vafs-devs`.
@@ -37,11 +39,56 @@ node bin/vafs.mjs get ws_personal_alvaro PRODUCT.md
 node bin/vafs.mjs sync ws_personal_alvaro
 ```
 
+Local checkout commands require installed Node and `rg`, with no application
+dependency installation. Supply the checkout explicitly:
+
+```bash
+node bin/vafs.mjs local index --root /path/to/agents-fs
+node bin/vafs.mjs local search "hybrid retrieval" --root /path/to/agents-fs
+node bin/vafs.mjs local get knowledge/retrieval.md --root /path/to/agents-fs
+```
+
+Local retrieval reads literal files and reports each signal's availability.
+It does not upload a checkout, create a hosted workspace or manufacture search
+results from the demo catalogue. Raw intake is excluded unless requested.
+QMD collection setup remains an operator-owned prerequisite. The
+[first real QMD keyword journey](docs/results/2026/11-07/local-qmd-keyword-attempt-1.md)
+passed on six disposable authored files with QMD 2.8.3, current-byte provenance,
+stale-index candidates and raw/foreign/missing exclusions. It does not establish
+private-corpus, semantic/model or hosted integration acceptance.
+The [63-case Linux reader receipt](docs/results/2026/10-31/local-reader-ci-checks.md)
+records actual authored file, rg and CLI checks. The earlier macOS process-inspection
+permission failure and private-corpus acceptance remain separate.
+
 MCP stdio bridge:
 
 ```bash
 VAFS_API_URL=http://127.0.0.1:3000 node bin/vafs-mcp.mjs
 ```
+
+For a trusted local checkout, select the separate local server explicitly:
+
+```bash
+node bin/vafs-local-mcp.mjs --root /path/to/agents-fs
+```
+
+It exposes metadata index, literal search and exact page reads. Raw intake is
+excluded and QMD is disabled by default. An operator with an existing QMD
+collection can explicitly enable its keyword candidates for this session:
+
+```bash
+node bin/vafs-local-mcp.mjs --root /path/to/agents-fs --qmd-collection personal
+```
+
+Only startup chooses that collection; tool requests cannot change it or expand
+the root. Current eligible files still own returned content/hashes even when
+index ranking is stale. This profile's [eight contracts and real Q02 journey](docs/results/2026/11-13/local-mcp-qmd.md)
+passed on authored files; the earlier Q01 result covers the CLI only.
+The local MCP server does not connect to the hosted API, change
+account access or implement sync/write tools. The
+[first Inspector CLI result](docs/results/2026/11-07/local-inspector-client-attempt-1.md)
+accepts one authored-file legacy interoperability journey across five separate
+sessions. It does not establish native-client registration or hosted access.
 
 ## API
 
@@ -59,7 +106,10 @@ The API is implemented with Next route handlers:
 - `GET /api/v1/health`
 - `GET|POST /api/mcp`
 
-Set `VAFS_AUTH_REQUIRED=true` to enforce scope checks through `x-vafs-scopes` while the Supabase OAuth server is being wired.
+`VAFS_AUTH_REQUIRED` controls the initial header-based scope check. That interim
+`x-vafs-scopes` behavior does not establish verified OAuth identity or workspace
+ownership. It has not been changed by the local reader. Hosted Auth/access and
+external-service acceptance remain unfinished.
 
 ## Environment
 
@@ -95,4 +145,10 @@ VAFS_AUTH_REQUIRED=false
 
 ## Current Integration State
 
-The implementation is credential-safe. It exposes real contracts, route handlers, CLI, MCP, schema, and worker boundaries, but external services are mocked until Supabase, GitHub App, AWS, and OpenAI credentials are configured.
+The hosted implementation exposes contracts, route handlers, HTTP-backed CLI
+and MCP, schema and worker boundaries. Its inspected search remains
+fixture-backed; credentialed Supabase/GitHub/AWS/OpenAI behavior and production
+access enforcement are unverified. Do not treat these surfaces as completed
+integrations. The local file bridge has an independent explicit-root contract
+with separate accepted reader, protocol and configured CLI evidence in the
+[testing guide](docs/testing.md). Those scopes do not complete the hosted integrations.

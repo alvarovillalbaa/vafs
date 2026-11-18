@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-18T16:46:51.203041+00:00",
+  "actual_main": "55eb26ccd6134176f3ef5296ed12a5dd4e00a6d5",
+  "premerge_branch_head": "71b860c078381d0994ecede0a82967c58acc3bb7",
+  "reviews": [
+    {
+      "agent": "afs_bug_review",
+      "lens": "bug detection",
+      "actionable_findings": 0
+    },
+    {
+      "agent": "afs_history_review",
+      "lens": "history and preservation",
+      "actionable_findings": 0
+    },
+    {
+      "agent": "afs_prior_comments",
+      "lens": "prior comments",
+      "actionable_findings": 0
+    },
+    {
+      "agent": "personal_afs_compliance",
+      "lens": "root contract compliance",
+      "actionable_findings": 0
+    },
+    {
+      "agent": "personal_afs_comment_accuracy",
+      "lens": "claim accuracy",
+      "actionable_findings": 0
+    }
+  ],
+  "root_files_sha256": {
+    "AGENTS.md": "697b2cb280d48972b401c89b1c381264eff8af58102e869d3428bd7a35683740",
+    "README.md": "6998cbce604af3e6464440fe3912d1b06042844be59ae18989907e071e39fd46"
+  },
+  "unchanged_previously_checked_source_sha256": {
+    "SOURCES.md": "844eb822d7fb0220d78f63e517c86afa80e35404f8eea8f3c1f8e3614c3a122f",
+    "docs/audits/2026/10-10/check-template-consumer.mjs": "b6a79cd53693b54f95d74fd13243511f5df22dedc22a03bf437654cd6e1573be",
+    "lib/vafs/afs-contract.ts": "c44f036afc47f2de036d6f8863e80705c4b4b71c5205666a9ba2da292028e67a",
+    "lib/vafs/fixtures.ts": "c1c0e00de8ae48f2103b3f954be29d393dd9c377e2e1cb02ca3aee8765b41019",
+    "packages/skills/vafs-use/assets/agents-fs-template/AGENTS.md": "071d0d230e6cadb7727ba916969425ee9f8feb8c5b9bca57ee21a4b94a18cb2a",
+    "packages/skills/vafs-use/assets/agents-fs-template/SOURCES.md": "e54ad9651c482bde99a3b7f5da769a64ac18385c607f7188b8cac57d88bb5f9e",
+    "packages/skills/vafs-use/assets/agents-fs-template/research/README.md": "bf83e1df3afce829e2d24500d788e1e032ed224edad74dd0499dc1ab381c802f"
+  },
+  "upstream_preservation_receipt": "base-reconciliation.json",
+  "final_preservation_and_whitespace_receipt": "base-reconciliation-final.json",
+  "new_runtime_or_mcp_tests_by_reviewers": false,
+  "reviewer_mutations": false
+}
