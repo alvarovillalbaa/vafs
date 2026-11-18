@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-18T16:27:46.132728+00:00",
+  "source_parent": "cfdeee8b367c81580c92f3d36157de2bcbf4adaa",
+  "node_version": "v26.8.2",
+  "checks": {
+    "focused_consumer": {
+      "command": "node docs/audits/2026/10-10/check-template-consumer.mjs",
+      "exit_code": 0,
+      "output_chunk": "299fd2",
+      "runtime_asset_byte_parity": 8,
+      "review_regression_cases_passed": 4,
+      "proposal_discovery_get_search_consumers": true
+    },
+    "presence_validator": {
+      "command": "node scripts/validate-vafs.mjs",
+      "exit_code": 0,
+      "output_chunk": "299fd2"
+    },
+    "checker_syntax_exit_code": 0,
+    "git_diff_check_passed": true
+  },
+  "source_sha256": {
+    "SOURCES.md": "844eb822d7fb0220d78f63e517c86afa80e35404f8eea8f3c1f8e3614c3a122f",
+    "docs/audits/2026/10-10/check-template-consumer.mjs": "b6a79cd53693b54f95d74fd13243511f5df22dedc22a03bf437654cd6e1573be",
+    "lib/vafs/afs-contract.ts": "c44f036afc47f2de036d6f8863e80705c4b4b71c5205666a9ba2da292028e67a",
+    "lib/vafs/fixtures.ts": "c1c0e00de8ae48f2103b3f954be29d393dd9c377e2e1cb02ca3aee8765b41019",
+    "packages/skills/vafs-use/assets/agents-fs-template/AGENTS.md": "071d0d230e6cadb7727ba916969425ee9f8feb8c5b9bca57ee21a4b94a18cb2a",
+    "packages/skills/vafs-use/assets/agents-fs-template/SOURCES.md": "e54ad9651c482bde99a3b7f5da769a64ac18385c607f7188b8cac57d88bb5f9e",
+    "packages/skills/vafs-use/assets/agents-fs-template/research/README.md": "bf83e1df3afce829e2d24500d788e1e032ed224edad74dd0499dc1ab381c802f"
+  },
+  "package_json_sha256": "670eae5ba3f561f58af50abb108709ca7647df41b0081918aa808d8c89c35f3a",
+  "node_module_type_warning_retained": true,
+  "canonical_validation": "canonical-validation.json",
+  "gfm_rendering": "github-render-verification.json",
+  "next_api_build_browser_database_install_or_live_integration": false
+}

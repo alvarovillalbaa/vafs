@@ -15,3 +15,11 @@ The removed raw README was placement guidance, not an uploaded artifact. Its sou
 ## Framework guidance
 
 The clean clone has no installed Next package guide. [Official Server and Client Components guide](https://nextjs.org/docs/app/getting-started/server-and-client-components) was inspected on 2026-10-10 for static labels. The page reports version 16.4.0; the repository pins 16.2.6. No framework APIs or dependencies were changed, and this guide is not a version-specific runtime verification.
+
+## 2026-11-18 correction review
+
+The same official guide was refreshed and reports 16.4.6; the repository still
+pins 16.2.6. The corrections change existing data/Markdown only and use no Next
+APIs. Validation uses the [published AFS source](https://github.com/alvarovillalbaa/afs/tree/4935baf22571bae68caf4318843e4c1164a8c22d)
+and records exact validator hashes and limits in the
+[owner review](docs/audits/2026/11-18/migration-review/README.md).
