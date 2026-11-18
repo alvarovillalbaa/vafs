@@ -41,7 +41,29 @@ assert.equal(proposal.repo.status, "creating")
 assert.deepEqual(proposal.initialCommit.files, template, "Repository proposal must use the maintained scaffold")
 assert.deepEqual(services.discoverAgentsFsRepos().createTemplate, template)
 assert.equal(services.getFile({ workspaceId: "ws_personal_alvaro", path: "AGENTS.md" }).title, "Agent Rules")
-assert.equal(services.getFile({ workspaceId: "ws_personal_alvaro", path: "PRODUCT.md" }).section, "truth")
+const reviewFailures = []
+const reviewCheck = (name, check) => {
+  try { check() } catch (error) { reviewFailures.push(`${name}: ${error.message}`) }
+}
+for (const kind of ["personal", "company"]) reviewCheck(`owner-neutral ${kind} proposal`, () => {
+  const proposed = services.createAgentsFsRepo({ owner: "unrelated-owner", kind, workspaceId: `review-${kind}` })
+  assert.equal(proposed.repo.owner, "unrelated-owner")
+  for (const file of proposed.initialCommit.files) {
+    assert.doesNotMatch(file.content, /alvaro\.villalbaperez@gmail\.com|avillalba@clous\.app/)
+  }
+})
+reviewCheck("PRODUCT root classification", () => {
+  assert.equal(services.getFile({ workspaceId: "ws_personal_alvaro", path: "PRODUCT.md" }).section, "root")
+  const product = services.searchWorkspace({ query: "VAFS Product", workspaceId: "ws_personal_alvaro", includeRaw: false }).find((file) => file.path === "PRODUCT.md")
+  assert.equal(product?.section, "root")
+})
+reviewCheck("literal Markdown placeholders", () => {
+  for (const file of template) {
+    const prose = file.content.replace(/`[^`\n]*`/g, "")
+    assert.doesNotMatch(prose, /<(?:unit|domain|folder|type)>/, file.path)
+  }
+})
+assert.deepEqual(reviewFailures, [], "Review regressions must pass")
 const overview = services.getPlatformOverview()
 for (const file of requiredFiles) assert.ok(overview.rootFiles.some((entry) => entry.file === file), file)
 for (const file of overview.rootFiles) assert.ok(!forbiddenFiles.has(file.file), file.file)

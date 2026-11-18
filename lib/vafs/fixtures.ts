@@ -78,7 +78,7 @@ export const demoFiles: AfsFileRecord[] = [
     title: "VAFS Product",
     description:
       "VAFS is the productized implementation of AFS with GitHub source repos, Supabase metadata, and S3 Vectors retrieval.",
-    section: "truth",
+    section: "root",
     updatedAt: "2026-05-17",
     sourceCommitSha: "aaf5d00",
     content:

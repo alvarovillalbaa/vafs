@@ -1,6 +1,6 @@
 # Research
 
-Create one living research/<unit>/ folder per accepted topic. Its README.md must define:
+Create one living `research/<unit>/` folder per accepted topic. Its README.md must define:
 
 - Questions and order: what to investigate and in which sequence.
 - Hypotheses: proposed expectations with uncertainty stated.

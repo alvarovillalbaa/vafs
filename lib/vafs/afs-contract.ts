@@ -317,9 +317,9 @@ This repository is an AFS-compatible agents-fs workspace.
 - Preserve source identity, URLs, dates, status, and authors when available in SOURCES.md.
 - Keep raw inputs and copied artifacts in the correct private Google Drive; verify a recoverable copy before removing original bytes.
 - Keep unique generalized knowledge and perspectives in knowledge/; operations belong in cookbooks/ or runbooks/.
-- Define continuous research in research/<unit>/README.md with ordered questions, hypotheses, reasoning, method, evidence, and status.
+- Define continuous research in \`research/<unit>/README.md\` with ordered questions, hypotheses, reasoning, method, evidence, and status.
 - Use YYYY/MM-DD/ for logs, lessons, fixes, audits, plans, and results; each log entry is at most two lines.
-- Keep facts/<domain>/, decisions/, specs/, cookbooks/, knowledge/, runbooks/, and research/ living without date directories.
+- Keep \`facts/<domain>/\`, decisions/, specs/, cookbooks/, knowledge/, runbooks/, and research/ living without date directories.
 - Folder docs: core README.md/ARCHITECTURE.md/TESTS.md; conditional SETUP.md/CHANGELOG.md/SECURITY.md; rare OVERVIEW.md/FAQ.md/DEPENDENCIES.md. Procedures and decisions use their topic folders, with no folder-level RUNBOOK.md or DECISIONS.md.
 - Goals belong in canonical Notion and link from ROADMAP.md; templates stay beside generated content.
 - REFERENCES.md catalogs links and owner guides; GAPS.md records unresolved understanding.
@@ -360,7 +360,7 @@ Add labeled external references and technical owner-guide links here rather than
 
 No external artifacts have been captured by this template. For each source, record origin, original path or URL, date, author when known, capture/ingestion status, verified private Drive artifact, checksums when migrated, and compiled destinations. Preservation does not prove ingestion.
 
-Personal raw material belongs in alvaro.villalbaperez@gmail.com Drive; Clous raw material in avillalba@clous.app Drive. The workspace owner must select and verify the private destination before any source removal. Keep unread or inaccessible URLs visible.
+The workspace owner must select and verify a private Google Drive destination appropriate to that workspace before preserving raw material or removing original bytes. No destination account has been configured by this scaffold. Keep unread or inaccessible URLs visible.
 `,
   },
   {
@@ -388,7 +388,7 @@ Keep unique generalized knowledge, original perspectives, and source-backed synt
     description: "Continuous research organized by defined units.",
     content: `# Research
 
-Create one living research/<unit>/ folder per accepted topic. Its README.md must define:
+Create one living \`research/<unit>/\` folder per accepted topic. Its README.md must define:
 
 - Questions and order: what to investigate and in which sequence.
 - Hypotheses: proposed expectations with uncertainty stated.
