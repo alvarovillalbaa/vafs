@@ -1,4 +1,9 @@
 # vAFS
+
+<!-- project-family:start -->
+> **Project family:** [Agent Infrastructure](https://github.com/alvarovillalbaa#agent-infrastructure) · **Area:** Local context reader
+<!-- project-family:end -->
+
 Last updated: 2026-11-18
 
 This repository includes a file-based local AFS reader and its separate read-only MCP entrypoint, alongside the historical Virtual Agentic FileSystem prototype. The hosted virtual filesystem layer is cancelled; current maintenance aligns the existing AFS catalog and exported scaffold with the [AFS standard](https://github.com/alvarovillalbaa/afs).
